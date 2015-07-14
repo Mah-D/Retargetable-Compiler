@@ -1,0 +1,11 @@
+dispatcher0@tuvalu:5000[     5|fanin0:10, 6|fanin1:14, 7|fanin2:18, 8|fanin3:22, 2|Terminator:26, 1|Result:30 ]$valgrind --tool=massif /home/dupper/duprun/dispatcher "/home/dupper/duprun/in.txt";
+dispatcher1@Juhu:5001[        5|fanin0:11, 6|fanin1:15, 7|fanin2:19, 8|fanin3:23, 2|Terminator:27, 1|Result:31 ]$/Users/dupper/duprun/dispatcher "/Users/dupper/duprun/in.txt";
+dispatcher2@Hama:5002[        5|fanin0:12, 6|fanin1:16, 7|fanin2:20, 8|fanin3:24, 2|Terminator:28, 1|Result:32 ]$/Users/dupper/duprun/dispatcher "/Users/dupper/duprun/in.txt";
+dispatcher3@Caspian:5005[     5|fanin0:13, 6|fanin1:17, 7|fanin2:21, 8|fanin3:25, 2|Terminator:29, 1|Result:33 ]$/Users/dupper/duprun/dispatcher "/Users/dupper/duprun/in.txt";
+fanin0@tuvalu:5006[          99|dispatcher0:4, 2|Terminator:40]$/home/dupper/duprun/relayer "/home/dupper/duprun/in.txt";
+fanin1@Juhu:5007[             99|dispatcher1:4, 2|Terminator:41]$/Users/dupper/duprun/relayer "/Users/dupper/duprun/in.txt";
+fanin2@Hama:5008[             99|dispatcher2:4, 2|Terminator:42]$/Users/dupper/duprun/relayer "/Users/dupper/duprun/in.txt";
+fanin3@Caspian:5009[             99|dispatcher3:4, 2|Terminator:43]$/Users/dupper/duprun/relayer "/Users/dupper/duprun/in.txt";
+Terminator@tuvalu:5010[1>/home/dupper/duprun/out.txt]$faninany;
+Result@tuvalu:5011[1>/home/dupper/duprun/result.txt]$faninany;
+

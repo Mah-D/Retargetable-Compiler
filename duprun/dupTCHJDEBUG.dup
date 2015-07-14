@@ -1,0 +1,14 @@
+dispatcher0@tuvalu:5000[     5|fanin0:10, 6|fanin1:14, 7|fanin2:18, 8|fanin3:22, 2|Terminator:26, 1|Result1:30 ]$gdb /home/dupper/duprun/dispatcher -x "/home/dupper/duprun/debug.txt";
+dispatcher1@Juhu:5001[        5|fanin0:11, 6|fanin1:15, 7|fanin2:19, 8|fanin3:23, 2|Terminator:27, 1|Result2:31 ]$/usr/local/bin/gdb /Users/dupper/duprun/dispatcher -x  "/Users/dupper/duprun/debug.txt";
+dispatcher2@Hama:5002[        5|fanin0:12, 6|fanin1:16, 7|fanin2:20, 8|fanin3:24, 2|Terminator:28, 1|Result3:32 ]$/usr/local/bin/gdb /Users/dupper/duprun/dispatcher -x "/Users/dupper/duprun/debug.txt";
+dispatcher3@Caspian:5005[     5|fanin0:13, 6|fanin1:17, 7|fanin2:21, 8|fanin3:25, 2|Terminator:29, 1|Result4:33 ]$/usr/local/bin/gdb /Users/dupper/duprun/dispatcher -x "/Users/dupper/duprun/debug.txt";
+fanin0@tuvalu:5006[          99|dispatcher0:4, 2|Terminator:40, 1|Result1:44]$gdb /home/dupper/duprun/relayer -x "/home/dupper/duprun/debug.txt";
+fanin1@Juhu:5007[             99|dispatcher1:4, 2|Terminator:41, 1|Result2:45]$/usr/local/bin/gdb /Users/dupper/duprun/relayer -x "/Users/dupper/duprun/debug.txt";
+fanin2@Hama:5008[             99|dispatcher2:4, 2|Terminator:42, 1|Result3:46]$/usr/local/bin/gdb /Users/dupper/duprun/relayer -x "/Users/dupper/duprun/debug.txt";
+fanin3@Caspian:5009[             99|dispatcher3:4, 2|Terminator:43, 1|Result4:47 ]$/usr/local/bin/gdb /Users/dupper/duprun/relayer -x "/Users/dupper/duprun/debug.txt";
+Terminator@tuvalu:5010[1>/home/dupper/duprun/out.txt]$faninany;
+Result1@tuvalu:5011[1>/home/dupper/duprun/result.txt]$faninany;
+Result2@Juhu:5012[1>/Users/dupper/duprun/result.txt]$faninany;
+Result3@Hama:5013[1>/Users/dupper/duprun/result.txt]$faninany;
+Result4@Caspian:5014[1>/Users/dupper/duprun/result.txt]$faninany;
+

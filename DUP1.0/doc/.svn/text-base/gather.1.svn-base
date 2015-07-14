@@ -1,0 +1,25 @@
+.TH GATHER "1" "Nov 21 2008" "gather"
+
+.SH "NAME"
+gather \- merge multiple input streams round\-robin into one output stream
+
+.SH "SYNOPSIS"
+.B gather
+[\fIRECORDSIZE\fR]
+
+.SH "DESCRIPTION"
+.PP
+gather reads round robin from all input streams and writes the data to stdout.  If an input file descriptor signals EOF, round\-robin reading continues without it.  If all input file descriptors are closed, then gather will terminate.  If the output file descriptor signals a pipe error, gather will also terminate.
+.TP
+When called without arguments, gather will operate in line\-based mode.  In this mode, gather will buffer an entire line of input from the current input descriptor before writing output to the output file descriptor.  If the last line read from an input file descriptor is not terminated with a newline, it will be printed without the newline, possibly being followed by inputs from other file descriptors on the same line.
+.TP
+When called with a number as the argument, gather will operate in record\-based mode.  In this mode, gather will read the specified number of bytes from input before writing the record to the output.  If the last line read from an input is incomplete (does not have the full record size), gather will discard it.
+
+.SH "SEE ALSO"
+\fBgatherany\fP(1), \fBfanout\fP(1), \fBdup\fP(1), \fBdupd\fP(1)
+
+.SH "LEGAL NOTICE"
+gather is released under the GPL.
+
+.SH "REPORTING BUGS"
+Please send electronic mail to <dup@cs.du.edu>

@@ -1,0 +1,1183 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 14.40     18.16    18.16 29491200     0.00     0.00  LinearESOpenPIC2D_pushParticle
+ 14.39     36.31    18.15                             GC_mark_from
+ 11.51     50.83    14.52      101     0.14     0.14  LinearESOpenPIC2D_depositCharge
+  9.93     63.35    12.52      201     0.06     0.11  LinearESOpenPIC2D_moveParticles
+  8.50     74.07    10.72   377926     0.00     0.00  getRankArbitrary2
+  6.41     82.16     8.09   376208     0.00     0.00  restrictDistArbitrary2
+  6.09     89.84     7.68      201     0.04     0.04  LinearESOpenPIC2D_packParticleArray
+  5.80     97.15     7.31   402632     0.00     0.00  Dist_Dist
+  5.64    104.27     7.12      608     0.01     0.05  FourierTransform2D_transformRank
+  3.03    108.09     3.82      100     0.04     0.04  LinearESOpenPIC2D_countParticles
+  2.85    111.68     3.59     2420     0.00     0.00  unionDist2
+  1.29    113.31     1.63      202     0.01     0.01  doublerefArraySum1
+  1.24    114.88     1.57     2528     0.00     0.00  createNewRegion2AA
+  0.94    116.07     1.19      200     0.01     0.01  ArrayUtil_complexToDouble
+  0.82    117.11     1.04      304     0.00     0.01  ArrayUtil_transpose
+  0.55    117.80     0.69      200     0.00     0.01  LinearESOpenPIC2D_cropField
+  0.45    118.37     0.57      608     0.00     0.00  FourierTransform2D_bitReverse
+  0.45    118.94     0.57      100     0.01     0.01  PoissonSolver_solveForceCharge
+  0.40    119.44     0.50     2218     0.00     0.00  X10Util_extendDistRank2D
+  0.36    119.90     0.46      104     0.00     0.01  ArrayUtil_doubleToComplex
+  0.34    120.33     0.43     2524     0.00     0.00  restrictDistArbitrary1
+  0.34    120.76     0.43      100     0.00     0.37  PoissonSolver_getForceCharge
+  0.33    121.18     0.42      400     0.00     0.01  LinearESOpenPIC2D_moveFieldToDist
+  0.33    121.59     0.41     1719     0.00     0.00  unionDist1
+  0.31    121.98     0.39                             GC_apply_to_all_blocks
+  0.27    122.32     0.34      200     0.00     0.00  FourierTransform2D_scrambleX
+  0.25    122.64     0.32        2     0.16     0.16  LinearESOpenPIC2D_sortParticles
+  0.22    122.92     0.28                             GC_allochblk_nth
+  0.21    123.19     0.27      100     0.00     0.19  LinearESOpenPIC2D_pushParticles
+  0.17    123.40     0.21  3328700     0.00     0.00  searchPointInRegion3
+  0.15    123.59     0.19        1     0.19     0.23  LinearESOpenPIC2D_genParticleVelocity
+  0.15    123.78     0.19                             GC_clear_stack_inner
+  0.14    123.96     0.18      100     0.00     1.04  LinearESOpenPIC2D_stepTime
+  0.13    124.12     0.16      104     0.00     0.00  FourierTransform2D_unscrambleX
+  0.12    124.27     0.15                             GC_install_header
+  0.11    124.41     0.14  3329500     0.00     0.00  searchPointInRegion2
+  0.11    124.55     0.14                             GC_promote_black_lists
+  0.10    124.68     0.13      200     0.00     0.00  LinearESOpenPIC2D_makeLocalSpace
+  0.10    124.80     0.12                             GC_install_counts
+  0.09    124.91     0.11                             GC_prev_block
+  0.07    125.00     0.09      403     0.00     0.00  unionDist3
+  0.07    125.09     0.09      100     0.00     0.00  LinearESOpenPIC2D_doubleDimensions
+  0.07    125.18     0.09        1     0.09     0.09  LinearESOpenPIC2D_genParticles
+  0.06    125.26     0.08                             GC_free_block_ending_at
+  0.06    125.34     0.08                             GC_remove_counts
+  0.06    125.41     0.07                             GC_allochblk
+  0.05    125.47     0.06        1     0.06     0.06  LinearESOpenPIC2D_genParticlePosition
+  0.05    125.53     0.06                             GC_get_first_part
+  0.04    125.58     0.05                             setup_header
+  0.03    125.62     0.04                             GC_build_fl
+  0.03    125.66     0.04                             GC_clear_hdr_marks
+  0.03    125.70     0.04                             GC_find_header
+  0.02    125.73     0.03   103680     0.00     0.00  unionRegion1
+  0.02    125.76     0.03                             GC_build_fl_clear2
+  0.02    125.79     0.03                             GC_freehblk
+  0.02    125.82     0.03                             GC_generic_malloc
+  0.02    125.84     0.02   589824     0.00     0.00  Random_nextNormal
+  0.02    125.86     0.02      301     0.00     0.00  unionRegion2
+  0.02    125.88     0.02                             GC_alloc_large
+  0.02    125.90     0.02                             GC_generic_push_regs
+  0.02    125.92     0.02                             GC_reclaim_block
+  0.02    125.94     0.02                             GC_scratch_alloc
+  0.02    125.96     0.02                             min_words_allocd
+  0.01    125.97     0.01  3359740     0.00     0.00  searchPointInRegion1
+  0.01    125.98     0.01  3328000     0.00     0.00  regionOrdinalPoint2
+  0.01    125.99     0.01      204     0.00     0.00  getRankArbitrary3
+  0.01    126.00     0.01      200     0.00     0.00  FourierTransform2D_scrambleY
+  0.01    126.01     0.01        1     0.01     0.01  PoissonSolver_makeFFG
+  0.01    126.02     0.01                             GC_add_to_fl
+  0.01    126.03     0.01                             GC_clear_a_few_frames
+  0.01    126.04     0.01                             GC_invalidate_map
+  0.01    126.05     0.01                             GC_invoke_finalizers
+  0.01    126.06     0.01                             GC_is_black_listed
+  0.01    126.07     0.01                             GC_malloc
+  0.01    126.08     0.01                             GC_mark_some
+  0.01    126.09     0.01                             GC_next_used_block
+  0.01    126.10     0.01                             GC_protect_heap
+  0.01    126.11     0.01                             GC_push_next_marked_uncollectable
+  0.01    126.12     0.01                             GC_stopped_mark
+  0.01    126.13     0.01                             get_index
+  0.01    126.14     0.01                             regionContainsPoint2
+  0.00    126.14     0.00   379142     0.00     0.00  getRank2
+  0.00    126.14     0.00     4922     0.00     0.00  restrictDistRegular1
+  0.00    126.14     0.00     1604     0.00     0.00  intrefArrayMax1
+  0.00    126.14     0.00     1603     0.00     0.00  createNewRegion1R
+  0.00    126.14     0.00     1285     0.00     0.00  PoissonSolver_expIntNL
+  0.00    126.14     0.00     1012     0.00     0.00  X10Util_distBlock
+  0.00    126.14     0.00     1001     0.00     0.00  createNewRegion2RA
+  0.00    126.14     0.00      904     0.00     0.00  restrictDist1
+  0.00    126.14     0.00      801     0.00     0.00  X10Util_get1DPRegion
+  0.00    126.14     0.00      708     0.00     0.00  X10Util_distBlockStar1
+  0.00    126.14     0.00      603     0.00     0.00  intrefArraySum1
+  0.00    126.14     0.00      506     0.00     0.00  Timer_stop
+  0.00    126.14     0.00      500     0.00     0.00  getPlaceDist1
+  0.00    126.14     0.00      402     0.00     0.00  X10Util_extendDistRank3D
+  0.00    126.14     0.00      402     0.00     0.00  createNewRegion3AAA
+  0.00    126.14     0.00      400     0.00     0.00  createNewRegion3RRA
+  0.00    126.14     0.00      309     0.00     0.00  createNewRegion2AR
+  0.00    126.14     0.00      305     0.00     0.00  getBlockDist1
+  0.00    126.14     0.00      304     0.00     0.00  X10Util_isDistBlockStar
+  0.00    126.14     0.00      304     0.00     0.00  X10Util_transposeBlockStar
+  0.00    126.14     0.00      204     0.00     0.00  getRank3
+  0.00    126.14     0.00      201     0.00     0.00  LinearESOpenPIC2D_transferParticles
+  0.00    126.14     0.00      201     0.00     0.00  X10Util_pullInt
+  0.00    126.14     0.00      200     0.00     0.12  FourierTransform2D_transformC
+  0.00    126.14     0.00      200     0.00     0.00  LinearESOpenPIC2D_parallelPrefix
+  0.00    126.14     0.00      200     0.00     0.00  PoissonSolver_makeForceArray
+  0.00    126.14     0.00      200     0.00     0.00  getPlaceDist2
+  0.00    126.14     0.00      105     0.00     0.00  restrictDistArbitrary3
+  0.00    126.14     0.00      104     0.00     0.12  FourierTransform2D_inverseTransformC
+  0.00    126.14     0.00      104     0.00     0.00  FourierTransform2D_unscrambleY
+  0.00    126.14     0.00      101     0.00     0.00  LinearESOpenPIC2D_addGuards
+  0.00    126.14     0.00      101     0.00     0.00  LinearESOpenPIC2D_makeGuards
+  0.00    126.14     0.00      101     0.00     0.00  LinearESOpenPIC2D_makeInfoArray
+  0.00    126.14     0.00      100     0.00     0.01  LinearESOpenPIC2D_repartition
+  0.00    126.14     0.00      100     0.00     0.00  X10Util_get1DLRegion
+  0.00    126.14     0.00      100     0.00     0.00  createNewRegion2RR
+  0.00    126.14     0.00        2     0.00     0.00  PoissonSolver_genTable1
+  0.00    126.14     0.00        1     0.00     0.00  FourierTransform2D_initBitReverse
+  0.00    126.14     0.00        1     0.00     0.00  FourierTransform2D_initSineCosine
+  0.00    126.14     0.00        1     0.00     0.54  LinearESOpenPIC2D_LinearESOpenPIC2D
+  0.00    126.14     0.00        1     0.00     0.00  LinearESOpenPIC2D_genInitialDist
+  0.00    126.14     0.00        1     0.00     0.64  LinearESOpenPIC2D_initialize
+  0.00    126.14     0.00        1     0.00   105.29  LinearESOpenPIC2D_run
+  0.00    126.14     0.00        1     0.00     0.54  PoissonSolver_PoissonSolver
+  0.00    126.14     0.00        1     0.00     0.00  PoissonSolver_genTable2
+  0.00    126.14     0.00        1     0.00     0.00  PoissonSolver_genTable3
+  0.00    126.14     0.00        1     0.00     0.13  PoissonSolver_initElectricFieldXTable
+  0.00    126.14     0.00        1     0.00     0.13  PoissonSolver_initElectricFieldYTable
+  0.00    126.14     0.00        1     0.00     0.13  PoissonSolver_initGreensFnTable
+  0.00    126.14     0.00        1     0.00     0.13  PoissonSolver_initShapeFactorTable
+  0.00    126.14     0.00        1     0.00     0.51  PoissonSolver_initTables
+  0.00    126.14     0.00        1     0.00     0.01  PoissonSolver_makeFFG2
+  0.00    126.14     0.00        1     0.00     0.00  Timer_Timer
+  0.00    126.14     0.00        1     0.00   105.83  runMain
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.01% of 126.14 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     83.9    0.00  105.83                 main [1]
+                0.00  105.83       1/1           runMain [2]
+                0.00    0.00       1/402632      Dist_Dist [18]
+-----------------------------------------------
+                0.00  105.83       1/1           main [1]
+[2]     83.9    0.00  105.83       1         runMain [2]
+                0.00  105.29       1/1           LinearESOpenPIC2D_run [3]
+                0.00    0.54       1/1           LinearESOpenPIC2D_LinearESOpenPIC2D [35]
+                0.00    0.00       1/1           Timer_Timer [125]
+-----------------------------------------------
+                0.00  105.29       1/1           runMain [2]
+[3]     83.5    0.00  105.29       1         LinearESOpenPIC2D_run [3]
+                0.18  104.15     100/100         LinearESOpenPIC2D_stepTime [4]
+                0.00    0.64       1/1           LinearESOpenPIC2D_initialize [32]
+                0.32    0.00       2/2           LinearESOpenPIC2D_sortParticles [44]
+                0.00    0.00       1/402632      Dist_Dist [18]
+-----------------------------------------------
+                0.18  104.15     100/100         LinearESOpenPIC2D_run [3]
+[4]     82.7    0.18  104.15     100         LinearESOpenPIC2D_stepTime [4]
+                0.43   36.57     100/100         PoissonSolver_getForceCharge [5]
+               12.46    8.89     200/201         LinearESOpenPIC2D_moveParticles [8]
+                0.27   19.18     100/100         LinearESOpenPIC2D_pushParticles [9]
+               14.38    0.04     100/101         LinearESOpenPIC2D_depositCharge [13]
+                3.82    0.06     100/100         LinearESOpenPIC2D_countParticles [20]
+                0.42    1.69     400/400         LinearESOpenPIC2D_moveFieldToDist [22]
+                1.19    0.59     200/200         ArrayUtil_complexToDouble [25]
+                0.69    0.73     200/200         LinearESOpenPIC2D_cropField [28]
+                0.44    0.30     100/104         ArrayUtil_doubleToComplex [31]
+                0.00    0.57     200/200         PoissonSolver_makeForceArray [34]
+                0.00    0.53     100/100         LinearESOpenPIC2D_repartition [37]
+                0.09    0.36     100/100         LinearESOpenPIC2D_doubleDimensions [40]
+                0.00    0.29     100/708         X10Util_distBlockStar1 [23]
+                0.00    0.17     100/101         LinearESOpenPIC2D_makeGuards [52]
+                0.00    0.00     100/101         LinearESOpenPIC2D_addGuards [116]
+                0.00    0.00     100/101         LinearESOpenPIC2D_makeInfoArray [120]
+                0.00    0.00     100/402632      Dist_Dist [18]
+-----------------------------------------------
+                0.43   36.57     100/100         LinearESOpenPIC2D_stepTime [4]
+[5]     29.3    0.43   36.57     100         PoissonSolver_getForceCharge [5]
+                0.00   23.27     200/200         FourierTransform2D_transformC [7]
+                0.00   11.61     100/104         FourierTransform2D_inverseTransformC [14]
+                0.57    0.83     100/100         PoissonSolver_solveForceCharge [29]
+                0.00    0.29     100/708         X10Util_distBlockStar1 [23]
+-----------------------------------------------
+                2.44    8.59     208/608         FourierTransform2D_inverseTransformC [14]
+                4.68   16.52     400/608         FourierTransform2D_transformC [7]
+[6]     25.6    7.12   25.11     608         FourierTransform2D_transformRank [6]
+                7.95    6.71  369664/376208      restrictDistArbitrary2 [12]
+                0.00   10.45  369664/379142      getRank2 [15]
+-----------------------------------------------
+                0.00   23.27     200/200         PoissonSolver_getForceCharge [5]
+[7]     18.4    0.00   23.27     200         FourierTransform2D_transformC [7]
+                4.68   16.52     400/608         FourierTransform2D_transformRank [6]
+                0.68    0.62     200/304         ArrayUtil_transpose [24]
+                0.38    0.03     400/608         FourierTransform2D_bitReverse [33]
+                0.34    0.01     200/200         FourierTransform2D_scrambleX [43]
+                0.01    0.00     200/200         FourierTransform2D_scrambleY [96]
+-----------------------------------------------
+                0.06    0.04       1/201         LinearESOpenPIC2D_initialize [32]
+               12.46    8.89     200/201         LinearESOpenPIC2D_stepTime [4]
+[8]     17.0   12.52    8.94     201         LinearESOpenPIC2D_moveParticles [8]
+                7.68    0.10     201/201         LinearESOpenPIC2D_packParticleArray [17]
+                0.09    0.92     402/2218        X10Util_extendDistRank2D [19]
+                0.03    0.00     200/2524        restrictDistArbitrary1 [39]
+                0.00    0.03     804/904         restrictDist1 [79]
+                0.00    0.03     804/1604        intrefArrayMax1 [73]
+                0.00    0.02     603/379142      getRank2 [15]
+                0.01    0.01     402/376208      restrictDistArbitrary2 [12]
+                0.00    0.01     402/603         intrefArraySum1 [84]
+                0.00    0.00     202/4922        restrictDistRegular1 [66]
+                0.00    0.00     201/402632      Dist_Dist [18]
+                0.00    0.00    7839/3359740     searchPointInRegion1 [94]
+                0.00    0.00     603/1603        createNewRegion1R [126]
+                0.00    0.00     201/201         LinearESOpenPIC2D_transferParticles [132]
+-----------------------------------------------
+                0.27   19.18     100/100         LinearESOpenPIC2D_stepTime [4]
+[9]     15.4    0.27   19.18     100         LinearESOpenPIC2D_pushParticles [9]
+               18.16    0.00 29491200/29491200     LinearESOpenPIC2D_pushParticle [10]
+                0.81    0.01     100/202         doublerefArraySum1 [26]
+                0.13    0.05     200/200         LinearESOpenPIC2D_makeLocalSpace [51]
+                0.02    0.00     100/2524        restrictDistArbitrary1 [39]
+-----------------------------------------------
+               18.16    0.00 29491200/29491200     LinearESOpenPIC2D_pushParticles [9]
+[10]    14.4   18.16    0.00 29491200         LinearESOpenPIC2D_pushParticle [10]
+-----------------------------------------------
+                                                 <spontaneous>
+[11]    14.4   18.15    0.00                 GC_mark_from [11]
+-----------------------------------------------
+                0.00    0.00       1/376208      LinearESOpenPIC2D_genParticleVelocity [47]
+                0.00    0.00       1/376208      LinearESOpenPIC2D_genParticlePosition [71]
+                0.00    0.00       1/376208      PoissonSolver_initShapeFactorTable [61]
+                0.00    0.00       1/376208      PoissonSolver_initGreensFnTable [60]
+                0.00    0.00       1/376208      PoissonSolver_genTable3 [124]
+                0.00    0.00       1/376208      PoissonSolver_initElectricFieldYTable [59]
+                0.00    0.00       1/376208      PoissonSolver_genTable2 [123]
+                0.00    0.00       1/376208      PoissonSolver_initElectricFieldXTable [58]
+                0.00    0.00       2/376208      PoissonSolver_genTable1 [122]
+                0.00    0.00     100/376208      LinearESOpenPIC2D_doubleDimensions [40]
+                0.00    0.00     101/376208      LinearESOpenPIC2D_addGuards [116]
+                0.00    0.00     104/376208      FourierTransform2D_unscrambleX [53]
+                0.00    0.00     200/376208      FourierTransform2D_scrambleX [43]
+                0.00    0.00     202/376208      LinearESOpenPIC2D_makeGuards [52]
+                0.01    0.01     304/376208      X10Util_isDistBlockStar [70]
+                0.01    0.01     402/376208      X10Util_extendDistRank3D [54]
+                0.01    0.01     402/376208      LinearESOpenPIC2D_moveParticles [8]
+                0.01    0.01     404/376208      LinearESOpenPIC2D_depositCharge [13]
+                0.01    0.01     506/376208      Timer_stop [48]
+                0.01    0.01     608/376208      FourierTransform2D_bitReverse [33]
+                0.02    0.01     800/376208      LinearESOpenPIC2D_makeLocalSpace [51]
+                0.02    0.01     800/376208      LinearESOpenPIC2D_cropField [28]
+                0.02    0.01     800/376208      LinearESOpenPIC2D_moveFieldToDist [22]
+                0.02    0.01     801/376208      X10Util_get1DPRegion [74]
+                7.95    6.71  369664/376208      FourierTransform2D_transformRank [6]
+[12]    11.8    8.09    6.83  376208         restrictDistArbitrary2 [12]
+                6.83    0.00  376208/402632      Dist_Dist [18]
+-----------------------------------------------
+                0.14    0.00       1/101         LinearESOpenPIC2D_initialize [32]
+               14.38    0.04     100/101         LinearESOpenPIC2D_stepTime [4]
+[13]    11.5   14.52    0.04     101         LinearESOpenPIC2D_depositCharge [13]
+                0.02    0.00     101/2524        restrictDistArbitrary1 [39]
+                0.01    0.01     404/376208      restrictDistArbitrary2 [12]
+                0.01    0.00     101/301         unionRegion2 [86]
+                0.00    0.00     101/402632      Dist_Dist [18]
+-----------------------------------------------
+                0.00    0.12       1/104         PoissonSolver_initShapeFactorTable [61]
+                0.00    0.12       1/104         PoissonSolver_initGreensFnTable [60]
+                0.00    0.12       1/104         PoissonSolver_initElectricFieldYTable [59]
+                0.00    0.12       1/104         PoissonSolver_initElectricFieldXTable [58]
+                0.00   11.61     100/104         PoissonSolver_getForceCharge [5]
+[14]     9.6    0.00   12.08     104         FourierTransform2D_inverseTransformC [14]
+                2.44    8.59     208/608         FourierTransform2D_transformRank [6]
+                0.36    0.32     104/304         ArrayUtil_transpose [24]
+                0.20    0.01     208/608         FourierTransform2D_bitReverse [33]
+                0.16    0.01     104/104         FourierTransform2D_unscrambleX [53]
+                0.00    0.00     104/104         FourierTransform2D_unscrambleY [133]
+-----------------------------------------------
+                0.00    0.00       1/379142      LinearESOpenPIC2D_genParticleVelocity [47]
+                0.00    0.00       1/379142      LinearESOpenPIC2D_genParticlePosition [71]
+                0.00    0.00       1/379142      PoissonSolver_genTable3 [124]
+                0.00    0.00       1/379142      PoissonSolver_genTable2 [123]
+                0.00    0.00       2/379142      PoissonSolver_genTable1 [122]
+                0.00    0.00     100/379142      LinearESOpenPIC2D_repartition [37]
+                0.00    0.00     104/379142      ArrayUtil_doubleToComplex [31]
+                0.00    0.00     104/379142      FourierTransform2D_unscrambleX [53]
+                0.00    0.01     200/379142      FourierTransform2D_scrambleX [43]
+                0.00    0.01     200/379142      ArrayUtil_complexToDouble [25]
+                0.00    0.01     200/379142      LinearESOpenPIC2D_cropField [28]
+                0.00    0.01     200/379142      LinearESOpenPIC2D_doubleDimensions [40]
+                0.00    0.01     202/379142      LinearESOpenPIC2D_makeGuards [52]
+                0.00    0.01     506/379142      Timer_stop [48]
+                0.00    0.02     603/379142      LinearESOpenPIC2D_moveParticles [8]
+                0.00    0.02     608/379142      X10Util_transposeBlockStar [30]
+                0.00    0.02     608/379142      FourierTransform2D_bitReverse [33]
+                0.00    0.02     801/379142      X10Util_get1DPRegion [74]
+                0.00    0.02     804/379142      X10Util_extendDistRank3D [54]
+                0.00    0.03    1216/379142      X10Util_isDistBlockStar [70]
+                0.00    0.04    1416/379142      X10Util_distBlockStar1 [23]
+                0.00    0.05    1600/379142      LinearESOpenPIC2D_moveFieldToDist [22]
+                0.00   10.45  369664/379142      FourierTransform2D_transformRank [6]
+[15]     8.5    0.00   10.72  379142         getRank2 [15]
+               10.72    0.00  377926/377926      getRankArbitrary2 [16]
+-----------------------------------------------
+               10.72    0.00  377926/377926      getRank2 [15]
+[16]     8.5   10.72    0.00  377926         getRankArbitrary2 [16]
+-----------------------------------------------
+                7.68    0.10     201/201         LinearESOpenPIC2D_moveParticles [8]
+[17]     6.2    7.68    0.10     201         LinearESOpenPIC2D_packParticleArray [17]
+                0.05    0.00     201/1719        unionDist1 [41]
+                0.03    0.00     201/2524        restrictDistArbitrary1 [39]
+                0.01    0.00     402/402632      Dist_Dist [18]
+                0.00    0.00     201/201         X10Util_pullInt [117]
+-----------------------------------------------
+                0.00    0.00       1/402632      Timer_Timer [125]
+                0.00    0.00       1/402632      PoissonSolver_initTables [38]
+                0.00    0.00       1/402632      LinearESOpenPIC2D_run [3]
+                0.00    0.00       1/402632      main [1]
+                0.00    0.00       2/402632      LinearESOpenPIC2D_sortParticles [44]
+                0.00    0.00       3/402632      LinearESOpenPIC2D_genInitialDist [121]
+                0.00    0.00     100/402632      LinearESOpenPIC2D_stepTime [4]
+                0.00    0.00     101/402632      LinearESOpenPIC2D_makeInfoArray [120]
+                0.00    0.00     101/402632      LinearESOpenPIC2D_depositCharge [13]
+                0.00    0.00     105/402632      restrictDistArbitrary3 [119]
+                0.00    0.00     200/402632      getPlaceDist2 [118]
+                0.00    0.00     200/402632      LinearESOpenPIC2D_makeLocalSpace [51]
+                0.00    0.00     201/402632      X10Util_pullInt [117]
+                0.00    0.00     201/402632      LinearESOpenPIC2D_moveParticles [8]
+                0.00    0.00     202/402632      doublerefArraySum1 [26]
+                0.00    0.00     202/402632      LinearESOpenPIC2D_makeGuards [52]
+                0.01    0.00     305/402632      getBlockDist1 [115]
+                0.01    0.00     402/402632      LinearESOpenPIC2D_packParticleArray [17]
+                0.01    0.00     403/402632      unionDist3 [64]
+                0.01    0.00     500/402632      getPlaceDist1 [113]
+                0.01    0.00     516/402632      PoissonSolver_makeFFG2 [112]
+                0.01    0.00     603/402632      intrefArraySum1 [84]
+                0.01    0.00     608/402632      X10Util_isDistBlockStar [70]
+                0.01    0.00     804/402632      X10Util_extendDistRank3D [54]
+                0.02    0.00    1012/402632      Timer_stop [48]
+                0.03    0.00    1604/402632      intrefArrayMax1 [73]
+                0.03    0.00    1719/402632      unionDist1 [41]
+                0.04    0.00    2024/402632      X10Util_distBlock [45]
+                0.04    0.00    2420/402632      unionDist2 [21]
+                0.05    0.00    2524/402632      restrictDistArbitrary1 [39]
+                0.08    0.00    4436/402632      X10Util_extendDistRank2D [19]
+                0.09    0.00    4922/402632      restrictDistRegular1 [66]
+                6.83    0.00  376208/402632      restrictDistArbitrary2 [12]
+[18]     5.8    7.31    0.00  402632         Dist_Dist [18]
+-----------------------------------------------
+                0.02    0.23     100/2218        LinearESOpenPIC2D_repartition [37]
+                0.02    0.24     104/2218        ArrayUtil_doubleToComplex [31]
+                0.05    0.46     200/2218        ArrayUtil_complexToDouble [25]
+                0.07    0.69     304/2218        X10Util_transposeBlockStar [30]
+                0.09    0.91     400/2218        LinearESOpenPIC2D_moveFieldToDist [22]
+                0.09    0.92     402/2218        LinearESOpenPIC2D_moveParticles [8]
+                0.16    1.61     708/2218        X10Util_distBlockStar1 [23]
+[19]     4.4    0.50    5.05    2218         X10Util_extendDistRank2D [19]
+                3.29    0.04    2218/2420        unionDist2 [21]
+                1.38    0.00    2218/2528        createNewRegion2AA [27]
+                0.22    0.02    1316/2524        restrictDistArbitrary1 [39]
+                0.08    0.00    4436/402632      Dist_Dist [18]
+                0.00    0.02     902/4922        restrictDistRegular1 [66]
+-----------------------------------------------
+                3.82    0.06     100/100         LinearESOpenPIC2D_stepTime [4]
+[20]     3.1    3.82    0.06     100         LinearESOpenPIC2D_countParticles [20]
+                0.00    0.04     100/506         Timer_stop [48]
+                0.02    0.00     100/2524        restrictDistArbitrary1 [39]
+-----------------------------------------------
+                0.00    0.00       1/2420        LinearESOpenPIC2D_genInitialDist [121]
+                0.15    0.00     100/2420        LinearESOpenPIC2D_repartition [37]
+                0.15    0.00     101/2420        LinearESOpenPIC2D_makeGuards [52]
+                3.29    0.04    2218/2420        X10Util_extendDistRank2D [19]
+[21]     2.9    3.59    0.04    2420         unionDist2 [21]
+                0.04    0.00    2420/402632      Dist_Dist [18]
+-----------------------------------------------
+                0.42    1.69     400/400         LinearESOpenPIC2D_stepTime [4]
+[22]     1.7    0.42    1.69     400         LinearESOpenPIC2D_moveFieldToDist [22]
+                0.09    0.91     400/2218        X10Util_extendDistRank2D [19]
+                0.21    0.00 3328000/3328700     searchPointInRegion3 [49]
+                0.00    0.15     400/402         X10Util_extendDistRank3D [54]
+                0.14    0.00 3328000/3329500     searchPointInRegion2 [56]
+                0.00    0.05     800/801         X10Util_get1DPRegion [74]
+                0.00    0.05    1600/379142      getRank2 [15]
+                0.02    0.01     800/376208      restrictDistArbitrary2 [12]
+                0.00    0.03     800/1604        intrefArrayMax1 [73]
+                0.01    0.00 3328000/3328000     regionOrdinalPoint2 [95]
+                0.01    0.00 3348800/3359740     searchPointInRegion1 [94]
+                0.00    0.01     400/500         getPlaceDist1 [113]
+                0.00    0.00     800/1001        createNewRegion2RA [128]
+                0.00    0.00     400/400         createNewRegion3RRA [130]
+                0.00    0.00     400/1603        createNewRegion1R [126]
+-----------------------------------------------
+                0.00    0.00       1/708         PoissonSolver_makeFFG [93]
+                0.00    0.00       1/708         LinearESOpenPIC2D_genParticleVelocity [47]
+                0.00    0.00       1/708         LinearESOpenPIC2D_genParticlePosition [71]
+                0.00    0.00       1/708         PoissonSolver_initShapeFactorTable [61]
+                0.00    0.00       1/708         PoissonSolver_initGreensFnTable [60]
+                0.00    0.00       1/708         PoissonSolver_initElectricFieldYTable [59]
+                0.00    0.00       1/708         PoissonSolver_initElectricFieldXTable [58]
+                0.00    0.00       1/708         PoissonSolver_initTables [38]
+                0.00    0.29     100/708         LinearESOpenPIC2D_doubleDimensions [40]
+                0.00    0.29     100/708         PoissonSolver_getForceCharge [5]
+                0.00    0.29     100/708         LinearESOpenPIC2D_stepTime [4]
+                0.00    0.57     200/708         PoissonSolver_makeForceArray [34]
+                0.00    0.57     200/708         LinearESOpenPIC2D_cropField [28]
+[23]     1.6    0.00    2.02     708         X10Util_distBlockStar1 [23]
+                0.16    1.61     708/2218        X10Util_extendDistRank2D [19]
+                0.00    0.21     708/1012        X10Util_distBlock [45]
+                0.00    0.04    1416/379142      getRank2 [15]
+-----------------------------------------------
+                0.36    0.32     104/304         FourierTransform2D_inverseTransformC [14]
+                0.68    0.62     200/304         FourierTransform2D_transformC [7]
+[24]     1.6    1.04    0.94     304         ArrayUtil_transpose [24]
+                0.00    0.87     304/304         X10Util_transposeBlockStar [30]
+                0.00    0.07     304/304         X10Util_isDistBlockStar [70]
+-----------------------------------------------
+                1.19    0.59     200/200         LinearESOpenPIC2D_stepTime [4]
+[25]     1.4    1.19    0.59     200         ArrayUtil_complexToDouble [25]
+                0.05    0.46     200/2218        X10Util_extendDistRank2D [19]
+                0.00    0.08     200/506         Timer_stop [48]
+                0.00    0.01     200/379142      getRank2 [15]
+-----------------------------------------------
+                0.02    0.00       2/202         LinearESOpenPIC2D_genParticleVelocity [47]
+                0.81    0.01     100/202         PoissonSolver_solveForceCharge [29]
+                0.81    0.01     100/202         LinearESOpenPIC2D_pushParticles [9]
+[26]     1.3    1.63    0.02     202         doublerefArraySum1 [26]
+                0.02    0.00     100/2524        restrictDistArbitrary1 [39]
+                0.00    0.00     202/402632      Dist_Dist [18]
+                0.00    0.00     102/4922        restrictDistRegular1 [66]
+-----------------------------------------------
+                0.00    0.00       1/2528        PoissonSolver_makeFFG [93]
+                0.00    0.00       1/2528        LinearESOpenPIC2D_genParticleVelocity [47]
+                0.00    0.00       1/2528        LinearESOpenPIC2D_genParticlePosition [71]
+                0.00    0.00       1/2528        PoissonSolver_initShapeFactorTable [61]
+                0.00    0.00       1/2528        PoissonSolver_initGreensFnTable [60]
+                0.00    0.00       1/2528        PoissonSolver_initElectricFieldYTable [59]
+                0.00    0.00       1/2528        PoissonSolver_initElectricFieldXTable [58]
+                0.00    0.00       1/2528        PoissonSolver_initTables [38]
+                0.00    0.00       2/2528        PoissonSolver_genTable1 [122]
+                0.06    0.00     100/2528        LinearESOpenPIC2D_doubleDimensions [40]
+                0.12    0.00     200/2528        LinearESOpenPIC2D_cropField [28]
+                1.38    0.00    2218/2528        X10Util_extendDistRank2D [19]
+[27]     1.2    1.57    0.00    2528         createNewRegion2AA [27]
+-----------------------------------------------
+                0.69    0.73     200/200         LinearESOpenPIC2D_stepTime [4]
+[28]     1.1    0.69    0.73     200         LinearESOpenPIC2D_cropField [28]
+                0.00    0.57     200/708         X10Util_distBlockStar1 [23]
+                0.12    0.00     200/2528        createNewRegion2AA [27]
+                0.02    0.01     800/376208      restrictDistArbitrary2 [12]
+                0.00    0.01     200/379142      getRank2 [15]
+-----------------------------------------------
+                0.57    0.83     100/100         PoissonSolver_getForceCharge [5]
+[29]     1.1    0.57    0.83     100         PoissonSolver_solveForceCharge [29]
+                0.81    0.01     100/202         doublerefArraySum1 [26]
+                0.00    0.01     200/204         getRank3 [110]
+                0.00    0.00     100/105         restrictDistArbitrary3 [119]
+                0.00    0.00    1500/3329500     searchPointInRegion2 [56]
+                0.00    0.00     700/3328700     searchPointInRegion3 [49]
+                0.00    0.00     400/3359740     searchPointInRegion1 [94]
+                0.00    0.00     200/1603        createNewRegion1R [126]
+-----------------------------------------------
+                0.00    0.87     304/304         ArrayUtil_transpose [24]
+[30]     0.7    0.00    0.87     304         X10Util_transposeBlockStar [30]
+                0.07    0.69     304/2218        X10Util_extendDistRank2D [19]
+                0.00    0.09     304/1012        X10Util_distBlock [45]
+                0.00    0.02     608/379142      getRank2 [15]
+-----------------------------------------------
+                0.00    0.00       1/104         PoissonSolver_initShapeFactorTable [61]
+                0.00    0.00       1/104         PoissonSolver_initGreensFnTable [60]
+                0.00    0.00       1/104         PoissonSolver_initElectricFieldYTable [59]
+                0.00    0.00       1/104         PoissonSolver_initElectricFieldXTable [58]
+                0.44    0.30     100/104         LinearESOpenPIC2D_stepTime [4]
+[31]     0.6    0.46    0.31     104         ArrayUtil_doubleToComplex [31]
+                0.02    0.24     104/2218        X10Util_extendDistRank2D [19]
+                0.00    0.04     104/506         Timer_stop [48]
+                0.00    0.00     104/379142      getRank2 [15]
+-----------------------------------------------
+                0.00    0.64       1/1           LinearESOpenPIC2D_run [3]
+[32]     0.5    0.00    0.64       1         LinearESOpenPIC2D_initialize [32]
+                0.19    0.04       1/1           LinearESOpenPIC2D_genParticleVelocity [47]
+                0.14    0.00       1/101         LinearESOpenPIC2D_depositCharge [13]
+                0.06    0.04       1/201         LinearESOpenPIC2D_moveParticles [8]
+                0.09    0.00       1/1           LinearESOpenPIC2D_genParticles [65]
+                0.06    0.00       1/1           LinearESOpenPIC2D_genParticlePosition [71]
+                0.00    0.00       1/101         LinearESOpenPIC2D_makeGuards [52]
+                0.00    0.00       1/1           LinearESOpenPIC2D_genInitialDist [121]
+                0.00    0.00       1/101         LinearESOpenPIC2D_addGuards [116]
+                0.00    0.00       1/101         LinearESOpenPIC2D_makeInfoArray [120]
+-----------------------------------------------
+                0.20    0.01     208/608         FourierTransform2D_inverseTransformC [14]
+                0.38    0.03     400/608         FourierTransform2D_transformC [7]
+[33]     0.5    0.57    0.04     608         FourierTransform2D_bitReverse [33]
+                0.01    0.01     608/376208      restrictDistArbitrary2 [12]
+                0.00    0.02     608/379142      getRank2 [15]
+-----------------------------------------------
+                0.00    0.57     200/200         LinearESOpenPIC2D_stepTime [4]
+[34]     0.5    0.00    0.57     200         PoissonSolver_makeForceArray [34]
+                0.00    0.57     200/708         X10Util_distBlockStar1 [23]
+-----------------------------------------------
+                0.00    0.54       1/1           runMain [2]
+[35]     0.4    0.00    0.54       1         LinearESOpenPIC2D_LinearESOpenPIC2D [35]
+                0.00    0.54       1/1           PoissonSolver_PoissonSolver [36]
+-----------------------------------------------
+                0.00    0.54       1/1           LinearESOpenPIC2D_LinearESOpenPIC2D [35]
+[36]     0.4    0.00    0.54       1         PoissonSolver_PoissonSolver [36]
+                0.00    0.51       1/1           PoissonSolver_initTables [38]
+                0.01    0.00       1/1           PoissonSolver_makeFFG [93]
+                0.00    0.01       1/1           PoissonSolver_makeFFG2 [112]
+                0.00    0.00       1/1           FourierTransform2D_initBitReverse [135]
+                0.00    0.00       1/1           FourierTransform2D_initSineCosine [136]
+-----------------------------------------------
+                0.00    0.53     100/100         LinearESOpenPIC2D_stepTime [4]
+[37]     0.4    0.00    0.53     100         LinearESOpenPIC2D_repartition [37]
+                0.02    0.23     100/2218        X10Util_extendDistRank2D [19]
+                0.15    0.00     100/2420        unionDist2 [21]
+                0.00    0.04     100/506         Timer_stop [48]
+                0.03    0.00     200/2524        restrictDistArbitrary1 [39]
+                0.00    0.02     100/100         X10Util_get1DLRegion [92]
+                0.00    0.01     200/200         LinearESOpenPIC2D_parallelPrefix [114]
+                0.00    0.01     200/603         intrefArraySum1 [84]
+                0.00    0.00     100/904         restrictDist1 [79]
+                0.00    0.00     200/200         getPlaceDist2 [118]
+                0.00    0.00     100/379142      getRank2 [15]
+                0.00    0.00     100/500         getPlaceDist1 [113]
+                0.00    0.00    2700/3359740     searchPointInRegion1 [94]
+                0.00    0.00     400/1603        createNewRegion1R [126]
+                0.00    0.00     100/100         createNewRegion2RR [134]
+                0.00    0.00     100/1001        createNewRegion2RA [128]
+-----------------------------------------------
+                0.00    0.51       1/1           PoissonSolver_PoissonSolver [36]
+[38]     0.4    0.00    0.51       1         PoissonSolver_initTables [38]
+                0.00    0.13       1/1           PoissonSolver_initGreensFnTable [60]
+                0.00    0.13       1/1           PoissonSolver_initShapeFactorTable [61]
+                0.00    0.13       1/1           PoissonSolver_initElectricFieldXTable [58]
+                0.00    0.13       1/1           PoissonSolver_initElectricFieldYTable [59]
+                0.00    0.00       1/708         X10Util_distBlockStar1 [23]
+                0.00    0.00       2/2           PoissonSolver_genTable1 [122]
+                0.00    0.00       1/2528        createNewRegion2AA [27]
+                0.00    0.00       1/402         X10Util_extendDistRank3D [54]
+                0.00    0.00       1/403         unionDist3 [64]
+                0.00    0.00       1/1           PoissonSolver_genTable2 [123]
+                0.00    0.00       1/1           PoissonSolver_genTable3 [124]
+                0.00    0.00       1/402632      Dist_Dist [18]
+-----------------------------------------------
+                0.00    0.00       6/2524        LinearESOpenPIC2D_sortParticles [44]
+                0.02    0.00     100/2524        restrictDist1 [79]
+                0.02    0.00     100/2524        X10Util_get1DLRegion [92]
+                0.02    0.00     100/2524        doublerefArraySum1 [26]
+                0.02    0.00     100/2524        LinearESOpenPIC2D_countParticles [20]
+                0.02    0.00     100/2524        LinearESOpenPIC2D_pushParticles [9]
+                0.02    0.00     101/2524        LinearESOpenPIC2D_depositCharge [13]
+                0.03    0.00     200/2524        LinearESOpenPIC2D_repartition [37]
+                0.03    0.00     200/2524        LinearESOpenPIC2D_moveParticles [8]
+                0.03    0.00     201/2524        LinearESOpenPIC2D_packParticleArray [17]
+                0.22    0.02    1316/2524        X10Util_extendDistRank2D [19]
+[39]     0.4    0.43    0.05    2524         restrictDistArbitrary1 [39]
+                0.05    0.00    2524/402632      Dist_Dist [18]
+-----------------------------------------------
+                0.09    0.36     100/100         LinearESOpenPIC2D_stepTime [4]
+[40]     0.4    0.09    0.36     100         LinearESOpenPIC2D_doubleDimensions [40]
+                0.00    0.29     100/708         X10Util_distBlockStar1 [23]
+                0.06    0.00     100/2528        createNewRegion2AA [27]
+                0.00    0.01     200/379142      getRank2 [15]
+                0.00    0.00     100/376208      restrictDistArbitrary2 [12]
+-----------------------------------------------
+                0.05    0.00     201/1719        LinearESOpenPIC2D_packParticleArray [17]
+                0.12    0.01     506/1719        Timer_stop [48]
+                0.24    0.02    1012/1719        X10Util_distBlock [45]
+[41]     0.3    0.41    0.03    1719         unionDist1 [41]
+                0.03    0.00    1719/402632      Dist_Dist [18]
+-----------------------------------------------
+                                                 <spontaneous>
+[42]     0.3    0.39    0.00                 GC_apply_to_all_blocks [42]
+-----------------------------------------------
+                0.34    0.01     200/200         FourierTransform2D_transformC [7]
+[43]     0.3    0.34    0.01     200         FourierTransform2D_scrambleX [43]
+                0.00    0.00     200/376208      restrictDistArbitrary2 [12]
+                0.00    0.01     200/379142      getRank2 [15]
+                0.00    0.00     200/309         createNewRegion2AR [131]
+-----------------------------------------------
+                0.32    0.00       2/2           LinearESOpenPIC2D_run [3]
+[44]     0.3    0.32    0.00       2         LinearESOpenPIC2D_sortParticles [44]
+                0.00    0.00       6/2524        restrictDistArbitrary1 [39]
+                0.00    0.00       2/506         Timer_stop [48]
+                0.00    0.00       2/402632      Dist_Dist [18]
+-----------------------------------------------
+                0.00    0.09     304/1012        X10Util_transposeBlockStar [30]
+                0.00    0.21     708/1012        X10Util_distBlockStar1 [23]
+[45]     0.2    0.00    0.30    1012         X10Util_distBlock [45]
+                0.24    0.02    1012/1719        unionDist1 [41]
+                0.04    0.00    2024/402632      Dist_Dist [18]
+-----------------------------------------------
+                                                 <spontaneous>
+[46]     0.2    0.28    0.00                 GC_allochblk_nth [46]
+-----------------------------------------------
+                0.19    0.04       1/1           LinearESOpenPIC2D_initialize [32]
+[47]     0.2    0.19    0.04       1         LinearESOpenPIC2D_genParticleVelocity [47]
+                0.02    0.00  589824/589824      Random_nextNormal [85]
+                0.02    0.00       2/202         doublerefArraySum1 [26]
+                0.00    0.00       1/708         X10Util_distBlockStar1 [23]
+                0.00    0.00       1/2528        createNewRegion2AA [27]
+                0.00    0.00       1/801         X10Util_get1DPRegion [74]
+                0.00    0.00       1/376208      restrictDistArbitrary2 [12]
+                0.00    0.00       1/603         intrefArraySum1 [84]
+                0.00    0.00       1/379142      getRank2 [15]
+                0.00    0.00       1/3359740     searchPointInRegion1 [94]
+                0.00    0.00       4/309         createNewRegion2AR [131]
+-----------------------------------------------
+                0.00    0.00       2/506         LinearESOpenPIC2D_sortParticles [44]
+                0.00    0.04     100/506         LinearESOpenPIC2D_countParticles [20]
+                0.00    0.04     100/506         LinearESOpenPIC2D_repartition [37]
+                0.00    0.04     104/506         ArrayUtil_doubleToComplex [31]
+                0.00    0.08     200/506         ArrayUtil_complexToDouble [25]
+[48]     0.2    0.00    0.21     506         Timer_stop [48]
+                0.12    0.01     506/1719        unionDist1 [41]
+                0.03    0.00  103680/103680      unionRegion1 [80]
+                0.01    0.01     506/376208      restrictDistArbitrary2 [12]
+                0.02    0.00    1012/402632      Dist_Dist [18]
+                0.00    0.01     506/379142      getRank2 [15]
+-----------------------------------------------
+                0.00    0.00     700/3328700     PoissonSolver_solveForceCharge [29]
+                0.21    0.00 3328000/3328700     LinearESOpenPIC2D_moveFieldToDist [22]
+[49]     0.2    0.21    0.00 3328700         searchPointInRegion3 [49]
+-----------------------------------------------
+                                                 <spontaneous>
+[50]     0.2    0.19    0.00                 GC_clear_stack_inner [50]
+-----------------------------------------------
+                0.13    0.05     200/200         LinearESOpenPIC2D_pushParticles [9]
+[51]     0.1    0.13    0.05     200         LinearESOpenPIC2D_makeLocalSpace [51]
+                0.02    0.01     800/376208      restrictDistArbitrary2 [12]
+                0.01    0.00     200/301         unionRegion2 [86]
+                0.00    0.00     200/402632      Dist_Dist [18]
+-----------------------------------------------
+                0.00    0.00       1/101         LinearESOpenPIC2D_initialize [32]
+                0.00    0.17     100/101         LinearESOpenPIC2D_stepTime [4]
+[52]     0.1    0.00    0.17     101         LinearESOpenPIC2D_makeGuards [52]
+                0.15    0.00     101/2420        unionDist2 [21]
+                0.00    0.00     202/376208      restrictDistArbitrary2 [12]
+                0.00    0.01     202/379142      getRank2 [15]
+                0.00    0.00     202/402632      Dist_Dist [18]
+                0.00    0.00     101/1001        createNewRegion2RA [128]
+-----------------------------------------------
+                0.16    0.01     104/104         FourierTransform2D_inverseTransformC [14]
+[53]     0.1    0.16    0.01     104         FourierTransform2D_unscrambleX [53]
+                0.00    0.00     104/376208      restrictDistArbitrary2 [12]
+                0.00    0.00     104/379142      getRank2 [15]
+                0.00    0.00     104/309         createNewRegion2AR [131]
+-----------------------------------------------
+                0.00    0.00       1/402         PoissonSolver_makeFFG [93]
+                0.00    0.00       1/402         PoissonSolver_initTables [38]
+                0.00    0.15     400/402         LinearESOpenPIC2D_moveFieldToDist [22]
+[54]     0.1    0.00    0.15     402         X10Util_extendDistRank3D [54]
+                0.09    0.01     402/403         unionDist3 [64]
+                0.00    0.02     804/379142      getRank2 [15]
+                0.01    0.01     402/376208      restrictDistArbitrary2 [12]
+                0.01    0.00     804/402632      Dist_Dist [18]
+                0.00    0.00     402/402         createNewRegion3AAA [129]
+-----------------------------------------------
+                                                 <spontaneous>
+[55]     0.1    0.15    0.00                 GC_install_header [55]
+-----------------------------------------------
+                0.00    0.00    1500/3329500     PoissonSolver_solveForceCharge [29]
+                0.14    0.00 3328000/3329500     LinearESOpenPIC2D_moveFieldToDist [22]
+[56]     0.1    0.14    0.00 3329500         searchPointInRegion2 [56]
+-----------------------------------------------
+                                                 <spontaneous>
+[57]     0.1    0.14    0.00                 GC_promote_black_lists [57]
+-----------------------------------------------
+                0.00    0.13       1/1           PoissonSolver_initTables [38]
+[58]     0.1    0.00    0.13       1         PoissonSolver_initElectricFieldXTable [58]
+                0.00    0.12       1/104         FourierTransform2D_inverseTransformC [14]
+                0.00    0.00       1/104         ArrayUtil_doubleToComplex [31]
+                0.00    0.00       1/708         X10Util_distBlockStar1 [23]
+                0.00    0.00       1/2528        createNewRegion2AA [27]
+                0.00    0.00       1/376208      restrictDistArbitrary2 [12]
+-----------------------------------------------
+                0.00    0.13       1/1           PoissonSolver_initTables [38]
+[59]     0.1    0.00    0.13       1         PoissonSolver_initElectricFieldYTable [59]
+                0.00    0.12       1/104         FourierTransform2D_inverseTransformC [14]
+                0.00    0.00       1/104         ArrayUtil_doubleToComplex [31]
+                0.00    0.00       1/708         X10Util_distBlockStar1 [23]
+                0.00    0.00       1/2528        createNewRegion2AA [27]
+                0.00    0.00       1/376208      restrictDistArbitrary2 [12]
+-----------------------------------------------
+                0.00    0.13       1/1           PoissonSolver_initTables [38]
+[60]     0.1    0.00    0.13       1         PoissonSolver_initGreensFnTable [60]
+                0.00    0.12       1/104         FourierTransform2D_inverseTransformC [14]
+                0.00    0.00       1/104         ArrayUtil_doubleToComplex [31]
+                0.00    0.00       1/708         X10Util_distBlockStar1 [23]
+                0.00    0.00       1/2528        createNewRegion2AA [27]
+                0.00    0.00       1/376208      restrictDistArbitrary2 [12]
+-----------------------------------------------
+                0.00    0.13       1/1           PoissonSolver_initTables [38]
+[61]     0.1    0.00    0.13       1         PoissonSolver_initShapeFactorTable [61]
+                0.00    0.12       1/104         FourierTransform2D_inverseTransformC [14]
+                0.00    0.00       1/104         ArrayUtil_doubleToComplex [31]
+                0.00    0.00       1/708         X10Util_distBlockStar1 [23]
+                0.00    0.00       1/2528        createNewRegion2AA [27]
+                0.00    0.00       1/376208      restrictDistArbitrary2 [12]
+-----------------------------------------------
+                                                 <spontaneous>
+[62]     0.1    0.12    0.00                 GC_install_counts [62]
+-----------------------------------------------
+                                                 <spontaneous>
+[63]     0.1    0.11    0.00                 GC_prev_block [63]
+-----------------------------------------------
+                0.00    0.00       1/403         PoissonSolver_initTables [38]
+                0.09    0.01     402/403         X10Util_extendDistRank3D [54]
+[64]     0.1    0.09    0.01     403         unionDist3 [64]
+                0.01    0.00     403/402632      Dist_Dist [18]
+-----------------------------------------------
+                0.09    0.00       1/1           LinearESOpenPIC2D_initialize [32]
+[65]     0.1    0.09    0.00       1         LinearESOpenPIC2D_genParticles [65]
+                0.00    0.00       1/305         getBlockDist1 [115]
+                0.00    0.00       1/4922        restrictDistRegular1 [66]
+-----------------------------------------------
+                0.00    0.00       1/4922        LinearESOpenPIC2D_genParticles [65]
+                0.00    0.00     102/4922        doublerefArraySum1 [26]
+                0.00    0.00     202/4922        LinearESOpenPIC2D_moveParticles [8]
+                0.00    0.01     304/4922        X10Util_isDistBlockStar [70]
+                0.00    0.01     400/4922        LinearESOpenPIC2D_parallelPrefix [114]
+                0.00    0.01     603/4922        intrefArraySum1 [84]
+                0.00    0.01     804/4922        restrictDist1 [79]
+                0.00    0.02     902/4922        X10Util_extendDistRank2D [19]
+                0.00    0.03    1604/4922        intrefArrayMax1 [73]
+[66]     0.1    0.00    0.09    4922         restrictDistRegular1 [66]
+                0.09    0.00    4922/402632      Dist_Dist [18]
+-----------------------------------------------
+                                                 <spontaneous>
+[67]     0.1    0.08    0.00                 GC_free_block_ending_at [67]
+-----------------------------------------------
+                                                 <spontaneous>
+[68]     0.1    0.08    0.00                 GC_remove_counts [68]
+-----------------------------------------------
+                                                 <spontaneous>
+[69]     0.1    0.07    0.00                 GC_allochblk [69]
+-----------------------------------------------
+                0.00    0.07     304/304         ArrayUtil_transpose [24]
+[70]     0.1    0.00    0.07     304         X10Util_isDistBlockStar [70]
+                0.00    0.03    1216/379142      getRank2 [15]
+                0.01    0.01     304/376208      restrictDistArbitrary2 [12]
+                0.01    0.00     608/402632      Dist_Dist [18]
+                0.00    0.01     304/305         getBlockDist1 [115]
+                0.00    0.01     304/4922        restrictDistRegular1 [66]
+-----------------------------------------------
+                0.06    0.00       1/1           LinearESOpenPIC2D_initialize [32]
+[71]     0.1    0.06    0.00       1         LinearESOpenPIC2D_genParticlePosition [71]
+                0.00    0.00       1/708         X10Util_distBlockStar1 [23]
+                0.00    0.00       1/2528        createNewRegion2AA [27]
+                0.00    0.00       1/376208      restrictDistArbitrary2 [12]
+                0.00    0.00       1/379142      getRank2 [15]
+                0.00    0.00    1156/1285        PoissonSolver_expIntNL [127]
+-----------------------------------------------
+                                                 <spontaneous>
+[72]     0.0    0.06    0.00                 GC_get_first_part [72]
+-----------------------------------------------
+                0.00    0.03     800/1604        LinearESOpenPIC2D_moveFieldToDist [22]
+                0.00    0.03     804/1604        LinearESOpenPIC2D_moveParticles [8]
+[73]     0.0    0.00    0.06    1604         intrefArrayMax1 [73]
+                0.03    0.00    1604/402632      Dist_Dist [18]
+                0.00    0.03    1604/4922        restrictDistRegular1 [66]
+-----------------------------------------------
+                0.00    0.00       1/801         LinearESOpenPIC2D_genParticleVelocity [47]
+                0.00    0.05     800/801         LinearESOpenPIC2D_moveFieldToDist [22]
+[74]     0.0    0.00    0.05     801         X10Util_get1DPRegion [74]
+                0.02    0.01     801/376208      restrictDistArbitrary2 [12]
+                0.00    0.02     801/379142      getRank2 [15]
+-----------------------------------------------
+                                                 <spontaneous>
+[75]     0.0    0.05    0.00                 setup_header [75]
+-----------------------------------------------
+                                                 <spontaneous>
+[76]     0.0    0.04    0.00                 GC_build_fl [76]
+-----------------------------------------------
+                                                 <spontaneous>
+[77]     0.0    0.04    0.00                 GC_clear_hdr_marks [77]
+-----------------------------------------------
+                                                 <spontaneous>
+[78]     0.0    0.04    0.00                 GC_find_header [78]
+-----------------------------------------------
+                0.00    0.00     100/904         LinearESOpenPIC2D_repartition [37]
+                0.00    0.03     804/904         LinearESOpenPIC2D_moveParticles [8]
+[79]     0.0    0.00    0.03     904         restrictDist1 [79]
+                0.02    0.00     100/2524        restrictDistArbitrary1 [39]
+                0.00    0.01     804/4922        restrictDistRegular1 [66]
+-----------------------------------------------
+                0.03    0.00  103680/103680      Timer_stop [48]
+[80]     0.0    0.03    0.00  103680         unionRegion1 [80]
+-----------------------------------------------
+                                                 <spontaneous>
+[81]     0.0    0.03    0.00                 GC_build_fl_clear2 [81]
+-----------------------------------------------
+                                                 <spontaneous>
+[82]     0.0    0.03    0.00                 GC_freehblk [82]
+-----------------------------------------------
+                                                 <spontaneous>
+[83]     0.0    0.03    0.00                 GC_generic_malloc [83]
+-----------------------------------------------
+                0.00    0.00       1/603         LinearESOpenPIC2D_genParticleVelocity [47]
+                0.00    0.01     200/603         LinearESOpenPIC2D_repartition [37]
+                0.00    0.01     402/603         LinearESOpenPIC2D_moveParticles [8]
+[84]     0.0    0.00    0.02     603         intrefArraySum1 [84]
+                0.01    0.00     603/402632      Dist_Dist [18]
+                0.00    0.01     603/4922        restrictDistRegular1 [66]
+-----------------------------------------------
+                0.02    0.00  589824/589824      LinearESOpenPIC2D_genParticleVelocity [47]
+[85]     0.0    0.02    0.00  589824         Random_nextNormal [85]
+-----------------------------------------------
+                0.01    0.00     101/301         LinearESOpenPIC2D_depositCharge [13]
+                0.01    0.00     200/301         LinearESOpenPIC2D_makeLocalSpace [51]
+[86]     0.0    0.02    0.00     301         unionRegion2 [86]
+-----------------------------------------------
+                                                 <spontaneous>
+[87]     0.0    0.02    0.00                 GC_alloc_large [87]
+-----------------------------------------------
+                                                 <spontaneous>
+[88]     0.0    0.02    0.00                 GC_generic_push_regs [88]
+-----------------------------------------------
+                                                 <spontaneous>
+[89]     0.0    0.02    0.00                 GC_reclaim_block [89]
+-----------------------------------------------
+                                                 <spontaneous>
+[90]     0.0    0.02    0.00                 GC_scratch_alloc [90]
+-----------------------------------------------
+                                                 <spontaneous>
+[91]     0.0    0.02    0.00                 min_words_allocd [91]
+-----------------------------------------------
+                0.00    0.02     100/100         LinearESOpenPIC2D_repartition [37]
+[92]     0.0    0.00    0.02     100         X10Util_get1DLRegion [92]
+                0.02    0.00     100/2524        restrictDistArbitrary1 [39]
+-----------------------------------------------
+                0.01    0.00       1/1           PoissonSolver_PoissonSolver [36]
+[93]     0.0    0.01    0.00       1         PoissonSolver_makeFFG [93]
+                0.00    0.00       1/708         X10Util_distBlockStar1 [23]
+                0.00    0.00       1/2528        createNewRegion2AA [27]
+                0.00    0.00       1/402         X10Util_extendDistRank3D [54]
+                0.00    0.00       1/105         restrictDistArbitrary3 [119]
+-----------------------------------------------
+                0.00    0.00       1/3359740     LinearESOpenPIC2D_genParticleVelocity [47]
+                0.00    0.00     400/3359740     PoissonSolver_solveForceCharge [29]
+                0.00    0.00    2700/3359740     LinearESOpenPIC2D_repartition [37]
+                0.00    0.00    7839/3359740     LinearESOpenPIC2D_moveParticles [8]
+                0.01    0.00 3348800/3359740     LinearESOpenPIC2D_moveFieldToDist [22]
+[94]     0.0    0.01    0.00 3359740         searchPointInRegion1 [94]
+-----------------------------------------------
+                0.01    0.00 3328000/3328000     LinearESOpenPIC2D_moveFieldToDist [22]
+[95]     0.0    0.01    0.00 3328000         regionOrdinalPoint2 [95]
+-----------------------------------------------
+                0.01    0.00     200/200         FourierTransform2D_transformC [7]
+[96]     0.0    0.01    0.00     200         FourierTransform2D_scrambleY [96]
+-----------------------------------------------
+                                                 <spontaneous>
+[97]     0.0    0.01    0.00                 GC_add_to_fl [97]
+-----------------------------------------------
+                                                 <spontaneous>
+[98]     0.0    0.01    0.00                 GC_clear_a_few_frames [98]
+-----------------------------------------------
+                                                 <spontaneous>
+[99]     0.0    0.01    0.00                 GC_invalidate_map [99]
+-----------------------------------------------
+                                                 <spontaneous>
+[100]    0.0    0.01    0.00                 GC_invoke_finalizers [100]
+-----------------------------------------------
+                                                 <spontaneous>
+[101]    0.0    0.01    0.00                 GC_is_black_listed [101]
+-----------------------------------------------
+                                                 <spontaneous>
+[102]    0.0    0.01    0.00                 GC_malloc [102]
+-----------------------------------------------
+                                                 <spontaneous>
+[103]    0.0    0.01    0.00                 GC_mark_some [103]
+-----------------------------------------------
+                                                 <spontaneous>
+[104]    0.0    0.01    0.00                 GC_next_used_block [104]
+-----------------------------------------------
+                                                 <spontaneous>
+[105]    0.0    0.01    0.00                 GC_protect_heap [105]
+-----------------------------------------------
+                                                 <spontaneous>
+[106]    0.0    0.01    0.00                 GC_push_next_marked_uncollectable [106]
+-----------------------------------------------
+                                                 <spontaneous>
+[107]    0.0    0.01    0.00                 GC_stopped_mark [107]
+-----------------------------------------------
+                                                 <spontaneous>
+[108]    0.0    0.01    0.00                 get_index [108]
+-----------------------------------------------
+                                                 <spontaneous>
+[109]    0.0    0.01    0.00                 regionContainsPoint2 [109]
+-----------------------------------------------
+                0.00    0.00       1/204         PoissonSolver_genTable3 [124]
+                0.00    0.00       1/204         PoissonSolver_genTable2 [123]
+                0.00    0.00       2/204         PoissonSolver_genTable1 [122]
+                0.00    0.01     200/204         PoissonSolver_solveForceCharge [29]
+[110]    0.0    0.00    0.01     204         getRank3 [110]
+                0.01    0.00     204/204         getRankArbitrary3 [111]
+-----------------------------------------------
+                0.01    0.00     204/204         getRank3 [110]
+[111]    0.0    0.01    0.00     204         getRankArbitrary3 [111]
+-----------------------------------------------
+                0.00    0.01       1/1           PoissonSolver_PoissonSolver [36]
+[112]    0.0    0.00    0.01       1         PoissonSolver_makeFFG2 [112]
+                0.01    0.00     516/402632      Dist_Dist [18]
+-----------------------------------------------
+                0.00    0.00     100/500         LinearESOpenPIC2D_repartition [37]
+                0.00    0.01     400/500         LinearESOpenPIC2D_moveFieldToDist [22]
+[113]    0.0    0.00    0.01     500         getPlaceDist1 [113]
+                0.01    0.00     500/402632      Dist_Dist [18]
+-----------------------------------------------
+                0.00    0.01     200/200         LinearESOpenPIC2D_repartition [37]
+[114]    0.0    0.00    0.01     200         LinearESOpenPIC2D_parallelPrefix [114]
+                0.00    0.01     400/4922        restrictDistRegular1 [66]
+-----------------------------------------------
+                0.00    0.00       1/305         LinearESOpenPIC2D_genParticles [65]
+                0.00    0.01     304/305         X10Util_isDistBlockStar [70]
+[115]    0.0    0.00    0.01     305         getBlockDist1 [115]
+                0.01    0.00     305/402632      Dist_Dist [18]
+-----------------------------------------------
+                0.00    0.00       1/101         LinearESOpenPIC2D_initialize [32]
+                0.00    0.00     100/101         LinearESOpenPIC2D_stepTime [4]
+[116]    0.0    0.00    0.00     101         LinearESOpenPIC2D_addGuards [116]
+                0.00    0.00     101/376208      restrictDistArbitrary2 [12]
+-----------------------------------------------
+                0.00    0.00     201/201         LinearESOpenPIC2D_packParticleArray [17]
+[117]    0.0    0.00    0.00     201         X10Util_pullInt [117]
+                0.00    0.00     201/402632      Dist_Dist [18]
+-----------------------------------------------
+                0.00    0.00     200/200         LinearESOpenPIC2D_repartition [37]
+[118]    0.0    0.00    0.00     200         getPlaceDist2 [118]
+                0.00    0.00     200/402632      Dist_Dist [18]
+-----------------------------------------------
+                0.00    0.00       1/105         PoissonSolver_makeFFG [93]
+                0.00    0.00       1/105         PoissonSolver_genTable3 [124]
+                0.00    0.00       1/105         PoissonSolver_genTable2 [123]
+                0.00    0.00       2/105         PoissonSolver_genTable1 [122]
+                0.00    0.00     100/105         PoissonSolver_solveForceCharge [29]
+[119]    0.0    0.00    0.00     105         restrictDistArbitrary3 [119]
+                0.00    0.00     105/402632      Dist_Dist [18]
+-----------------------------------------------
+                0.00    0.00       1/101         LinearESOpenPIC2D_initialize [32]
+                0.00    0.00     100/101         LinearESOpenPIC2D_stepTime [4]
+[120]    0.0    0.00    0.00     101         LinearESOpenPIC2D_makeInfoArray [120]
+                0.00    0.00     101/402632      Dist_Dist [18]
+-----------------------------------------------
+                0.00    0.00       1/1           LinearESOpenPIC2D_initialize [32]
+[121]    0.0    0.00    0.00       1         LinearESOpenPIC2D_genInitialDist [121]
+                0.00    0.00       1/2420        unionDist2 [21]
+                0.00    0.00       3/402632      Dist_Dist [18]
+                0.00    0.00     129/1285        PoissonSolver_expIntNL [127]
+                0.00    0.00       1/309         createNewRegion2AR [131]
+-----------------------------------------------
+                0.00    0.00       2/2           PoissonSolver_initTables [38]
+[122]    0.0    0.00    0.00       2         PoissonSolver_genTable1 [122]
+                0.00    0.00       2/2528        createNewRegion2AA [27]
+                0.00    0.00       2/204         getRank3 [110]
+                0.00    0.00       2/376208      restrictDistArbitrary2 [12]
+                0.00    0.00       2/379142      getRank2 [15]
+                0.00    0.00       2/105         restrictDistArbitrary3 [119]
+-----------------------------------------------
+                0.00    0.00       1/1           PoissonSolver_initTables [38]
+[123]    0.0    0.00    0.00       1         PoissonSolver_genTable2 [123]
+                0.00    0.00       1/204         getRank3 [110]
+                0.00    0.00       1/376208      restrictDistArbitrary2 [12]
+                0.00    0.00       1/379142      getRank2 [15]
+                0.00    0.00       1/105         restrictDistArbitrary3 [119]
+-----------------------------------------------
+                0.00    0.00       1/1           PoissonSolver_initTables [38]
+[124]    0.0    0.00    0.00       1         PoissonSolver_genTable3 [124]
+                0.00    0.00       1/204         getRank3 [110]
+                0.00    0.00       1/376208      restrictDistArbitrary2 [12]
+                0.00    0.00       1/379142      getRank2 [15]
+                0.00    0.00       1/105         restrictDistArbitrary3 [119]
+-----------------------------------------------
+                0.00    0.00       1/1           runMain [2]
+[125]    0.0    0.00    0.00       1         Timer_Timer [125]
+                0.00    0.00       1/402632      Dist_Dist [18]
+-----------------------------------------------
+                0.00    0.00     200/1603        PoissonSolver_solveForceCharge [29]
+                0.00    0.00     400/1603        LinearESOpenPIC2D_moveFieldToDist [22]
+                0.00    0.00     400/1603        LinearESOpenPIC2D_repartition [37]
+                0.00    0.00     603/1603        LinearESOpenPIC2D_moveParticles [8]
+[126]    0.0    0.00    0.00    1603         createNewRegion1R [126]
+-----------------------------------------------
+                0.00    0.00     129/1285        LinearESOpenPIC2D_genInitialDist [121]
+                0.00    0.00    1156/1285        LinearESOpenPIC2D_genParticlePosition [71]
+[127]    0.0    0.00    0.00    1285         PoissonSolver_expIntNL [127]
+-----------------------------------------------
+                0.00    0.00     100/1001        LinearESOpenPIC2D_repartition [37]
+                0.00    0.00     101/1001        LinearESOpenPIC2D_makeGuards [52]
+                0.00    0.00     800/1001        LinearESOpenPIC2D_moveFieldToDist [22]
+[128]    0.0    0.00    0.00    1001         createNewRegion2RA [128]
+-----------------------------------------------
+                0.00    0.00     402/402         X10Util_extendDistRank3D [54]
+[129]    0.0    0.00    0.00     402         createNewRegion3AAA [129]
+-----------------------------------------------
+                0.00    0.00     400/400         LinearESOpenPIC2D_moveFieldToDist [22]
+[130]    0.0    0.00    0.00     400         createNewRegion3RRA [130]
+-----------------------------------------------
+                0.00    0.00       1/309         LinearESOpenPIC2D_genInitialDist [121]
+                0.00    0.00       4/309         LinearESOpenPIC2D_genParticleVelocity [47]
+                0.00    0.00     104/309         FourierTransform2D_unscrambleX [53]
+                0.00    0.00     200/309         FourierTransform2D_scrambleX [43]
+[131]    0.0    0.00    0.00     309         createNewRegion2AR [131]
+-----------------------------------------------
+                0.00    0.00     201/201         LinearESOpenPIC2D_moveParticles [8]
+[132]    0.0    0.00    0.00     201         LinearESOpenPIC2D_transferParticles [132]
+-----------------------------------------------
+                0.00    0.00     104/104         FourierTransform2D_inverseTransformC [14]
+[133]    0.0    0.00    0.00     104         FourierTransform2D_unscrambleY [133]
+-----------------------------------------------
+                0.00    0.00     100/100         LinearESOpenPIC2D_repartition [37]
+[134]    0.0    0.00    0.00     100         createNewRegion2RR [134]
+-----------------------------------------------
+                0.00    0.00       1/1           PoissonSolver_PoissonSolver [36]
+[135]    0.0    0.00    0.00       1         FourierTransform2D_initBitReverse [135]
+-----------------------------------------------
+                0.00    0.00       1/1           PoissonSolver_PoissonSolver [36]
+[136]    0.0    0.00    0.00       1         FourierTransform2D_initSineCosine [136]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+
+Index by function name
+
+  [25] ArrayUtil_complexToDouble [90] GC_scratch_alloc    [45] X10Util_distBlock
+  [31] ArrayUtil_doubleToComplex [107] GC_stopped_mark    [23] X10Util_distBlockStar1
+  [24] ArrayUtil_transpose    [35] LinearESOpenPIC2D_LinearESOpenPIC2D [19] X10Util_extendDistRank2D
+  [18] Dist_Dist             [116] LinearESOpenPIC2D_addGuards [54] X10Util_extendDistRank3D
+  [33] FourierTransform2D_bitReverse [20] LinearESOpenPIC2D_countParticles [92] X10Util_get1DLRegion
+ [135] FourierTransform2D_initBitReverse [28] LinearESOpenPIC2D_cropField [74] X10Util_get1DPRegion
+ [136] FourierTransform2D_initSineCosine [13] LinearESOpenPIC2D_depositCharge [70] X10Util_isDistBlockStar
+  [14] FourierTransform2D_inverseTransformC [40] LinearESOpenPIC2D_doubleDimensions [117] X10Util_pullInt
+  [43] FourierTransform2D_scrambleX [121] LinearESOpenPIC2D_genInitialDist [30] X10Util_transposeBlockStar
+  [96] FourierTransform2D_scrambleY [71] LinearESOpenPIC2D_genParticlePosition [126] createNewRegion1R
+   [7] FourierTransform2D_transformC [47] LinearESOpenPIC2D_genParticleVelocity [27] createNewRegion2AA
+   [6] FourierTransform2D_transformRank [65] LinearESOpenPIC2D_genParticles [131] createNewRegion2AR
+  [53] FourierTransform2D_unscrambleX [32] LinearESOpenPIC2D_initialize [128] createNewRegion2RA
+ [133] FourierTransform2D_unscrambleY [52] LinearESOpenPIC2D_makeGuards [134] createNewRegion2RR
+  [97] GC_add_to_fl          [120] LinearESOpenPIC2D_makeInfoArray [129] createNewRegion3AAA
+  [87] GC_alloc_large         [51] LinearESOpenPIC2D_makeLocalSpace [130] createNewRegion3RRA
+  [69] GC_allochblk           [22] LinearESOpenPIC2D_moveFieldToDist [26] doublerefArraySum1
+  [46] GC_allochblk_nth        [8] LinearESOpenPIC2D_moveParticles [115] getBlockDist1
+  [42] GC_apply_to_all_blocks [17] LinearESOpenPIC2D_packParticleArray [113] getPlaceDist1
+  [76] GC_build_fl           [114] LinearESOpenPIC2D_parallelPrefix [118] getPlaceDist2
+  [81] GC_build_fl_clear2     [10] LinearESOpenPIC2D_pushParticle [15] getRank2
+  [98] GC_clear_a_few_frames   [9] LinearESOpenPIC2D_pushParticles [110] getRank3
+  [77] GC_clear_hdr_marks     [37] LinearESOpenPIC2D_repartition [16] getRankArbitrary2
+  [50] GC_clear_stack_inner    [3] LinearESOpenPIC2D_run [111] getRankArbitrary3
+  [78] GC_find_header         [44] LinearESOpenPIC2D_sortParticles [108] get_index (headers.c)
+  [67] GC_free_block_ending_at [4] LinearESOpenPIC2D_stepTime [73] intrefArrayMax1
+  [82] GC_freehblk           [132] LinearESOpenPIC2D_transferParticles [84] intrefArraySum1
+  [83] GC_generic_malloc      [36] PoissonSolver_PoissonSolver [91] min_words_allocd (alloc.c)
+  [88] GC_generic_push_regs  [127] PoissonSolver_expIntNL [109] regionContainsPoint2
+  [72] GC_get_first_part     [122] PoissonSolver_genTable1 [95] regionOrdinalPoint2
+  [62] GC_install_counts     [123] PoissonSolver_genTable2 [79] restrictDist1
+  [55] GC_install_header     [124] PoissonSolver_genTable3 [39] restrictDistArbitrary1
+  [99] GC_invalidate_map       [5] PoissonSolver_getForceCharge [12] restrictDistArbitrary2
+ [100] GC_invoke_finalizers   [58] PoissonSolver_initElectricFieldXTable [119] restrictDistArbitrary3
+ [101] GC_is_black_listed     [59] PoissonSolver_initElectricFieldYTable [66] restrictDistRegular1
+ [102] GC_malloc              [60] PoissonSolver_initGreensFnTable [2] runMain
+  [11] GC_mark_from           [61] PoissonSolver_initShapeFactorTable [94] searchPointInRegion1
+ [103] GC_mark_some           [38] PoissonSolver_initTables [56] searchPointInRegion2
+ [104] GC_next_used_block     [93] PoissonSolver_makeFFG  [49] searchPointInRegion3
+  [63] GC_prev_block         [112] PoissonSolver_makeFFG2 [75] setup_header (allchblk.c)
+  [57] GC_promote_black_lists [34] PoissonSolver_makeForceArray [41] unionDist1
+ [105] GC_protect_heap        [29] PoissonSolver_solveForceCharge [21] unionDist2
+ [106] GC_push_next_marked_uncollectable [85] Random_nextNormal [64] unionDist3
+  [89] GC_reclaim_block      [125] Timer_Timer            [80] unionRegion1
+  [68] GC_remove_counts       [48] Timer_stop             [86] unionRegion2

@@ -1,0 +1,1190 @@
+/**
+ * Grammar for a superset of X10.
+ * Author: Christian Grothoff
+ * Date: 9/3/2006
+ */
+
+options {
+  JAVA_UNICODE_ESCAPE = true;
+}
+
+PARSER_BEGIN(X10Parser)
+
+// import org.grothoff.x10c.parser.visitors.TreeDumper;
+// import org.grothoff.x10c.parser.visitors.TreeFormatter;
+
+public class X10Parser
+{
+   public static void main(String args[]){
+   /*
+      X10Parser parser = new X10Parser(System.in);
+      try
+      {
+         CompilationUnit root = parser.CompilationUnit();
+         System.err.println("X10 program parsed successfully.");
+         new TreeFormatter().visit(root);
+         new TreeDumper(System.out).visit(root);
+      }
+      catch (ParseException e)
+      {
+         System.err.println("Encountered errors during parse:\n" + e);
+      }
+    */
+    }
+}
+PARSER_END(X10Parser)
+
+
+/* WHITE SPACE */
+
+SKIP :
+{
+  " "
+| "\t"
+| "\n"
+| "\r"
+| "\f"
+}
+
+/* COMMENTS */
+
+MORE :
+{
+  "//" : IN_SINGLE_LINE_COMMENT
+|
+  <"/**" ~["/"]> { input_stream.backup(1); } : IN_FORMAL_COMMENT
+|
+  "/*" : IN_MULTI_LINE_COMMENT
+}
+
+<IN_SINGLE_LINE_COMMENT>
+SPECIAL_TOKEN :
+{
+  <SINGLE_LINE_COMMENT: "\n" | "\r" | "\r\n" > : DEFAULT
+}
+
+<IN_FORMAL_COMMENT>
+SPECIAL_TOKEN :
+{
+  <FORMAL_COMMENT: "*/" > : DEFAULT
+}
+
+<IN_MULTI_LINE_COMMENT>
+SPECIAL_TOKEN :
+{
+  <MULTI_LINE_COMMENT: "*/" > : DEFAULT
+}
+
+<IN_SINGLE_LINE_COMMENT,IN_FORMAL_COMMENT,IN_MULTI_LINE_COMMENT>
+MORE :
+{
+  < ~[] >
+}
+
+/* RESERVED WORDS AND LITERALS */
+
+TOKEN :
+{
+  < ABSTRACT: "abstract" >
+| < ASSERT: "assert" >
+| < ASYNC: "async" >
+| < ATEACH: "ateach" >
+| < ATOMIC: "atomic" >
+| < AWAIT: "await" >
+| < BREAK: "break" >
+| < CASE: "case" >
+| < CATCH: "catch" >
+| < CLASS: "class" >
+| < CLOCKED: "clocked" >
+| < CONST: "const" >
+| < CONTINUE: "continue" >
+| < CURRENT: "current" >
+| < _DEFAULT: "default" >
+| < DO: "do" >
+| < ELSE: "else" >
+| < EXTENDS: "extends" >
+| < EXTERN: "extern" >
+| < FALSE: "false" >
+| < FINAL: "final" >
+| < FINALLY: "finally" >
+| < FINISH: "finish" >
+| < FOR: "for" >
+| < FOREACH: "foreach" >
+| < FUNCTION: "function" >
+| < FUTURE: "future" >
+| < GOTO: "goto" >
+| < LOCAL: "local" >
+| < HERE: "here" >
+| < IF: "if" >
+| < IMPLEMENTS: "implements" >
+| < IMPORT: "import" >
+| < INSTANCEOF: "instanceof" >
+| < INTERFACE: "interface" >
+| < NEW: "new" >
+| < NONBLOCKING: "nonblocking" >
+| < NONEXCEPTING: "nonexcepting" >
+| < NOW: "now" >
+| < NULL: "null" >
+| < NULLABLE: "nullable" >
+| < OR: "or">
+| < PACKAGE: "package">
+| < PRIVATE: "private" >
+| < PROTECTED: "protected" >
+| < PUBLIC: "public" >
+| < PURE: "pure" >
+| < RETURN: "return" >
+| < ROF: "rof" >
+| < SEQUENTIAL: "sequential" >
+| < STATIC: "static" >
+| < STRICTFP: "strictfp" >
+| < SUPER: "super" >
+| < SWITCH: "switch" >
+| < THIS: "this" >
+| < THROW: "throw" >
+| < THROWS: "throws" >
+| < TRUE: "true" >
+| < TRY: "try" >
+| < VALUE: "value" >
+| < VAR: "var" >
+| < VOID: "void" >
+| < WHEN: "when" >
+| < WHILE: "while" >
+}
+
+/* LITERALS */
+
+TOKEN :
+{
+  < INTEGER_LITERAL:
+        <DECIMAL_LITERAL> (["l","L"])?
+      | <HEX_LITERAL> (["l","L"])?
+      | <OCTAL_LITERAL> (["l","L"])?
+  >
+|
+  < POINT_LITERAL:
+        <DECIMAL_LITERAL> (["p","P"])
+      | <HEX_LITERAL> (["p","P"])
+      | <OCTAL_LITERAL> (["p","P"])
+  >
+|
+  < #DECIMAL_LITERAL: ["1"-"9"] (["0"-"9"])* >
+|
+  < #HEX_LITERAL: "0" ["x","X"] (["0"-"9","a"-"f","A"-"F"])+ >
+|
+  < #OCTAL_LITERAL: "0" (["0"-"7"])* >
+|
+  < FLOATING_POINT_LITERAL:
+        (["0"-"9"])+ "." (["0"-"9"])* (<EXPONENT>)? (["f","F","d","D"])?
+      | "." (["0"-"9"])+ (<EXPONENT>)? (["f","F","d","D"])?
+      | (["0"-"9"])+ <EXPONENT> (["f","F","d","D"])?
+      | (["0"-"9"])+ (<EXPONENT>)? ["f","F","d","D"]
+  >
+|
+  < #EXPONENT: ["e","E"] (["+","-"])? (["0"-"9"])+ >
+|
+  < CHARACTER_LITERAL:
+      "'"
+      (   (~["'","\\","\n","\r"])
+        | ("\\"
+            ( ["n","t","b","r","f","\\","'","\""]
+            | ["0"-"7"] ( ["0"-"7"] )?
+            | ["0"-"3"] ["0"-"7"] ["0"-"7"]
+            )
+          )
+      )
+      "'"
+  >
+|
+  < STRING_LITERAL:
+      "\""
+      (   (~["\"","\\","\n","\r"])
+        | ("\\"
+            ( ["n","t","b","r","f","\\","'","\""]
+            | ["0"-"7"] ( ["0"-"7"] )?
+            | ["0"-"3"] ["0"-"7"] ["0"-"7"]
+            )
+          )
+      )*
+      "\""
+  >
+}
+
+/* IDENTIFIERS */
+
+TOKEN :
+{
+  < IDENTIFIER: <LETTER> (<LETTER>|<DIGIT>)* >
+|
+  < #LETTER:
+      [
+       "\u0024",
+       "\u0041"-"\u005a",
+       "\u005f",
+       "\u0061"-"\u007a",
+       "\u00c0"-"\u00d6",
+       "\u00d8"-"\u00f6",
+       "\u00f8"-"\u00ff",
+       "\u0100"-"\u1fff",
+       "\u3040"-"\u318f",
+       "\u3300"-"\u337f",
+       "\u3400"-"\u3d2d",
+       "\u4e00"-"\u9fff",
+       "\uf900"-"\ufaff"
+      ]
+  >
+|
+  < #DIGIT:
+      [
+       "\u0030"-"\u0039",
+       "\u0660"-"\u0669",
+       "\u06f0"-"\u06f9",
+       "\u0966"-"\u096f",
+       "\u09e6"-"\u09ef",
+       "\u0a66"-"\u0a6f",
+       "\u0ae6"-"\u0aef",
+       "\u0b66"-"\u0b6f",
+       "\u0be7"-"\u0bef",
+       "\u0c66"-"\u0c6f",
+       "\u0ce6"-"\u0cef",
+       "\u0d66"-"\u0d6f",
+       "\u0e50"-"\u0e59",
+       "\u0ed0"-"\u0ed9",
+       "\u1040"-"\u1049"
+      ]
+  >
+}
+
+/* SEPARATORS */
+
+TOKEN :
+{
+  < LPAREN: "(" >
+| < RPAREN: ")" >
+| < LBRACE: "{" >
+| < RBRACE: "}" >
+| < LBRACKET: "[" >
+| < RBRACKET: "]" >
+| < SEMICOLON: ";" >
+| < COMMA: "," >
+| < DOT: "." >
+}
+
+/* OPERATORS */
+
+TOKEN :
+{
+  < ASSIGN: "=" >
+| < AT: "@" >
+| < TO: "->" >
+| < LT: "<" >
+| < BANG: "!" >
+| < TILDE: "~" >
+| < HOOK: "?" >
+| < COLON: ":" >
+| < EQ: "==" >
+| < LE: "<=" >
+| < GE: ">=" >
+| < NE: "!=" >
+| < SC_OR: "||" >
+| < SC_AND: "&&" >
+| < INCR: "++" >
+| < DECR: "--" >
+| < PLUS: "+" >
+| < MINUS: "-" >
+| < STAR: "*" >
+| < SLASH: "/" >
+| < BIT_AND: "&" >
+| < BIT_OR: "|" >
+| < XOR: "^" >
+| < REM: "%" >
+| < LSHIFT: "<<" >
+| < PLUSASSIGN: "+=" >
+| < MINUSASSIGN: "-=" >
+| < STARASSIGN: "*=" >
+| < SLASHASSIGN: "/=" >
+| < ANDASSIGN: "&=" >
+| < ORASSIGN: "|=" >
+| < XORASSIGN: "^=" >
+| < REMASSIGN: "%=" >
+| < LSHIFTASSIGN: "<<=" >
+| < RSIGNEDSHIFTASSIGN: ">>=" >
+| < RUNSIGNEDSHIFTASSIGN: ">>>=" >
+}
+
+TOKEN :
+{
+  < RUNSIGNEDSHIFT: ">>>" >
+  {
+     matchedToken.kind = GT;
+     ((Token.GTToken)matchedToken).realKind = RUNSIGNEDSHIFT;
+     input_stream.backup(2);
+  }
+| < RSIGNEDSHIFT: ">>" >
+  {
+     matchedToken.kind = GT;
+     ((Token.GTToken)matchedToken).realKind = RSIGNEDSHIFT;
+     input_stream.backup(1);
+  }
+| < GT: ">" >
+}
+
+/* We use productions to match >>>, >> and > so that we can keep the
+ * type declaration syntax with generics clean
+ */
+void RUNSIGNEDSHIFT():
+{}
+{
+  LOOKAHEAD({ getToken(1).kind == GT &&
+                ((Token.GTToken)getToken(1)).realKind == RUNSIGNEDSHIFT} )
+   ">" ">" ">"
+}
+
+void RSIGNEDSHIFT():
+{}
+{
+  LOOKAHEAD({ getToken(1).kind == GT &&
+                ((Token.GTToken)getToken(1)).realKind == RSIGNEDSHIFT} )
+  ">" ">"  
+}
+
+/*****************************************
+ * THE X10 LANGUAGE GRAMMAR STARTS HERE *
+ *****************************************/
+
+/*
+ * Program structuring syntax follows.
+ */
+
+void CompilationUnit() :
+{}
+{
+  ( PackageDeclaration() )?
+  ( ImportDeclaration() )*
+  ( TypeDeclaration() )*
+  <EOF>
+}
+
+void PackageDeclaration() :
+{}
+{
+  "package" Name() ";"
+}
+
+void ImportDeclaration() :
+{}
+{
+  "import" Name() [ "." "*" ] ";"
+}
+
+void TypeDeclaration() :
+{}
+{
+  LOOKAHEAD( ( "abstract" | "final" | "public" | "extern" | "strictfp" )* ("value")? "class" )
+  ClassDeclaration()
+|
+  InterfaceDeclaration()
+}
+
+
+/*
+ * Declaration syntax follows.
+ */
+
+void ClassDeclaration() :
+{}
+{
+  ( "abstract" | "final" | "public" | "extern" | "strictfp")*
+  UnmodifiedClassDeclaration()
+}
+
+void UnmodifiedClassDeclaration() :
+{}
+{
+  ("value")? "class"
+        <IDENTIFIER> 
+       [ FormalsClause() ]
+       ( ExtendsClause() )?
+       [ "implements" InterfaceList() ]
+  ClassBody()
+}
+
+void TypeVariables() :
+{}
+{
+   TypeVariable() ("," TypeVariable())* 
+}
+
+void TypeVariable() :
+{}
+{
+  ["+"|"-"] ["nullable"] <IDENTIFIER> [ "extends" ObjectType() ]
+}
+
+void ExtendsClause() :
+{}
+{
+  "extends" ObjectType() 
+}
+
+void ClassBody() :
+{}
+{
+  "{" ( ClassBodyDeclaration() )* "}"
+}
+
+void NestedClassDeclaration() :
+{}
+{
+  ( "static" | "abstract" | "final" | "public" | "protected" | "private" | "strictfp")*
+  UnmodifiedClassDeclaration()
+}
+
+void ClassBodyDeclaration() :
+{}
+{
+  LOOKAHEAD( ( "static" | "abstract" | "final" | "public" | "protected" | "private" | "strictfp")* ( "value" )? "class" )
+  NestedClassDeclaration()
+|
+  LOOKAHEAD( ( "static" | "abstract" | "final" | "public" | "protected" | "private" | "strictfp")* "interface" )
+  NestedInterfaceDeclaration()
+|
+  LOOKAHEAD( ( "public" | "protected" | "private" | "nonblocking" | "nonexcepting" )* Name() "(" )
+  ConstructorDeclaration()
+|
+  LOOKAHEAD( MethodDeclarationLookahead() )
+  MethodDeclaration()
+|
+  FieldDeclaration()
+}
+
+// This production is to determine lookahead only.
+void MethodDeclarationLookahead() :
+{}
+{
+  [ FormalsClause() ]
+  ( "public" | "protected" | "private" | "static" | "abstract" | "final" | "strictfp" | "atomic" | "nonblocking" | "nonexcepting" )*
+  ResultType() <IDENTIFIER> "("
+}
+
+void InterfaceDeclaration() :
+{}
+{
+  ( "abstract" | "public" | "strictfp")*
+  UnmodifiedInterfaceDeclaration()
+}
+
+void NestedInterfaceDeclaration() :
+{}
+{
+  ( "static" | "abstract" | "final" | "public" | "protected" | "private" | "strictfp")*
+  UnmodifiedInterfaceDeclaration()
+}
+
+void UnmodifiedInterfaceDeclaration() :
+{}
+{
+  "interface" <IDENTIFIER> 
+  [ FormalsClause() ]
+  [ ExtendsClause() ]
+  "{" ( InterfaceMemberDeclaration() )* "}"
+}
+
+void InterfaceMemberDeclaration() :
+{}
+{
+  LOOKAHEAD( ( "static" | "abstract" | "final" | "public" | "protected" | "private" | "strictfp")* ( "value" )? "class" )
+  NestedClassDeclaration()
+|
+  LOOKAHEAD( ( "static" | "abstract" | "final" | "public" | "protected" | "private" | "strictfp")* "interface" )
+  NestedInterfaceDeclaration()
+|
+  LOOKAHEAD( MethodDeclarationLookahead() )
+  MethodDeclaration()
+|
+  FieldDeclaration()
+}
+
+void FieldDeclaration() :
+{}
+{
+  ( "public" | "protected" | "private" | "const" | "final" )*
+  NullableType() VariableDeclarator() ";"
+}
+
+void VariableDeclarator() :
+{}
+{
+  <IDENTIFIER> [ "=" Expression() ]
+}
+
+void ExplodedSpecification() :
+{}
+{
+ <IDENTIFIER> [ "[" <IDENTIFIER> ("," <IDENTIFIER> )* "]" ]
+}
+
+void MethodDeclaration() :
+{}
+{
+  [ FormalsClause() ]
+  ( "public" | "protected" | "private" | "static" | "abstract" | "final" | "strictfp" | "atomic" | "nonblocking" | "nonexcepting" )*
+  ResultType() MethodDeclarator() [ "throws" NameList() ]
+  ( Block() | ";" )
+}
+
+void MethodDeclarator() :
+{}
+{
+  <IDENTIFIER> FormalParameters()
+}
+
+void FormalParameters() :
+{}
+{
+  "(" [ FormalParameter() ( "," FormalParameter() )* ] ")"
+}
+
+void FormalParameter() :
+{}
+{
+  NullableType() ExplodedSpecification()
+}
+
+void RegionType() :
+{}
+{
+  [ ";" PrimaryExpression() ] 
+  [ ":" PrimaryExpression() ] 
+  [ "@" PrimaryExpression() ] 
+  [ "#" AdditiveExpression() ]
+}
+
+void FormalsClause() :
+{}
+{
+   "<" TypeVariables() ">" 
+}
+
+void ConstructorDeclaration() :
+{}
+{
+  [ FormalsClause() ]
+  ( "public" | "protected" | "private" | "nonblocking" | "nonexcepting" )*
+  <IDENTIFIER> FormalParameters() [ "throws" NameList() ]
+  ( "{"
+    [ LOOKAHEAD(ExplicitConstructorInvocation()) ExplicitConstructorInvocation() ]
+    ( BlockStatement() )*
+    "}" | ";" )
+}
+
+void ExplicitConstructorInvocation() :
+{}
+{
+  ("this" | "super") Arguments() ";"
+}
+
+void NullableType() :
+{}
+{
+  ( "nullable" )? Type()
+}
+
+void NullableObjectType() :
+{}
+{
+  ( "nullable" )? ObjectType()
+}
+
+void Type() :
+{}
+{
+  ObjectType()
+|
+  FunctionType()
+}
+
+void TypeList() :
+{}
+{
+  "(" [ NullableType() ("," NullableType() )* ] ")"
+}
+
+void FunctionType() :
+{}
+{
+  ["value"] "function" ResultType() TypeList()
+}
+
+void ObjectType() :
+{}
+{
+  Name() [ "<" [ NullableTypeList() ] RegionType() ">" ]
+}
+
+void NullableTypeList() :
+{}
+{
+  NullableType() ("," NullableType() )*
+}
+
+void ResultType() :
+{}
+{
+  "void"
+|
+  NullableType()
+}
+
+void Name() :
+/*
+ * A lookahead of 2 is required below since "Name" can be followed
+ * by a ".*" when used in the context of an "ImportDeclaration".
+ */
+{}
+{
+  <IDENTIFIER>
+  ( LOOKAHEAD(2) "." <IDENTIFIER> )*
+}
+
+void NameList() :
+{}
+{
+  Name()
+  ( LOOKAHEAD(2) "," Name()  )*
+}
+
+
+void InterfaceList() :
+{}
+{
+  InterfaceName()
+  ( LOOKAHEAD(2) "," InterfaceName() )*
+}
+
+void InterfaceName() :
+{}
+{
+   Name() [ "<" NullableTypeList() ">" ]
+}
+
+
+/*
+ * Expression syntax follows.
+ */
+
+void Expression() :
+{}
+{ 
+  ConditionalExpression()
+}
+
+void AssignmentOperator() :
+{}
+{
+  "=" | "*=" | "/=" | "%=" | "+=" | "-=" | "<<=" | ">>=" | ">>>=" | "&=" | "^=" | "|="
+}
+
+
+void ConditionalExpression() :
+{}
+{
+  ConditionalOrExpression() [ "?" Expression() ":" ConditionalExpression() ]
+}
+
+void ConditionalOrExpression() :
+{}
+{
+  ConditionalAndExpression() ( "||" ConditionalAndExpression() )*
+}
+
+void ConditionalAndExpression() :
+{}
+{
+  InclusiveOrExpression() ( "&&" InclusiveOrExpression() )*
+}
+
+void InclusiveOrExpression() :
+{}
+{
+  ExclusiveOrExpression() ( "|" ExclusiveOrExpression() )*
+}
+
+void ExclusiveOrExpression() :
+{}
+{
+  AndExpression() ( "^" AndExpression() )*
+}
+
+void AndExpression() :
+{}
+{
+  EqualityExpression() ( "&" EqualityExpression() )*
+}
+
+void EqualityExpression() :
+{}
+{
+  InstanceOfExpression() ( ( "==" | "!=" ) InstanceOfExpression() )*
+}
+
+void InstanceOfExpression() :
+{}
+{
+  RelationalExpression() [ "instanceof" NullableType() ]
+}
+
+void RelationalExpression() :
+{}
+{
+  ShiftExpression() ( ( "<" | ">" | "<=" | ">=" ) ShiftExpression() )*
+}
+
+void ShiftExpression() :
+{}
+{
+  AdditiveExpression() ( ( "<<" | RSIGNEDSHIFT() | RUNSIGNEDSHIFT() ) AdditiveExpression() )*
+}
+
+void AdditiveExpression() :
+{}
+{
+  MultiplicativeExpression() ( ( "+" | "-" ) MultiplicativeExpression() )*
+}
+
+void MultiplicativeExpression() :
+{}
+{
+  AtExpression() ( ( "*" | "/" | "%" ) AtExpression() )*
+}
+
+void AtExpression() :
+{}
+{
+  MapExpression() ( "@" MapExpression() )*
+}
+
+void MapExpression() :
+{}
+{
+  RegionExpression() ( "->" RegionExpression() )*
+}
+
+void RegionExpression() :
+{}
+{
+  "[" PointExpression() ":" PointExpression() "]"
+|
+  UnaryExpression() 
+}
+
+void PointExpression() :
+{}
+{
+  Expression() ( "," Expression() )*
+}
+
+
+void UnaryExpression() :
+{}
+{
+  ( "+" | "-" ) UnaryExpression()
+|
+  PreIncrementExpression()
+|
+  UnaryExpressionNotPlusMinus()
+}
+
+void PreIncrementExpression() :
+{}
+{
+  ( "++" | "--" ) PrimaryExpression()
+}
+
+void FutureExpression() :
+{}
+{
+  "future" [ "(" Expression() ")" ] "{" Expression() "}"
+}
+
+void UnaryExpressionNotPlusMinus() :
+{}
+{
+  ( "~" | "!" ) UnaryExpression()
+|
+  LOOKAHEAD( "(" NullableType() ")" )
+  CastExpression()
+|
+  PostfixExpression()
+}
+
+void FunctionExpression() :
+{}
+{
+  ["value"] "function" ResultType() FormalParameters() Block()
+}
+
+void PostfixExpression() :
+{}
+{
+  PrimaryExpression() [ "++" | "--" ]
+}
+
+void CastExpression() :
+{}
+{
+  "(" NullableType() ")" UnaryExpression()
+}
+
+void PrimaryExpression() :
+{}
+{
+  PrimaryPrefix() ( LOOKAHEAD(2) PrimarySuffix() )*
+}
+
+void PrimaryPrefix() :
+{}
+{
+  Literal()
+|
+  "this"
+|
+  "super" "." <IDENTIFIER>
+|
+  "(" Expression() ")"
+|
+  AllocationExpression()
+|
+  LOOKAHEAD( ResultType() "." "class" )
+  ResultType() "." "class"
+|
+  FutureExpression()
+|
+  FunctionExpression()
+|
+  Name()
+}
+
+
+
+void PrimarySuffix() :
+{}
+{
+  LOOKAHEAD(2)
+  "." "this"
+|
+  LOOKAHEAD(2)
+  "." AllocationExpression()
+|
+  "[" Expression() ( "," Expression() )* "]"
+|
+  "." <IDENTIFIER>
+|
+  Arguments()
+}
+
+void Literal() :
+{}
+{
+  <INTEGER_LITERAL>
+|
+  <FLOATING_POINT_LITERAL>
+|
+  <CHARACTER_LITERAL>
+|
+  <STRING_LITERAL>
+|
+  BooleanLiteral()
+|
+  NullLiteral()
+|
+  HereLiteral()
+| 
+  <POINT_LITERAL>
+}
+
+void BooleanLiteral() :
+{}
+{
+  "true"
+|
+  "false"
+}
+
+void NullLiteral() :
+{}
+{
+  "null"
+}
+
+void HereLiteral() :
+{}
+{
+  "here"
+}
+
+void Arguments() :
+{}
+{
+  "(" [ ArgumentList() ] ")"
+}
+
+void ArgumentList() :
+{}
+{
+  Expression() ( "," Expression() )*
+}
+
+void AllocationExpression() :
+{}
+{
+  "new" ObjectType() Arguments()
+}
+
+/*
+ * Statement syntax follows.
+ */
+
+void Statement() :
+{}
+{
+  LOOKAHEAD(2)
+  LabeledStatement()
+|
+  AsyncStatement()
+|
+  AssertStatement()
+|
+  AwaitStatement()
+|
+  AtomicStatement()
+|
+  Block()
+|
+  BreakStatement()
+|
+  ContinueStatement()
+|
+  DoStatement()
+|
+  EmptyStatement()
+|
+  FinishStatement()
+|
+  IfStatement()
+|
+  NowStatement()
+|
+  LoopStatement()
+|
+  ReturnStatement()
+|
+  StatementExpression() ";"
+|
+  SwitchStatement()
+|
+  ThrowStatement()
+|
+  TryStatement()
+|
+  WhenStatement()
+|
+  WhileStatement()
+}
+
+void LabeledStatement() :
+{}
+{
+  <IDENTIFIER> ":" Statement()
+}
+
+void Block() :
+{}
+{
+  "{" ( BlockStatement() )* "}"
+}
+
+void BlockStatement() :
+{}
+{
+  LOOKAHEAD( ["var"] LocalVariableType() VariableDeclarator() )
+  LocalVariableDeclaration() ";"
+|
+  Statement()
+}
+
+void LocalVariableType() :
+{}
+{
+  NullableType()
+|
+  "."
+}
+
+void LocalVariableDeclaration() :
+{}
+{
+  [ "var" ] LocalVariableType() VariableDeclarator()
+}
+
+void EmptyStatement() :
+{}
+{
+  ";"
+}
+
+void StatementExpression() :
+{}
+{
+  PreIncrementExpression()
+|
+  PrimaryExpression()
+  [  AssignmentOperator() Expression() ]
+}
+
+void SwitchStatement() :
+{}
+{
+  "switch" "(" Expression() ")" "{"
+    ( SwitchLabel() ( BlockStatement() )* )*
+  "}"
+}
+
+void SwitchLabel() :
+{}
+{
+  "case" Expression() ":"
+|
+  "default" ":"
+}
+
+void IfStatement() :
+/*
+ * The disambiguating algorithm of JavaCC automatically binds dangling
+ * else's to the innermost if statement.  The LOOKAHEAD specification
+ * is to tell JavaCC that we know what we are doing.
+ */
+{}
+{
+  "if" "(" Expression() ")" Statement() [ LOOKAHEAD(1) "else" Statement() ]
+}
+
+void WhileStatement() :
+{}
+{
+  "while" "(" Expression() ")" Statement()
+}
+
+void DoStatement() :
+{}
+{
+  "do" Statement() "while" "(" Expression() ")" ";"
+}
+
+void LoopStatement() :
+{}
+{
+  LoopQualifier() "(" LoopSpecifier() ")" [ "clocked" "(" ClockList() ")" ] Statement()
+}
+
+void LoopQualifier() :
+{}
+{
+  "ateach" | "for" | "foreach" | "rof"
+}
+
+void LoopSpecifier():
+{}
+{
+  ExplodedSpecification() ":" Expression()
+}
+
+void BreakStatement() :
+{}
+{
+  "break" [ <IDENTIFIER> ] ";"
+}
+
+void ContinueStatement() :
+{}
+{
+  "continue" [ <IDENTIFIER> ] ";"
+}
+
+void ReturnStatement() :
+{}
+{
+  "return" [ Expression() ] ";"
+}
+
+void ThrowStatement() :
+{}
+{
+  "throw" Expression() ";"
+}
+
+void AtomicStatement() :
+{}
+{
+  "atomic" Statement()
+}
+
+void FinishStatement() :
+{}
+{
+  "finish" Statement()
+}
+
+void ClockList() :
+{}
+{
+  Expression() ( "," Expression() )* 
+}
+
+void NowStatement() :
+{}
+{
+  "now" "(" Expression() ")" Statement()
+}
+
+void AsyncStatement() :
+{}
+{
+  "async" [ "(" Expression() ")" ] [ "clocked" "(" ClockList() ")" ] Block()
+}
+
+void WhenStatement() :
+{}
+{
+  "when" "(" Expression() ")" Block() ( OrExtension() )*
+}
+
+void OrExtension() :
+{}
+{
+  "or" "(" Expression() ")" Block()
+}
+
+void AwaitStatement() :
+{}
+{
+  "await" "(" Expression()  ")" ";"
+}
+
+void AssertStatement() :
+{}
+{
+  "assert" Expression() ";"
+}
+
+void TryStatement() :
+/*
+ * Semantic check required here to make sure that at least one
+ * finally/catch is present.
+ */
+{}
+{
+  "try" Block()
+  ( "catch" "(" FormalParameter() ")" Block() )*
+  [ "finally" Block() ]
+}
+

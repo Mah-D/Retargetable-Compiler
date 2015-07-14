@@ -1,0 +1,24 @@
+.TH GATE "1" "Dec 1 2008" "gate"
+
+.SH "NAME"
+gate \- copy stream 3 to stdout until data is available on stdin
+
+.SH "SYNOPSIS"
+.B gate
+
+.SH "DESCRIPTION"
+.PP
+gate reads from stream 3 and writes the input to stdout until
+data is available at stream 0 (stdin).  Note that due to buffering it
+is possible that data that has already been read from stream 3
+is still being flushed to stream 1 before gate notices that
+data is available on stream 0.
+
+.SH "SEE ALSO"
+\fBcat\fP(1), \fBdup\fP(1), \fBdupd\fP(1)
+
+.SH "LEGAL NOTICE"
+gate is released under the GPL.
+
+.SH "REPORTING BUGS"
+Please send electronic mail to <dup@cs.du.edu>

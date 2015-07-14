@@ -1,0 +1,75 @@
+singleThreadedCrypt/RunMain.java:public static int Random_nextbits ( final Random X10_TEMP0, final int bits, int myUniquePlacePoint)
+singleThreadedCrypt/RunMain.java:		long nextseed = X10_TEMP4 & _Random_mask;
+singleThreadedCrypt/RunMain.java:		final long X10_TEMP8 = nextseed;
+singleThreadedCrypt/RunMain.java:		final long X10_TEMP13 = nextseed >>> X10_TEMP11;
+singleThreadedCrypt/RunMain.java:public static int Random_nextInt ( final Random X10_TEMP0, int myUniquePlacePoint)
+singleThreadedCrypt/RunMain.java:		final int X10_TEMP4 = Program.Random_nextbits(X10_TEMP0, X10_TEMP2,myUniquePlacePoint);
+singleThreadedCrypt/RunMain.java:public static long Random_nextLong ( final Random X10_TEMP0, int myUniquePlacePoint)
+singleThreadedCrypt/RunMain.java:		final int X10_TEMP4 = Program.Random_nextbits(X10_TEMP0, X10_TEMP2,myUniquePlacePoint);
+singleThreadedCrypt/RunMain.java:		final int X10_TEMP11 = Program.Random_nextbits(X10_TEMP0, X10_TEMP10,myUniquePlacePoint);
+singleThreadedCrypt/RunMain.java:public static boolean Random_nextBoolean ( final Random X10_TEMP0, int myUniquePlacePoint)
+singleThreadedCrypt/RunMain.java:		final int X10_TEMP3 = Program.Random_nextbits(X10_TEMP0, X10_TEMP2,myUniquePlacePoint);
+singleThreadedCrypt/RunMain.java:public static double Random_nextDouble ( final Random X10_TEMP0, int myUniquePlacePoint)
+singleThreadedCrypt/RunMain.java:		final int X10_TEMP4 = Program.Random_nextbits(X10_TEMP0, X10_TEMP2,myUniquePlacePoint);
+singleThreadedCrypt/RunMain.java:		final int X10_TEMP11 = Program.Random_nextbits(X10_TEMP0, X10_TEMP10,myUniquePlacePoint);
+singleThreadedCrypt/RunMain.java:			final int X10_TEMP14 = Program.Random_nextInt(rndnum,myUniquePlacePoint);
+singleThreadedMontecarlo/RunMain.java:			final double X10_TEMP30 = Program.Random_nextGaussian(rnd,myUniquePlacePoint);
+singleThreadedMontecarlo/RunMain.java:public static int Random_nextbits ( final Random X10_TEMP0, final int bits, int myUniquePlacePoint)
+singleThreadedMontecarlo/RunMain.java:		long nextseed = X10_TEMP4 & _Random_mask;
+singleThreadedMontecarlo/RunMain.java:		final long X10_TEMP8 = nextseed;
+singleThreadedMontecarlo/RunMain.java:		final long X10_TEMP13 = nextseed >>> X10_TEMP11;
+singleThreadedMontecarlo/RunMain.java:public static int Random_nextInt ( final Random X10_TEMP0, int myUniquePlacePoint)
+singleThreadedMontecarlo/RunMain.java:		final int X10_TEMP4 = Program.Random_nextbits(X10_TEMP0, X10_TEMP2,myUniquePlacePoint);
+singleThreadedMontecarlo/RunMain.java:public static long Random_nextLong ( final Random X10_TEMP0, int myUniquePlacePoint)
+singleThreadedMontecarlo/RunMain.java:		final int X10_TEMP4 = Program.Random_nextbits(X10_TEMP0, X10_TEMP2,myUniquePlacePoint);
+singleThreadedMontecarlo/RunMain.java:		final int X10_TEMP11 = Program.Random_nextbits(X10_TEMP0, X10_TEMP10,myUniquePlacePoint);
+singleThreadedMontecarlo/RunMain.java:public static boolean Random_nextBoolean ( final Random X10_TEMP0, int myUniquePlacePoint)
+singleThreadedMontecarlo/RunMain.java:		final int X10_TEMP3 = Program.Random_nextbits(X10_TEMP0, X10_TEMP2,myUniquePlacePoint);
+singleThreadedMontecarlo/RunMain.java:public static double Random_nextDouble ( final Random X10_TEMP0, int myUniquePlacePoint)
+singleThreadedMontecarlo/RunMain.java:		final int X10_TEMP4 = Program.Random_nextbits(X10_TEMP0, X10_TEMP2,myUniquePlacePoint);
+singleThreadedMontecarlo/RunMain.java:		final int X10_TEMP11 = Program.Random_nextbits(X10_TEMP0, X10_TEMP10,myUniquePlacePoint);
+singleThreadedMontecarlo/RunMain.java:public static double Random_nextGaussian ( final Random X10_TEMP0, int myUniquePlacePoint)
+singleThreadedMontecarlo/RunMain.java:			final double X10_TEMP8 = X10_TEMP0.nextNextGaussian;
+singleThreadedMontecarlo/RunMain.java:				final double X10_TEMP14 = Program.Random_nextDouble(X10_TEMP0,myUniquePlacePoint);
+singleThreadedMontecarlo/RunMain.java:				final double X10_TEMP20 = Program.Random_nextDouble(X10_TEMP0,myUniquePlacePoint);
+singleThreadedMontecarlo/RunMain.java:			X10_TEMP0.nextNextGaussian = (X10_TEMP46);
+singleThreadedMontecarlo/RunMain.java:	public double nextNextGaussian;
+singleThreadedPlasma/RunMain.java:					final double X10_TEMP35 = Program.Random_nextNormal(X10_TEMP34,myUniquePlacePoint);
+singleThreadedPlasma/RunMain.java:					final double X10_TEMP38 = Program.Random_nextNormal(X10_TEMP37,myUniquePlacePoint);
+singleThreadedPlasma/RunMain.java:public static double Random_nextNormal ( final Random X10_TEMP0, int myUniquePlacePoint)
+singleThreadedSor/RunMain.java:public static int Random_nextbits ( final Random X10_TEMP0, final int bits, int myUniquePlacePoint)
+singleThreadedSor/RunMain.java:		long nextseed = X10_TEMP4 & _Random_mask;
+singleThreadedSor/RunMain.java:		final long X10_TEMP8 = nextseed;
+singleThreadedSor/RunMain.java:		final long X10_TEMP13 = nextseed >>> X10_TEMP11;
+singleThreadedSor/RunMain.java:public static int Random_nextInt ( final Random X10_TEMP0, int myUniquePlacePoint)
+singleThreadedSor/RunMain.java:		final int X10_TEMP4 = Program.Random_nextbits(X10_TEMP0, X10_TEMP2,myUniquePlacePoint);
+singleThreadedSor/RunMain.java:public static long Random_nextLong ( final Random X10_TEMP0, int myUniquePlacePoint)
+singleThreadedSor/RunMain.java:		final int X10_TEMP4 = Program.Random_nextbits(X10_TEMP0, X10_TEMP2,myUniquePlacePoint);
+singleThreadedSor/RunMain.java:		final int X10_TEMP11 = Program.Random_nextbits(X10_TEMP0, X10_TEMP10,myUniquePlacePoint);
+singleThreadedSor/RunMain.java:public static boolean Random_nextBoolean ( final Random X10_TEMP0, int myUniquePlacePoint)
+singleThreadedSor/RunMain.java:		final int X10_TEMP3 = Program.Random_nextbits(X10_TEMP0, X10_TEMP2,myUniquePlacePoint);
+singleThreadedSor/RunMain.java:public static double Random_nextDouble ( final Random X10_TEMP0, int myUniquePlacePoint)
+singleThreadedSor/RunMain.java:		final int X10_TEMP4 = Program.Random_nextbits(X10_TEMP0, X10_TEMP2,myUniquePlacePoint);
+singleThreadedSor/RunMain.java:		final int X10_TEMP11 = Program.Random_nextbits(X10_TEMP0, X10_TEMP10,myUniquePlacePoint);
+singleThreadedSor/RunMain.java:			final double X10_TEMP21 = Program.Random_nextDouble(R,myUniquePlacePoint);
+singleThreadedSparsemm/RunMain.java:public static int Random_nextbits ( final Random X10_TEMP0, final int bits, int myUniquePlacePoint)
+singleThreadedSparsemm/RunMain.java:		long nextseed = X10_TEMP4 & _Random_mask;
+singleThreadedSparsemm/RunMain.java:		final long X10_TEMP8 = nextseed;
+singleThreadedSparsemm/RunMain.java:		final long X10_TEMP13 = nextseed >>> X10_TEMP11;
+singleThreadedSparsemm/RunMain.java:public static int Random_nextInt ( final Random X10_TEMP0, int myUniquePlacePoint)
+singleThreadedSparsemm/RunMain.java:		final int X10_TEMP4 = Program.Random_nextbits(X10_TEMP0, X10_TEMP2,myUniquePlacePoint);
+singleThreadedSparsemm/RunMain.java:public static long Random_nextLong ( final Random X10_TEMP0, int myUniquePlacePoint)
+singleThreadedSparsemm/RunMain.java:		final int X10_TEMP4 = Program.Random_nextbits(X10_TEMP0, X10_TEMP2,myUniquePlacePoint);
+singleThreadedSparsemm/RunMain.java:		final int X10_TEMP11 = Program.Random_nextbits(X10_TEMP0, X10_TEMP10,myUniquePlacePoint);
+singleThreadedSparsemm/RunMain.java:public static boolean Random_nextBoolean ( final Random X10_TEMP0, int myUniquePlacePoint)
+singleThreadedSparsemm/RunMain.java:		final int X10_TEMP3 = Program.Random_nextbits(X10_TEMP0, X10_TEMP2,myUniquePlacePoint);
+singleThreadedSparsemm/RunMain.java:public static double Random_nextDouble ( final Random X10_TEMP0, int myUniquePlacePoint)
+singleThreadedSparsemm/RunMain.java:		final int X10_TEMP4 = Program.Random_nextbits(X10_TEMP0, X10_TEMP2,myUniquePlacePoint);
+singleThreadedSparsemm/RunMain.java:		final int X10_TEMP11 = Program.Random_nextbits(X10_TEMP0, X10_TEMP10,myUniquePlacePoint);
+singleThreadedSparsemm/RunMain.java:			final int X10_TEMP128 = Program.Random_nextInt(_SparseMatmult_R,myUniquePlacePoint);
+singleThreadedSparsemm/RunMain.java:			final int X10_TEMP136 = Program.Random_nextInt(_SparseMatmult_R,myUniquePlacePoint);
+singleThreadedSparsemm/RunMain.java:			final double X10_TEMP145 = Program.Random_nextDouble(_SparseMatmult_R,myUniquePlacePoint);
+singleThreadedSparsemm/RunMain.java:			final double X10_TEMP14 = Program.Random_nextDouble(R,myUniquePlacePoint);
+temp/RunMain.java:					final double X10_TEMP35 = Program.Random_nextNormal(X10_TEMP34,myUniquePlacePoint);
+temp/RunMain.java:					final double X10_TEMP38 = Program.Random_nextNormal(X10_TEMP37,myUniquePlacePoint);
+temp/RunMain.java:public static double Random_nextNormal ( final Random X10_TEMP0, int myUniquePlacePoint)

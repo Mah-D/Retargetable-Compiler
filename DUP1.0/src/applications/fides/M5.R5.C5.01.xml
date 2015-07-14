@@ -1,0 +1,166 @@
+<commsim>
+<manufacturer name='m1'>
+<item name='item22' delay='4'/>
+<item name='item37' delay='8'/>
+<item name='item41' delay='7'/>
+</manufacturer>
+<manufacturer name='m2'>
+<item name='item10' delay='10'/>
+<item name='item38' delay='8'/>
+<item name='item45' delay='6'/>
+</manufacturer>
+<manufacturer name='m3'>
+<item name='item18' delay='7'/>
+</manufacturer>
+<manufacturer name='m4'>
+<item name='item98' delay='7'/>
+</manufacturer>
+<manufacturer name='m5'>
+<item name='item23' delay='10'/>
+<item name='item52' delay='10'/>
+</manufacturer>
+<retailer name='r1'>
+<item name='item41' manufacturer='m1' unitSize='54'/>
+<item name='item10' manufacturer='m2' unitSize='87'/>
+</retailer>
+<retailer name='r2'>
+<item name='item37' manufacturer='m1' unitSize='80'/>
+<item name='item52' manufacturer='m5' unitSize='54'/>
+<item name='item41' manufacturer='m1' unitSize='8'/>
+<item name='item18' manufacturer='m3' unitSize='74'/>
+<item name='item45' manufacturer='m2' unitSize='3'/>
+<item name='item22' manufacturer='m1' unitSize='78'/>
+<item name='item38' manufacturer='m2' unitSize='4'/>
+<item name='item98' manufacturer='m4' unitSize='86'/>
+</retailer>
+<retailer name='r3'>
+<item name='item52' manufacturer='m5' unitSize='89'/>
+<item name='item37' manufacturer='m1' unitSize='56'/>
+<item name='item22' manufacturer='m1' unitSize='81'/>
+</retailer>
+<retailer name='r4'>
+<item name='item37' manufacturer='m1' unitSize='75'/>
+<item name='item10' manufacturer='m2' unitSize='13'/>
+<item name='item18' manufacturer='m3' unitSize='92'/>
+<item name='item23' manufacturer='m5' unitSize='100'/>
+</retailer>
+<retailer name='r5'>
+<item name='item41' manufacturer='m1' unitSize='78'/>
+<item name='item22' manufacturer='m1' unitSize='98'/>
+<item name='item98' manufacturer='m4' unitSize='78'/>
+<item name='item37' manufacturer='m1' unitSize='54'/>
+</retailer>
+<consumer name='c1'>
+<order item='item23' retailer='r4' quantity='37' delay='243'/>
+<order item='item41' retailer='r1' quantity='20' delay='129'/>
+<order item='item22' retailer='r2' quantity='49' delay='271'/>
+<order item='item98' retailer='r5' quantity='3' delay='314'/>
+<order item='item18' retailer='r4' quantity='7' delay='168'/>
+<order item='item98' retailer='r5' quantity='41' delay='26'/>
+<order item='item18' retailer='r2' quantity='23' delay='240'/>
+</consumer>
+<consumer name='c2'>
+<order item='item41' retailer='r5' quantity='11' delay='342'/>
+<order item='item52' retailer='r2' quantity='13' delay='42'/>
+</consumer>
+<consumer name='c3'>
+<order item='item10' retailer='r4' quantity='49' delay='309'/>
+<order item='item23' retailer='r4' quantity='2' delay='195'/>
+<order item='item18' retailer='r2' quantity='32' delay='211'/>
+<order item='item37' retailer='r2' quantity='2' delay='231'/>
+<order item='item45' retailer='r2' quantity='20' delay='30'/>
+<order item='item98' retailer='r2' quantity='34' delay='201'/>
+<order item='item52' retailer='r2' quantity='21' delay='324'/>
+<order item='item37' retailer='r4' quantity='12' delay='358'/>
+<order item='item45' retailer='r2' quantity='49' delay='16'/>
+<order item='item45' retailer='r2' quantity='25' delay='166'/>
+<order item='item18' retailer='r4' quantity='14' delay='32'/>
+<order item='item52' retailer='r2' quantity='9' delay='203'/>
+<order item='item45' retailer='r2' quantity='34' delay='16'/>
+<order item='item41' retailer='r5' quantity='21' delay='267'/>
+<order item='item45' retailer='r2' quantity='19' delay='357'/>
+<order item='item10' retailer='r4' quantity='4' delay='279'/>
+<order item='item38' retailer='r2' quantity='42' delay='289'/>
+<order item='item10' retailer='r4' quantity='43' delay='140'/>
+<order item='item38' retailer='r2' quantity='11' delay='173'/>
+<order item='item37' retailer='r3' quantity='12' delay='31'/>
+<order item='item37' retailer='r2' quantity='7' delay='353'/>
+<order item='item18' retailer='r4' quantity='13' delay='276'/>
+<order item='item41' retailer='r2' quantity='30' delay='100'/>
+<order item='item23' retailer='r4' quantity='24' delay='236'/>
+<order item='item22' retailer='r2' quantity='20' delay='360'/>
+</consumer>
+<consumer name='c4'>
+<order item='item37' retailer='r4' quantity='35' delay='110'/>
+<order item='item37' retailer='r3' quantity='21' delay='51'/>
+<order item='item52' retailer='r3' quantity='44' delay='97'/>
+<order item='item10' retailer='r1' quantity='40' delay='23'/>
+<order item='item22' retailer='r5' quantity='42' delay='138'/>
+<order item='item18' retailer='r2' quantity='26' delay='330'/>
+<order item='item38' retailer='r2' quantity='6' delay='24'/>
+<order item='item38' retailer='r2' quantity='47' delay='9'/>
+<order item='item37' retailer='r3' quantity='3' delay='3'/>
+<order item='item38' retailer='r2' quantity='46' delay='110'/>
+<order item='item38' retailer='r2' quantity='35' delay='121'/>
+<order item='item52' retailer='r2' quantity='27' delay='333'/>
+<order item='item45' retailer='r2' quantity='3' delay='21'/>
+<order item='item37' retailer='r4' quantity='36' delay='224'/>
+<order item='item22' retailer='r5' quantity='11' delay='194'/>
+<order item='item37' retailer='r2' quantity='45' delay='241'/>
+<order item='item22' retailer='r3' quantity='47' delay='263'/>
+<order item='item22' retailer='r5' quantity='20' delay='184'/>
+<order item='item45' retailer='r2' quantity='45' delay='252'/>
+<order item='item38' retailer='r2' quantity='3' delay='161'/>
+<order item='item52' retailer='r3' quantity='11' delay='175'/>
+<order item='item23' retailer='r4' quantity='20' delay='95'/>
+<order item='item18' retailer='r2' quantity='46' delay='194'/>
+<order item='item18' retailer='r4' quantity='14' delay='80'/>
+<order item='item52' retailer='r3' quantity='37' delay='95'/>
+<order item='item18' retailer='r2' quantity='47' delay='363'/>
+<order item='item10' retailer='r4' quantity='14' delay='195'/>
+<order item='item45' retailer='r2' quantity='38' delay='42'/>
+<order item='item18' retailer='r2' quantity='27' delay='239'/>
+</consumer>
+<consumer name='c5'>
+<order item='item38' retailer='r2' quantity='38' delay='102'/>
+<order item='item18' retailer='r2' quantity='7' delay='200'/>
+<order item='item41' retailer='r1' quantity='49' delay='329'/>
+<order item='item22' retailer='r3' quantity='8' delay='262'/>
+<order item='item45' retailer='r2' quantity='49' delay='313'/>
+<order item='item52' retailer='r3' quantity='38' delay='41'/>
+<order item='item52' retailer='r2' quantity='29' delay='217'/>
+<order item='item37' retailer='r3' quantity='4' delay='308'/>
+<order item='item41' retailer='r2' quantity='23' delay='90'/>
+<order item='item23' retailer='r4' quantity='39' delay='170'/>
+<order item='item23' retailer='r4' quantity='36' delay='239'/>
+<order item='item38' retailer='r2' quantity='35' delay='173'/>
+<order item='item10' retailer='r1' quantity='37' delay='20'/>
+<order item='item41' retailer='r2' quantity='13' delay='188'/>
+<order item='item52' retailer='r3' quantity='42' delay='152'/>
+<order item='item37' retailer='r2' quantity='32' delay='278'/>
+<order item='item98' retailer='r5' quantity='34' delay='162'/>
+<order item='item23' retailer='r4' quantity='27' delay='335'/>
+<order item='item22' retailer='r2' quantity='20' delay='306'/>
+<order item='item45' retailer='r2' quantity='35' delay='61'/>
+<order item='item98' retailer='r2' quantity='33' delay='113'/>
+<order item='item98' retailer='r5' quantity='34' delay='303'/>
+<order item='item22' retailer='r5' quantity='35' delay='94'/>
+<order item='item18' retailer='r2' quantity='17' delay='204'/>
+<order item='item10' retailer='r1' quantity='2' delay='278'/>
+<order item='item22' retailer='r3' quantity='48' delay='28'/>
+<order item='item23' retailer='r4' quantity='25' delay='268'/>
+<order item='item22' retailer='r3' quantity='50' delay='180'/>
+<order item='item18' retailer='r2' quantity='21' delay='117'/>
+<order item='item38' retailer='r2' quantity='6' delay='139'/>
+<order item='item41' retailer='r2' quantity='42' delay='314'/>
+<order item='item37' retailer='r4' quantity='36' delay='363'/>
+<order item='item38' retailer='r2' quantity='29' delay='47'/>
+<order item='item37' retailer='r3' quantity='34' delay='115'/>
+<order item='item22' retailer='r5' quantity='49' delay='330'/>
+<order item='item37' retailer='r5' quantity='9' delay='257'/>
+<order item='item38' retailer='r2' quantity='46' delay='332'/>
+<order item='item18' retailer='r2' quantity='36' delay='328'/>
+<order item='item22' retailer='r2' quantity='31' delay='363'/>
+<order item='item38' retailer='r2' quantity='9' delay='206'/>
+</consumer>
+</commsim>

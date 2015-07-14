@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/faculty/!svn/ver/10114/dup/doc
+END
+gate.1
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/faculty/!svn/ver/1612/dup/doc/gate.1
+END
+router.1
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/faculty/!svn/ver/9205/dup/doc/router.1
+END
+dup.1
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/faculty/!svn/ver/2181/dup/doc/dup.1
+END
+dup-grammar.txt
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/faculty/!svn/ver/1718/dup/doc/dup-grammar.txt
+END
+nodelay.1
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/faculty/!svn/ver/6583/dup/doc/nodelay.1
+END
+fanout.1
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/faculty/!svn/ver/1678/dup/doc/fanout.1
+END
+dupd.1
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/faculty/!svn/ver/5288/dup/doc/dupd.1
+END
+delay.1
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/faculty/!svn/ver/1555/dup/doc/delay.1
+END
+buffer-dup.1
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/faculty/!svn/ver/5797/dup/doc/buffer-dup.1
+END
+millerrabin.1
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/faculty/!svn/ver/2393/dup/doc/millerrabin.1
+END
+protocol.tex
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/faculty/!svn/ver/10114/dup/doc/protocol.tex
+END
+holmerge.1
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/faculty/!svn/ver/1678/dup/doc/holmerge.1
+END
+faninany.1
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/faculty/!svn/ver/9222/dup/doc/faninany.1
+END
+cmd.1
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/faculty/!svn/ver/1612/dup/doc/cmd.1
+END
+drop.1
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/faculty/!svn/ver/2391/dup/doc/drop.1
+END
+deal.1
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/faculty/!svn/ver/1678/dup/doc/deal.1
+END
+append.1
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/faculty/!svn/ver/2391/dup/doc/append.1
+END
+devrandom_gen_random.1
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/faculty/!svn/ver/1735/dup/doc/devrandom_gen_random.1
+END
+eat.1
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/faculty/!svn/ver/2386/dup/doc/eat.1
+END
+lookup.1
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/faculty/!svn/ver/1612/dup/doc/lookup.1
+END
+duplicate.1
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/faculty/!svn/ver/1612/dup/doc/duplicate.1
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/faculty/!svn/ver/9205/dup/doc/Makefile.am
+END
+gather.1
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/faculty/!svn/ver/5794/dup/doc/gather.1
+END
+mgrep.1
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/faculty/!svn/ver/1565/dup/doc/mgrep.1
+END
+gmp_gen_random.1
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/faculty/!svn/ver/2392/dup/doc/gmp_gen_random.1
+END
+zos-port.txt
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/faculty/!svn/ver/3090/dup/doc/zos-port.txt
+END

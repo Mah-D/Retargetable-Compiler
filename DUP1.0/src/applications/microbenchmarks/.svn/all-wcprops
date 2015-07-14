@@ -1,0 +1,179 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/faculty/!svn/ver/8721/dup/src/applications/microbenchmarks
+END
+calibrate_driver.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/faculty/!svn/ver/8713/dup/src/applications/microbenchmarks/calibrate_driver.c
+END
+shm_perf.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/faculty/!svn/ver/5639/dup/src/applications/microbenchmarks/shm_perf.c
+END
+helper_lib.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/faculty/!svn/ver/5486/dup/src/applications/microbenchmarks/helper_lib.c
+END
+calibrate_driver.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/faculty/!svn/ver/5486/dup/src/applications/microbenchmarks/calibrate_driver.h
+END
+memcpy_perf.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/faculty/!svn/ver/6192/dup/src/applications/microbenchmarks/memcpy_perf.c
+END
+shm_perf.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/faculty/!svn/ver/5488/dup/src/applications/microbenchmarks/shm_perf.h
+END
+pipe_perf.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/faculty/!svn/ver/6271/dup/src/applications/microbenchmarks/pipe_perf.c
+END
+helper_lib.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/faculty/!svn/ver/5486/dup/src/applications/microbenchmarks/helper_lib.h
+END
+tcp_socket_perf.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/faculty/!svn/ver/6270/dup/src/applications/microbenchmarks/tcp_socket_perf.c
+END
+ipc_gnuplot.sh
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/faculty/!svn/ver/7157/dup/src/applications/microbenchmarks/ipc_gnuplot.sh
+END
+memcpy_perf.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/faculty/!svn/ver/6192/dup/src/applications/microbenchmarks/memcpy_perf.h
+END
+client_server_common.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/faculty/!svn/ver/6271/dup/src/applications/microbenchmarks/client_server_common.c
+END
+msq_perf.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/faculty/!svn/ver/6234/dup/src/applications/microbenchmarks/msq_perf.c
+END
+readme
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/faculty/!svn/ver/6112/dup/src/applications/microbenchmarks/readme
+END
+pipe_perf.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/faculty/!svn/ver/6112/dup/src/applications/microbenchmarks/pipe_perf.h
+END
+AF_UNIX_DGRAM_perf.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/faculty/!svn/ver/6234/dup/src/applications/microbenchmarks/AF_UNIX_DGRAM_perf.c
+END
+tcp_socket_perf.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/faculty/!svn/ver/5743/dup/src/applications/microbenchmarks/tcp_socket_perf.h
+END
+AF_UNIX_STREAM_perf.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/faculty/!svn/ver/6249/dup/src/applications/microbenchmarks/AF_UNIX_STREAM_perf.c
+END
+AF_UNIX_DGRAM_common.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/faculty/!svn/ver/6112/dup/src/applications/microbenchmarks/AF_UNIX_DGRAM_common.h
+END
+client_server_common.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/faculty/!svn/ver/6249/dup/src/applications/microbenchmarks/client_server_common.h
+END
+msq_perf.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/faculty/!svn/ver/6192/dup/src/applications/microbenchmarks/msq_perf.h
+END
+AF_UNIX_DGRAM_perf.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/faculty/!svn/ver/5663/dup/src/applications/microbenchmarks/AF_UNIX_DGRAM_perf.h
+END
+AF_UNIX_STREAM_perf.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/faculty/!svn/ver/5743/dup/src/applications/microbenchmarks/AF_UNIX_STREAM_perf.h
+END
+tcp_simple_server.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/faculty/!svn/ver/6234/dup/src/applications/microbenchmarks/tcp_simple_server.c
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/faculty/!svn/ver/6270/dup/src/applications/microbenchmarks/Makefile.am
+END
+AF_UNIX_DGRAM_server.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/faculty/!svn/ver/6234/dup/src/applications/microbenchmarks/AF_UNIX_DGRAM_server.c
+END
+AF_UNIX_STREAM_server.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/faculty/!svn/ver/6209/dup/src/applications/microbenchmarks/AF_UNIX_STREAM_server.c
+END
+script_gnuplot
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/faculty/!svn/ver/7793/dup/src/applications/microbenchmarks/script_gnuplot
+END
+common.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/faculty/!svn/ver/6763/dup/src/applications/microbenchmarks/common.h
+END

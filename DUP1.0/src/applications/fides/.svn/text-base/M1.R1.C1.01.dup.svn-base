@@ -1,0 +1,7 @@
+errorLog@localhost:55555[1>commsim.err]$faninany;
+fanin@localhost:55555[1|fanout:0,2|errorLog:5]$faninany;
+fanout@localhost:55555[1|timekeeper:0, 2|errorLog:6, 4|m0:0, 5|r0:0, 6|c0:0]$fanout;
+timekeeper@localhost:55555[1|fanin:7,2|errorLog:7]$vtimekeeper 3;
+m0@localhost:55555[1|fanin:11,2|errorLog:11]$manufacturer m1|item1:8 ;
+r0@localhost:55555[1|fanin:12,2|errorLog:12]$retailer r1|item1:m1:64 ;
+c0@localhost:55555[1|fanin:13,2|errorLog:13]$consumer c1|r1:item1:12:20,r1:item1:27:294,r1:item1:46:44,r1:item1:21:301 ;

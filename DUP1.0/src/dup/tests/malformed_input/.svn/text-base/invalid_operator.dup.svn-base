@@ -1,0 +1,2 @@
+badnode@localhost:9999[1<<lkj:0]$ command ;
+goodNode@localhost:8889[1|badnode:0]$ command ;

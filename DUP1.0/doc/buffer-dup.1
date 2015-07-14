@@ -1,0 +1,34 @@
+.TH BUFFER-DUP "1" "Nov 20 2009" "buffer-dup"
+
+.SH "NAME"
+buffer\-dup \- copies records from stdin to stdout, buffering if needed
+
+.SH "SYNOPSIS"
+.B buffer-dup [\fIBUFFERSIZE\fR]
+
+.SH "DESCRIPTION"
+.PP
+buffer\-dup reads data from file descriptor 0 (stdin) and writes
+the same data to file descriptor 1 (stdout).  Errors are reported
+on file descriptor 2 (stderr).  Up to BUFFERSIZE bytes are buffered
+in memory.  If BUFFERSIZE is not specified, 512k of buffer memory
+are used. 
+.PP
+If a BUFFERSIZE of 0 is specified, a variable\-size buffer
+is used.  In this case, initially 512k are allocated and then
+more if more data can be read but writing would block.  In
+this case, the buffer size will be doubled until allocation
+fails (in which case buffer\-dup will block on write, just
+as in the case with the fixed\-size buffer).
+.PP
+buffer\-dup was written to be faster than buffer (and as fast
+as dd and cat).
+.PP
+.SH "SEE ALSO"
+\fBcat\fP(1), \fBbuffer\fP(1), \fBdd\fP(1)
+
+.SH "LEGAL NOTICE"
+buffer\-dup is released under the GPL.
+
+.SH "REPORTING BUGS"
+Please send electronic mail to <dup@cs.du.edu>

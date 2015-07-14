@@ -1,0 +1,14 @@
+fanin@localhost:55555[1|fanout:0,2|DUP:1]$faninany;
+fanout@localhost:55555[1|timekeeper:0, 4|m0:0, 9|r4:0, 8|r3:0, 7|r2:0, 6|r1:0, 5|r0:0, 14|c4:0, 13|c3:0, 12|c2:0, 11|c1:0, 10|c0:0, 255|DUP:1]$fanout;
+timekeeper@localhost:55555[1|fanin:7,2|DUP:1]$vtimekeeper 15;
+m0@localhost:55555[1|fanin:8,2|DUP:1]$manufacturer m1|item22:4,item37:8,item41:7 m2|item10:10,item38:8,item45:6 m3|item18:7 m4|item98:7 m5|item23:10,item52:10 ;
+r0@localhost:55555[1|fanin:10,2|DUP:1]$retailer r1|item41:m1:54,item10:m2:87 ;
+r1@localhost:55555[1|fanin:12,2|DUP:1]$retailer r2|item37:m1:80,item52:m5:54,item41:m1:8,item18:m3:74,item45:m2:3,item22:m1:78,item38:m2:4,item98:m4:86 ;
+r2@localhost:55555[1|fanin:14,2|DUP:1]$retailer r3|item52:m5:89,item37:m1:56,item22:m1:81 ;
+r3@localhost:55555[1|fanin:16,2|DUP:1]$retailer r4|item37:m1:75,item10:m2:13,item18:m3:92,item23:m5:100 ;
+r4@localhost:55555[1|fanin:18,2|DUP:1]$retailer r5|item41:m1:78,item22:m1:98,item98:m4:78,item37:m1:54 ;
+c0@localhost:55555[1|fanin:20,2|DUP:1]$consumer c1|r4:item23:37:243,r1:item41:20:129,r2:item22:49:271,r5:item98:3:314,r4:item18:7:168,r5:item98:41:26,r2:item18:23:240 ;
+c1@localhost:55555[1|fanin:22,2|DUP:1]$consumer c2|r5:item41:11:342,r2:item52:13:42 ;
+c2@localhost:55555[1|fanin:24,2|DUP:1]$consumer c3|r4:item10:49:309,r4:item23:2:195,r2:item18:32:211,r2:item37:2:231,r2:item45:20:30,r2:item98:34:201,r2:item52:21:324,r4:item37:12:358,r2:item45:49:16,r2:item45:25:166,r4:item18:14:32,r2:item52:9:203,r2:item45:34:16,r5:item41:21:267,r2:item45:19:357,r4:item10:4:279,r2:item38:42:289,r4:item10:43:140,r2:item38:11:173,r3:item37:12:31,r2:item37:7:353,r4:item18:13:276,r2:item41:30:100,r4:item23:24:236,r2:item22:20:360 ;
+c3@localhost:55555[1|fanin:26,2|DUP:1]$consumer c4|r4:item37:35:110,r3:item37:21:51,r3:item52:44:97,r1:item10:40:23,r5:item22:42:138,r2:item18:26:330,r2:item38:6:24,r2:item38:47:9,r3:item37:3:3,r2:item38:46:110,r2:item38:35:121,r2:item52:27:333,r2:item45:3:21,r4:item37:36:224,r5:item22:11:194,r2:item37:45:241,r3:item22:47:263,r5:item22:20:184,r2:item45:45:252,r2:item38:3:161,r3:item52:11:175,r4:item23:20:95,r2:item18:46:194,r4:item18:14:80,r3:item52:37:95,r2:item18:47:363,r4:item10:14:195,r2:item45:38:42,r2:item18:27:239 ;
+c4@localhost:55555[1|fanin:28,2|DUP:1]$consumer c5|r2:item38:38:102,r2:item18:7:200,r1:item41:49:329,r3:item22:8:262,r2:item45:49:313,r3:item52:38:41,r2:item52:29:217,r3:item37:4:308,r2:item41:23:90,r4:item23:39:170,r4:item23:36:239,r2:item38:35:173,r1:item10:37:20,r2:item41:13:188,r3:item52:42:152,r2:item37:32:278,r5:item98:34:162,r4:item23:27:335,r2:item22:20:306,r2:item45:35:61,r2:item98:33:113,r5:item98:34:303,r5:item22:35:94,r2:item18:17:204,r1:item10:2:278,r3:item22:48:28,r4:item23:25:268,r3:item22:50:180,r2:item18:21:117,r2:item38:6:139,r2:item41:42:314,r4:item37:36:363,r2:item38:29:47,r3:item37:34:115,r5:item22:49:330,r5:item37:9:257,r2:item38:46:332,r2:item18:36:328,r2:item22:31:363,r2:item38:9:206 ;

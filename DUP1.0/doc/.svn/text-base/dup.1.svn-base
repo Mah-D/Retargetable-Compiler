@@ -1,0 +1,38 @@
+.TH DUP "1" "Jan 22 2009" "dup"
+
+.SH "NAME"
+dup \- the dup interpreter
+
+.SH "SYNOPSIS"
+.B dup [OPTIONS]
+
+.SH "DESCRIPTION"
+.PP
+dup is the interpreter for DUP code.  dup will read in a
+script describing the processes that should be started
+and how they should be connected with pipelines.  By default,
+dup will read the DUP code from stdin and report errors to
+stdout.  If the code is acceptable, dup will try to connect
+to the dupds specified in the DUP code to schedule the execution
+of the application.
+.TP
+\-\-code=FILENAME
+This option can be used to specify a filename.  With this 
+option, dup will use the DUP code in FILENAME; without it,
+dup will expect to read the DUP code from stdin.
+.TP
+\-\-help
+This option will print a short helptext describing the options
+supported by dup.
+.TP
+\-\-version
+Display the version number.
+
+.SH "SEE ALSO"
+\fBdupd\fP(1)
+
+.SH "LEGAL NOTICE"
+dup is released under the GPL.
+
+.SH "REPORTING BUGS"
+Please send electronic mail to <dup@cs.du.edu>

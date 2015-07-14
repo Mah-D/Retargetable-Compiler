@@ -1,0 +1,28 @@
+.TH "DEVRANDOM_GEN_RANDOM" "1" "Dec 1 2008" "dup Team" "Crypto"
+.SH "NAME"
+devrandom_gen_random \- generate arbitrary length random numbers using /dev/random
+
+.SH "SYNOPSIS"
+.B devrandom_gen_random
+[\fIBYTES NUMBERS\fR]
+
+.SH "DESCRIPTION"
+.PP 
+devrandom_gen_random generates random numbers using the linux 
+random number source /dev/random. Random numbers BYTES bytes 
+will be used to create the random number, although the size of
+the actual returned number cannot be guaranteed because no bit\-
+flipping is implemented to ensure proper length.
+.PP 
+If NUMBERS is specified, exactly NUMBERS numbers will be generated, 
+separated by newline characters.  If NUMBERS is not specified, 
+random numbers will be output forever until the program is killed.
+.TP 
+.SH "SEE ALSO"
+\fBgmp_gen_random\fP(1)
+
+.SH "LEGAL NOTICE"
+devrandom_gen_random is released under the GPL.
+
+.SH "REPORTING BUGS"
+Please send electronic mail to <dup@cs.du.edu>

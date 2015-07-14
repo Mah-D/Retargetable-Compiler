@@ -1,0 +1,5 @@
+nodegen@localhost:30001[1|nodesplit:0]$cat RowRowRowYourBoat.mp3;
+nodesplit@localhost:30001[5|nodeplay1:0,1|nodedelay:0]$fanout 50;
+nodedelay@localhost:30001[1|nodeplay2:0]$delay 3000;
+nodeplay1@localhost:30001[4>/dev/null]$mpg123 -;
+nodeplay2@localhost:30001[4>/dev/null]$mpg123 -;

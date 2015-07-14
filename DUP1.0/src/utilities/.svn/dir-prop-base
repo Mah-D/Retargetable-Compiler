@@ -1,0 +1,22 @@
+K 10
+svn:ignore
+V 221
+execvother
+dupparse.h
+dupparse.cc
+duplex.c
+dupap
+dup_dot_printer
+dprof
+millerrabin.gcno
+millerrabin
+Makefile.in
+Makefile
+gmp_gen_random.gcno
+gmp_gen_random
+devrandom_gen_random.gcno
+devrandom_gen_random
+common.gcno
+.deps
+
+END

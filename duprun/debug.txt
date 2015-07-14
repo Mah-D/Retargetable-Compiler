@@ -1,0 +1,5 @@
+directory /home/duprun/lib/:/home/duprun/relay/lib/
+run  "/home/dupper/duprun/in.txt"
+bt
+
+

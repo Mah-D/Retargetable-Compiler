@@ -1,0 +1,28 @@
+threads = 2, iterations = 50000, 32-bit digits of random input: about 500
+
+Generating random inputs, please wait...
+
+sequential +            = 3053 ns
+parallel   + (simple)   = 7157 ns
+parallel   + (fixpoint) = 5482 ns
+parallel   + (mux)      = 8543 ns
+sequential -            = 2500 ns
+parallel   - (simple)   = 7459 ns
+parallel   - (fixpoint) = 10582 ns
+parallel   - (mux)      = 10838 ns
+sequential *            = 247204 ns
+parallel   *            = 139837 ns
+sequential /            = 911181 ns
+parallel   /            = 9096041 ns
+
+sequential ==           = 560 ns
+parallel   ==           = 2511 ns
+sequential !=           = 32 ns
+parallel   !=           = 24 ns
+
+sequential <<           = 1790 ns
+parallel   <<           = 4262 ns
+sequential >>           = 792 ns
+parallel   >>           = 3282 ns
+sequential ~            = 880 ns
+parallel   ~            = 3083 ns

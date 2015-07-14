@@ -1,0 +1,371 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/faculty/!svn/ver/8851/dup/src/applications/fides
+END
+M2000.R2000.C10000.01.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/faculty/!svn/ver/5201/dup/src/applications/fides/M2000.R2000.C10000.01.xml
+END
+manufacturer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/faculty/!svn/ver/7218/dup/src/applications/fides/manufacturer.cc
+END
+M5.R5.C5.01.dup
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/faculty/!svn/ver/5826/dup/src/applications/fides/M5.R5.C5.01.dup
+END
+test_statekeeper.sh
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/faculty/!svn/ver/2865/dup/src/applications/fides/test_statekeeper.sh
+END
+commsim2dup2.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/faculty/!svn/ver/5257/dup/src/applications/fides/commsim2dup2.xsl
+END
+commsim2ssim.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/faculty/!svn/ver/5224/dup/src/applications/fides/commsim2ssim.xsl
+END
+test_commsim.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/faculty/!svn/ver/5201/dup/src/applications/fides/test_commsim.cc
+END
+commsim.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/faculty/!svn/ver/6217/dup/src/applications/fides/commsim.cc
+END
+commsim2dup4.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/faculty/!svn/ver/5332/dup/src/applications/fides/commsim2dup4.xsl
+END
+test_router.sh
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/faculty/!svn/ver/7083/dup/src/applications/fides/test_router.sh
+END
+M5.R5.C5.01.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/faculty/!svn/ver/2897/dup/src/applications/fides/M5.R5.C5.01.xml
+END
+canbus.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/faculty/!svn/ver/5201/dup/src/applications/fides/canbus.cc
+END
+cansim.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/faculty/!svn/ver/5201/dup/src/applications/fides/cansim.h
+END
+manufacturer_file.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/faculty/!svn/ver/5332/dup/src/applications/fides/manufacturer_file.xsl
+END
+test_Process.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/faculty/!svn/ver/6130/dup/src/applications/fides/test_Process.cc
+END
+M50.R50.C50.01.dup
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/faculty/!svn/ver/6152/dup/src/applications/fides/M50.R50.C50.01.dup
+END
+test_consumer.sh
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/faculty/!svn/ver/7272/dup/src/applications/fides/test_consumer.sh
+END
+commsim2dup.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/faculty/!svn/ver/5199/dup/src/applications/fides/commsim2dup.xsl
+END
+router.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/faculty/!svn/ver/8719/dup/src/applications/fides/router.cc
+END
+test_Event.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/faculty/!svn/ver/5201/dup/src/applications/fides/test_Event.cc
+END
+vtimekeeper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/faculty/!svn/ver/7272/dup/src/applications/fides/vtimekeeper.cc
+END
+M100.R100.C100.01.dup
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/faculty/!svn/ver/5238/dup/src/applications/fides/M100.R100.C100.01.dup
+END
+M50.R50.C50.01.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/faculty/!svn/ver/2900/dup/src/applications/fides/M50.R50.C50.01.xml
+END
+monolithic_commsim.cc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/faculty/!svn/ver/6130/dup/src/applications/fides/monolithic_commsim.cc
+END
+M100.R100.C100.01.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/faculty/!svn/ver/5257/dup/src/applications/fides/M100.R100.C100.01.xml
+END
+hello_commsim.dup
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/faculty/!svn/ver/5238/dup/src/applications/fides/hello_commsim.dup
+END
+consumer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/faculty/!svn/ver/7218/dup/src/applications/fides/consumer.cc
+END
+test_retailer.sh
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/faculty/!svn/ver/7272/dup/src/applications/fides/test_retailer.sh
+END
+fides.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/faculty/!svn/ver/7272/dup/src/applications/fides/fides.h
+END
+generate_commsim_xml.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/faculty/!svn/ver/8817/dup/src/applications/fides/generate_commsim_xml.py
+END
+hello_commsim.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/faculty/!svn/ver/2892/dup/src/applications/fides/hello_commsim.xml
+END
+test_vtimekeeper.sh
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/faculty/!svn/ver/7272/dup/src/applications/fides/test_vtimekeeper.sh
+END
+M1000.R1000.C5000.01.dup
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/faculty/!svn/ver/5240/dup/src/applications/fides/M1000.R1000.C5000.01.dup
+END
+M100.R500.C1000.01.dup
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/faculty/!svn/ver/5238/dup/src/applications/fides/M100.R500.C1000.01.dup
+END
+commsim.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/faculty/!svn/ver/6130/dup/src/applications/fides/commsim.h
+END
+M100.R500.C1000.02.dup
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/faculty/!svn/ver/5238/dup/src/applications/fides/M100.R500.C1000.02.dup
+END
+retailer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/faculty/!svn/ver/7218/dup/src/applications/fides/retailer.cc
+END
+M100.R500.C1000.03.dup
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/faculty/!svn/ver/5238/dup/src/applications/fides/M100.R500.C1000.03.dup
+END
+M100.R500.C1000.04.dup
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/faculty/!svn/ver/5238/dup/src/applications/fides/M100.R500.C1000.04.dup
+END
+cansim.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/faculty/!svn/ver/7218/dup/src/applications/fides/cansim.cc
+END
+M1000.R5000.C5000.01.dup
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/faculty/!svn/ver/5240/dup/src/applications/fides/M1000.R5000.C5000.01.dup
+END
+M100.R500.C1000.05.dup
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/faculty/!svn/ver/5238/dup/src/applications/fides/M100.R500.C1000.05.dup
+END
+consumer_file.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/faculty/!svn/ver/5332/dup/src/applications/fides/consumer_file.xsl
+END
+statekeeper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/faculty/!svn/ver/6130/dup/src/applications/fides/statekeeper.cc
+END
+M1000.R1000.C5000.01.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/faculty/!svn/ver/5201/dup/src/applications/fides/M1000.R1000.C5000.01.xml
+END
+M100.R500.C1000.01.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/faculty/!svn/ver/2862/dup/src/applications/fides/M100.R500.C1000.01.xml
+END
+M100.R500.C1000.02.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/faculty/!svn/ver/2862/dup/src/applications/fides/M100.R500.C1000.02.xml
+END
+test_EventRecord.cc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/faculty/!svn/ver/5201/dup/src/applications/fides/test_EventRecord.cc
+END
+M100.R500.C1000.03.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/faculty/!svn/ver/2862/dup/src/applications/fides/M100.R500.C1000.03.xml
+END
+test_manufacturer.sh
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/faculty/!svn/ver/7272/dup/src/applications/fides/test_manufacturer.sh
+END
+M100.R500.C1000.04.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/faculty/!svn/ver/2862/dup/src/applications/fides/M100.R500.C1000.04.xml
+END
+M1000.R5000.C5000.01.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/faculty/!svn/ver/5201/dup/src/applications/fides/M1000.R5000.C5000.01.xml
+END
+M1.R1.C1.01.dup
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/faculty/!svn/ver/5240/dup/src/applications/fides/M1.R1.C1.01.dup
+END
+M100.R500.C1000.05.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/faculty/!svn/ver/2862/dup/src/applications/fides/M100.R500.C1000.05.xml
+END
+M1000.R1000.C10000.01.dup
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/faculty/!svn/ver/5238/dup/src/applications/fides/M1000.R1000.C10000.01.dup
+END
+M2000.R2000.C10000.01.dup
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/faculty/!svn/ver/5240/dup/src/applications/fides/M2000.R2000.C10000.01.dup
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/faculty/!svn/ver/8851/dup/src/applications/fides/Makefile.am
+END
+retailer_file.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/faculty/!svn/ver/5332/dup/src/applications/fides/retailer_file.xsl
+END
+M1000.R1000.C10000.01.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/faculty/!svn/ver/5201/dup/src/applications/fides/M1000.R1000.C10000.01.xml
+END
+M1.R1.C1.01.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/faculty/!svn/ver/5201/dup/src/applications/fides/M1.R1.C1.01.xml
+END
+fides.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/faculty/!svn/ver/8713/dup/src/applications/fides/fides.cc
+END

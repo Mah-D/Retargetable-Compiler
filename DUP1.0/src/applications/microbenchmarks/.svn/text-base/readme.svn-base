@@ -1,0 +1,18 @@
+7-12-2009
+code cleanup
+Both unidirectional and birectional measurement are implemented.
+
+17-11-2009
+Code is running on my local computer, however, when moved to b.plug,
+Unix Domain Datagram socket portion has problem??? Root-cause to be found.
+
+11-11-2009
+Pending task: rephrase code for tcp loopback, unix domain socket stream 
+
+2-11-2009 @Eric
+- To do performance measurement, please check Makefile, make sure it will compile with "-O3" flag, instead of "-g"
+  which was used during program development. 
+
+8-Oct-2009 @Eric
+
+- Command to flush cache? hot/cold startup

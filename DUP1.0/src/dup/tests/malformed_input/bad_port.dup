@@ -1,0 +1,2 @@
+badnode@localhost:port[1</some/file]$ command ;
+goodNode@localhost:8889[1|bad node:0]$ command ;

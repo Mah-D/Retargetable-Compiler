@@ -1,0 +1,14 @@
+<commsim>
+<manufacturer name='m1'>
+<item name='item1' delay='8'/>
+</manufacturer>
+<retailer name='r1'>
+<item name='item1' manufacturer='m1' unitSize='64'/>
+</retailer>
+<consumer name='c1'>
+<order item='item1' retailer='r1' quantity='12' delay='20'/>
+<order item='item1' retailer='r1' quantity='27' delay='294'/>
+<order item='item1' retailer='r1' quantity='46' delay='44'/>
+<order item='item1' retailer='r1' quantity='21' delay='301'/>
+</consumer>
+</commsim>

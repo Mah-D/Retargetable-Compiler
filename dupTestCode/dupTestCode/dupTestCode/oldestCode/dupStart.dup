@@ -1,0 +1,13 @@
+#ssuming 4 places: juhu=0, hama=1, caspian=2 and redondo=3
+# in.txt can be used to pass command line arguments
+# we ignore all fds <=3
+bootloader@Juhu.cs.ucla.edu:5000[0</Users/orenfreiberg/Desktop/dup/in.txt,12|dispatcher0:12,13|dispatcher1:13,14|dispatcher2:14,15|dispatcher3:15]$fanout;
+dispatcher0@Juhu.cs.ucla.edu:5001[17|Terminator:17,4|fanin0:12,5|fanin1:12,6|fanin2:12,7|fanin3:12]$ echo Hello World;
+dispatcher1@Hama.cs.ucla.edu:5002[4|fanin0:13,5|fanin1:13,6|fanin2:13,7|fanin3:13]$ echo Hello World;
+dispatcher2@Caspian.cs.ucla.edu:5003[4|fanin0:14,5|fanin1:14,6|fanin2:14,7|fanin3:14]$ echo Hello World;
+dispatcher3@redondo.cs.ucla.edu:5004[4|fanin0:15,5|fanin1:15,6|fanin2:15,7|fanin3:15]$ echo Hello World;
+fanin0@Juhu.cs.ucla.edu:5005[0|dispatcher0:8]$faninany S;
+fanin1@Hama.cs.ucla.edu:5006[0|dispatcher1:9]$faninany S;
+fanin2@Caspian.cs.ucla.edu:5007[0|dispatcher2:10]$faninany S;
+fanin3@redondo.cs.ucla.edu:5008[0|dispatcher3:11]$faninany S;
+Terminator@Juhu.cs.ucla.edu:5009[1|DUP:1]$echo complete;

@@ -1,0 +1,35 @@
+
+
+On the performance evaluation side, I wonder what we should try to
+compare sending data through a pipeline to.  Obviously we can easily
+make a chart showing the effect of different block sizes, but what
+other things to compare to is less clear.  Candidates I can think of
+include (in order of fastest to slowest using my best guess):
+
+0) Boulder's FastForward work (as a reference for extreme performance
+    between cores on a multi-core)
+1) (p)thread locking and context switch
+2) in-process, (same-thread) plain memcpy
+3) Process-to-process pipe
+4) Inter-process shared memory with IPC semaphore
+5) CPU to GPU data transfer
+6) TCP transfer via loopback
+7) TCP transfer in LAN
+
+Am I missing anything?  
+
+All (or some) of these should then be measured for different amounts
+of memory being transferred in one exchange (naturally, the time for 0
+and 1 would not change based on amount of data exchanged).  Hopefully
+the numbers do not look too ridiculous (except for 7, that can
+obviously be ridiculously high by comparison).  For the paper, we
+could then plot these lines (or a subset, not sure how nice 7 lines
+would look) using message size on the x-axis and time-overhead on a
+(logarithmic?) y-axis.  Does that sound to you like a reasonable way
+to give developers an idea for when DUP would be useful for
+communication between parallel activities?
+
+
+
+
+

@@ -1,0 +1,26 @@
+.TH NODELAY "1" "Jan 8 2010" "nodelay"
+
+.SH "NAME"
+nodelay \- disables Nagle's algorithm for one socket and runs another process
+
+.SH "SYNOPSIS"
+.B nodelay N COMMAND [\fIARGS\fR]*
+
+.SH "DESCRIPTION"
+.PP
+nodelay first disables Nagle's algorithm on file descriptor N
+and then runs the given COMMAND (with the given ARGS).
+.PP
+If the first argument is not a number or no command is given, nodelay
+will print an error message and return an error code.  If the given
+number is not a valid socket or if disabling Nagle's algorithm fails,
+nodelay will print an error message and still try to execute COMMAND.
+If the command is not executable (or not in the path), nodelay will
+print an error message and return an error code.
+be installed.
+
+.SH "LEGAL NOTICE"
+nodelay is in the public domain.
+
+.SH "REPORTING BUGS"
+Please send electronic mail to <dup@cs.du.edu>

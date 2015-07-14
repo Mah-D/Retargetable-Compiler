@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/faculty/!svn/ver/5727/dup/src/dup/tests/malformed_input
+END
+bad_port.dup
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/faculty/!svn/ver/1940/dup/src/dup/tests/malformed_input/bad_port.dup
+END
+no_command.dup
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/faculty/!svn/ver/1940/dup/src/dup/tests/malformed_input/no_command.dup
+END
+bad_node.dup
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/faculty/!svn/ver/1940/dup/src/dup/tests/malformed_input/bad_node.dup
+END
+invalid_operator.dup
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/faculty/!svn/ver/5727/dup/src/dup/tests/malformed_input/invalid_operator.dup
+END
+misused_operator.dup
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/faculty/!svn/ver/1940/dup/src/dup/tests/malformed_input/misused_operator.dup
+END
+no_file_fd.dup
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/faculty/!svn/ver/1940/dup/src/dup/tests/malformed_input/no_file_fd.dup
+END
+bad_inner_node.dup
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/faculty/!svn/ver/1940/dup/src/dup/tests/malformed_input/bad_inner_node.dup
+END
+no_operator.dup
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/faculty/!svn/ver/1940/dup/src/dup/tests/malformed_input/no_operator.dup
+END
+two_operators.dup
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/faculty/!svn/ver/1940/dup/src/dup/tests/malformed_input/two_operators.dup
+END

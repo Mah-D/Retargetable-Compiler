@@ -1,0 +1,69 @@
+/*
+ This file is part of DUP.
+ (C) 2008, 2010 The DUP team
+ 
+ DUP is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published
+ by the Free Software Foundation; either version 2, or (at your
+ option) any later version.
+ 
+ DUP is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+ 
+ You should have received a copy of the GNU General Public License
+ along with DUP; see the file COPYING.  If not, write to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+ Boston, MA 02111-1307, USA.
+ */
+
+
+/**
+ * @file filters/append.c
+ * @brief filter that forwards all data from stdin to stdout
+ *        and then executes the given filter using stdin and
+ *        stdout for the filter
+ * @author Chris GauthierDickey
+ * @author Christian Grothoff
+ */
+#include "dup_filter_lib.h"
+
+#define BUF_SIZE (32 * 1024 * 4)
+
+int
+main (int argc, char *argv[])
+{
+  char buf[BUF_SIZE];
+  size_t wcount;
+  ssize_t rcount;
+  ssize_t wret;
+
+  DUP_ignore_sigpipe ();
+  /* first, copy everthing from stdin to stdout */
+  if ( (DUP_get_fd (0)) &&
+       (DUP_get_fd (1)) )
+    {
+      /* read until we can't anymore, for which DUP_read returns 0 */
+      while ((rcount = DUP_read (0, buf, BUF_SIZE)) > 0)
+	{
+	  wcount = 0;
+	  while (rcount > wcount)
+	    {
+	      wret = DUP_write (1, &buf[wcount], rcount - wcount);
+	      if (wret <= 0)
+		break;
+	      wcount += wret;
+	    }
+	}        
+    }
+  if (argc > 1)
+    {
+      execvp (argv[1], &argv[1]);
+      fprintf (stderr, "append: Error executing `%s': %s\n", 
+	       argv[1],
+               strerror (errno));
+      return 1;
+    }
+  return 0;
+}

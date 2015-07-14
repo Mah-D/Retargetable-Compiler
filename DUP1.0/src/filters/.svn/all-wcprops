@@ -1,0 +1,365 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/faculty/!svn/ver/9273/dup/src/filters
+END
+test_eof.sh
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/faculty/!svn/ver/1659/dup/src/filters/test_eof.sh
+END
+perf_grep.sh
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/faculty/!svn/ver/1664/dup/src/filters/perf_grep.sh
+END
+test_duplicate.sh
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/faculty/!svn/ver/1606/dup/src/filters/test_duplicate.sh
+END
+metrics.txt
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/faculty/!svn/ver/1654/dup/src/filters/metrics.txt
+END
+deal.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/faculty/!svn/ver/5793/dup/src/filters/deal.c
+END
+perf_head.sh
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/faculty/!svn/ver/1663/dup/src/filters/perf_head.sh
+END
+perf_holmerge.sh
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/faculty/!svn/ver/1657/dup/src/filters/perf_holmerge.sh
+END
+perf_deal.sh
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/faculty/!svn/ver/1881/dup/src/filters/perf_deal.sh
+END
+gather.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/faculty/!svn/ver/5794/dup/src/filters/gather.c
+END
+duplicate.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/faculty/!svn/ver/5764/dup/src/filters/duplicate.c
+END
+cbuffer.c
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/faculty/!svn/ver/2148/dup/src/filters/cbuffer.c
+END
+perf_mgrep.sh
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/faculty/!svn/ver/1698/dup/src/filters/perf_mgrep.sh
+END
+gate.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/faculty/!svn/ver/1653/dup/src/filters/gate.c
+END
+test_deal_input.txt
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/faculty/!svn/ver/5815/dup/src/filters/test_deal_input.txt
+END
+exec_no_stdin.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/faculty/!svn/ver/1612/dup/src/filters/exec_no_stdin.c
+END
+cbuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/faculty/!svn/ver/2148/dup/src/filters/cbuffer.h
+END
+test_fanout.sh
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/faculty/!svn/ver/1594/dup/src/filters/test_fanout.sh
+END
+perf_buffer_dup.sh
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/faculty/!svn/ver/5793/dup/src/filters/perf_buffer_dup.sh
+END
+test_delay.sh
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/faculty/!svn/ver/1619/dup/src/filters/test_delay.sh
+END
+copyargs.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/faculty/!svn/ver/9205/dup/src/filters/copyargs.c
+END
+count.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/faculty/!svn/ver/5764/dup/src/filters/count.c
+END
+eat
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/faculty/!svn/ver/2386/dup/src/filters/eat
+END
+test_faninany.sh
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/faculty/!svn/ver/1552/dup/src/filters/test_faninany.sh
+END
+nodelay.c
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/faculty/!svn/ver/6583/dup/src/filters/nodelay.c
+END
+perf_tail.sh
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/faculty/!svn/ver/1860/dup/src/filters/perf_tail.sh
+END
+mstime.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/faculty/!svn/ver/1661/dup/src/filters/mstime.c
+END
+delay.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/faculty/!svn/ver/8839/dup/src/filters/delay.c
+END
+buffer-dup.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/faculty/!svn/ver/5798/dup/src/filters/buffer-dup.c
+END
+perf_fanout.sh
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/faculty/!svn/ver/1657/dup/src/filters/perf_fanout.sh
+END
+test_lookup.sh
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/faculty/!svn/ver/1619/dup/src/filters/test_lookup.sh
+END
+test_gather.sh
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/faculty/!svn/ver/5794/dup/src/filters/test_gather.sh
+END
+test_mgrep.sh
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/faculty/!svn/ver/1594/dup/src/filters/test_mgrep.sh
+END
+holmerge.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/faculty/!svn/ver/5791/dup/src/filters/holmerge.c
+END
+faninany.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/faculty/!svn/ver/9273/dup/src/filters/faninany.c
+END
+cmd.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/faculty/!svn/ver/5764/dup/src/filters/cmd.c
+END
+drop.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/faculty/!svn/ver/5764/dup/src/filters/drop.c
+END
+append.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/faculty/!svn/ver/8839/dup/src/filters/append.c
+END
+perf_faninany.sh
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/faculty/!svn/ver/5791/dup/src/filters/perf_faninany.sh
+END
+test_gate.sh
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/faculty/!svn/ver/1653/dup/src/filters/test_gate.sh
+END
+complete.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/faculty/!svn/ver/9205/dup/src/filters/complete.c
+END
+lookup.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/faculty/!svn/ver/5764/dup/src/filters/lookup.c
+END
+eof.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/faculty/!svn/ver/1612/dup/src/filters/eof.c
+END
+mgrep.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/faculty/!svn/ver/5764/dup/src/filters/mgrep.c
+END
+perf_cat.sh
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/faculty/!svn/ver/1663/dup/src/filters/perf_cat.sh
+END
+perf_lookup.sh
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/faculty/!svn/ver/1882/dup/src/filters/perf_lookup.sh
+END
+jointime.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/faculty/!svn/ver/5809/dup/src/filters/jointime.c
+END
+perf_gather.sh
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/faculty/!svn/ver/1884/dup/src/filters/perf_gather.sh
+END
+router.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/faculty/!svn/ver/9205/dup/src/filters/router.c
+END
+exec_no_stdout.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/faculty/!svn/ver/1612/dup/src/filters/exec_no_stdout.c
+END
+perf_gate.sh
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/faculty/!svn/ver/1886/dup/src/filters/perf_gate.sh
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/faculty/!svn/ver/9205/dup/src/filters/Makefile.am
+END
+common.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/faculty/!svn/ver/6006/dup/src/filters/common.c
+END
+dup_filter_lib.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/faculty/!svn/ver/8716/dup/src/filters/dup_filter_lib.h
+END
+perf_gather_large.sh
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/faculty/!svn/ver/5795/dup/src/filters/perf_gather_large.sh
+END
+test_holmerge.sh
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/faculty/!svn/ver/1658/dup/src/filters/test_holmerge.sh
+END
+test_cmd.sh
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/faculty/!svn/ver/1619/dup/src/filters/test_cmd.sh
+END
+test_drop.sh
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/faculty/!svn/ver/2310/dup/src/filters/test_drop.sh
+END
+fanout.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/faculty/!svn/ver/5791/dup/src/filters/fanout.c
+END
+test_deal.sh
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/faculty/!svn/ver/8839/dup/src/filters/test_deal.sh
+END
+test_no_stdxx.sh
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/faculty/!svn/ver/1592/dup/src/filters/test_no_stdxx.sh
+END

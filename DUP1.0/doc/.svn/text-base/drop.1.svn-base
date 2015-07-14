@@ -1,0 +1,44 @@
+.TH DROP "1" "Jan 20 2009" "drop"
+
+.SH "NAME"
+drop \- drops lines or records from the start or end of stdin, sending
+dropped lines or records to stderr.
+
+.SH "SYNOPSIS"
+.B drop [\fIFIRST\fR | [\fILAST\fR | [\fIRECORDSIZE\fR]]]
+
+.SH "DESCRIPTION"
+.PP
+drop reads lines or records from file descriptor 0 (stdin) and drops
+lines or records to file descriptor 2 (stderr). Lines or records which 
+are not dropped are sent to file descriptor 1 (stdout).
+.PP
+drop is similar to head(1) or tail(1), except that it combines both
+utilities, allows you to drop from the head and the tail of a stream,
+and it outputs dropped lines and records to stderr.
+.TP
+FIRST 
+indicates how many lines or records to drop from the beginning
+of the data stream read on stdin. By default, FIRST is 1.
+.TP
+LAST 
+indicates  how many lines or records to drop from the end
+of the data stream read on stdin. By default, LAST is 0.
+.TP
+RECORDSIZE 
+indicates the size of the records to be processed. A
+record size of 0 indicates that records are distinguished by '\n'.
+By default, RECORDSIZE is 0.
+.PP
+Note that if only one argument is given, drop assumes it is the
+FIRST argument. If two arguments are given, drop assumes they are
+the FIRST and LAST arguments.
+
+.SH "SEE ALSO"
+\fBdup\fP(1), \fBdupd\fP(1)
+
+.SH "LEGAL NOTICE"
+drop is released under the GPL.
+
+.SH "REPORTING BUGS"
+Please send electronic mail to <dup@cs.du.edu>

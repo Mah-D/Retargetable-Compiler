@@ -1,0 +1,26 @@
+.TH DUPLICATE "1" "Dec 1 2008" "duplicate"
+
+.SH "NAME"
+duplicate \- copy stdin many times to stdout
+
+.SH "SYNOPSIS"
+.B duplicate [\fIFACTOR\fR [\fIRECORDSIZE\fR]]
+
+.SH "DESCRIPTION"
+.PP
+duplicate reads from stdin and writes the input FACTOR times to stdout.  If no FACTOR is specified, a FACTOR of two is assumed.  If no RECORDSIZE is specified, duplicate operates on lines of input.  Note that you can only specify a RECORDSIZE if you also explicitly specify a FACTOR.
+.PP
+A special value "*" can be used for FACTOR to mean infinite duplication.  In this case, only the first line or record will ever be read.  Note that you may need to escape the "*" to prevent the shell from expanding it.
+.PP
+duplicate will terminate if there are no more records to be read from stdin (and all duplicates have been written) or if stdout is closed (SIGPIPE).
+.PP
+The "-1" argument of CMS DUPLICATE is not supported (redirect to /dev/null instead).
+
+.SH "SEE ALSO"
+\fBfanout\fP(1), \fBdup\fP(1), \fBdupd\fP(1)
+
+.SH "LEGAL NOTICE"
+duplicate is released under the GPL.
+
+.SH "REPORTING BUGS"
+Please send electronic mail to <dup@cs.du.edu>

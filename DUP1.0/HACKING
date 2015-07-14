@@ -1,0 +1,70 @@
+NEW naming conventions for DUP:
+
+1) All exported symbols (function names, macros and structures) should begin
+   with the prefix "DUP_".  No global variables should be exported.  
+2) All function names should use lower-caps names with underscores.  Common
+   abbreviations like "RSA" should be in all-caps in function names.  Example:
+   "DUP_parse_configuration".
+3) All macros and constants (including values in enums) should be in all-caps,
+   exceptions are allowed if the MACRO is really used like a normal function
+   in the rest of the application.  
+4) All structs should not have underscores (other than the underscore in
+   the prefix "DUP_") and instead use capitalization of the first letter
+   of every word, for example "DUP_FileDescriptor" (this should be the only
+   minor departure from GNU's general conventions).
+5) All local symbols (anything declared "static") should follow the same
+   conventions (except for the "DUP_" prefix).
+6) Global symbols that are exported but should not usually be used directly
+   (i.e., because a convenience macro is provided), should end with an underscore.
+
+
+
+HOW TO CHECK SYMBOLS:
+=====================
+
+Before every release, we should run
+
+$ nm lib/libdup*.so | grep " T " | grep -v DUP_ | grep -v " T _"
+
+on the installed DUP libraries.  The output should be empty.
+
+
+OTHER CONVENTIONS/RULES:
+========================
+
+1) Each source file should start with a comment giving the short form
+   of its license (usually GPL)
+2) Each source file should have a comment listing all authors that
+   have written major portions of the code
+3) Each author (including minor contributors) should be listed in a
+   file AUTHORS on the top level
+4) Each installed binary (dup, dupd, all filters) must have a man-page
+   in the doc/ directory
+5) All binaries must be build using the autotools build process
+6) Testcases should be integrated with the "make check" target;
+   code coverage should be checked using the coverage.sh script
+7) Functions shared by multiple filters should be moved into a common
+   library instead of being replicated ("libdupfilterio"?)
+8) Document each function, each argument, each return value;  
+   (run doxygen to check for undocumented functions and arguments)
+   write code that does not require any other documentation ;-)
+9) Do not use threads in dup, dupd or non-CUDA filters.
+
+
+LaTeX hacking:
+==============
+
+1) Do not bother with formatting (until close to submission)
+2) Do not worry about page limits (until close to submission)
+3) If you make major changes to somebody else's text, consider
+   commenting out the original text (unless it was simply 
+   wrong)
+4) Do feel free to edit text or code written by anybody
+
+
+General:
+========
+
+Commit early, commit often.
+
+ 

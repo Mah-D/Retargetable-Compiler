@@ -1,0 +1,58 @@
+                         The DUP System
+
+
+What is the DUP System?
+=======================
+
+The DUP System is a language system for parallel and distributed
+stream processing.  A key difference to most other stream processing
+languages is that the DUP System is largely language-agnostic: the
+actual compuations can be implemented in almost any programming
+language (including a combination of many languages).  DUP is only
+responsible for organizing the parallel and distributed execution.
+
+As a language system DUP includes primarily an interpreter (the "dup"
+command), a run-time system (the "dupd" command) and a run-time
+library (many small command-line tools that can be used from within
+DUP applications or theoretically also stand-alone).
+
+
+Dependencies:
+=============
+
+* POSIX-compatible operating system (BSD, Linux, Solaris OS X, etc.)
+* C++ compiler
+* (Open)SSH (for distributed execution only)
+
+
+How to install?
+===============
+
+Simple "configure; make; make install" process.  Note that the DUP
+system must be installed on all participating machines.
+
+
+Usage
+=====
+
+First, create an SSH public-private key pair for authentication and
+run an ssh-agent that allows password-less (!) login to all
+participating systems.  If the DUP application only runs on the local
+machine, this is not required.
+
+Then, create a "Hello world" DUP application:
+
+$ echo 'hw@localhost[1|DUP:1] $ echo Hello World;' > hello.dup
+$ dup -c hello.dup
+
+
+For more details on the DUP language please read our NPC 2010 research
+paper.
+
+
+
+Stay tuned
+==========
+
+* http://dupsystem.org/
+

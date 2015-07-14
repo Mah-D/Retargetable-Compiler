@@ -1,0 +1,3 @@
+nodegen@localhost:30001[0<RowRowRowYourBoat.mp3, 1|nodeplay1:0]$cat -;
+nodeplay1@localhost:30001[2|DUP:1, 1|DUP:1]$mpg123 -;
+#nodeplay1@localhost:30001[1>/tmp/testrow.mp3]$cat -;

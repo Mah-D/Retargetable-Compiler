@@ -1,0 +1,41 @@
+.TH CMD "1" "Dec 1 2008" "cmd"
+
+.SH "NAME"
+cmd \- execute commands read from stdin
+
+.SH "SYNOPSIS"
+.B cmd
+[\fICOMMAND (ARGS)*]\fR
+
+.SH "DESCRIPTION"
+.PP
+cmd first executes the specified command on the command line (if any) and
+then starts reading commands from stdin.  Each command is executed and
+the output is written to stdout.  Error messages from the command are
+passed to stderr.  Commands are executed regardless of the streams
+connected to cmd.
+.PP
+If FD 3 is connected, cmd will write the return code of each program to
+FD 3.  Each line contains three integers.   The first is the return code,
+the second the signal (if the command was killed by a signal; otherwise 0)
+and the last a flag set to 1 to indicate thate the program was aborted
+or core dumped (otherwise the flags is 0).
+.PP
+If cmd is started with more than the first four file descriptors, commands
+started through cmd can write to those file descriptors.
+.PP
+Commands are executed sequentially.  cmd will wait for each child process
+to terminate before starting the next one.  If cmd fails to run a particular
+command, an error message explaining the cause will be printed to stderr
+and the process will terminate with status code 1.
+.PP
+cmd is inspired by the CMS CP stage; however the name cp was already taken...
+
+.SH "SEE ALSO"
+\fBdup\fP(1), \fBdupd\fP(1)
+
+.SH "LEGAL NOTICE"
+cmd is released under the GPL.
+
+.SH "REPORTING BUGS"
+Please send electronic mail to <dup@cs.du.edu>

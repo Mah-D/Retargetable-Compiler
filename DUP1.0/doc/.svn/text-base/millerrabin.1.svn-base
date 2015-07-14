@@ -1,0 +1,28 @@
+.TH "MILLERRABIN" "1" "Dec 1 2008" "dup team" ""
+.SH "NAME"
+millerrabin \- read numbers from stdin, print to stdout if probably prime
+
+.SH "SYNOPSIS"
+.B millerrabin
+[\fINUMTESTS BUFSIZE\fR]
+
+.SH "DESCRIPTION"
+.PP 
+millerrabin reads numbers from stdin one at a time, does NUMTESTS (default 25) 
+Miller Rabin/Knuth primality tests, and prints the number, 0 if prime and the 
+number, 1 if not prime to stdout if it is probably prime, meaning it passed 
+each test. The probability that any reported number is prime is 
+1 \- ( 1 / 4^NUMTESTS )
+.PP 
+millerrabin terminates when EOF is read on stdin
+.PP 
+This filter is intended to be used to easily test any random number for primality
+
+.SH "SEE ALSO"
+\fBgmp_gen_random\fP(1)
+
+.SH "LEGAL NOTICE"
+millerrabin is released under the GPL.
+
+.SH "REPORTING BUGS"
+Please send electronic mail to <dup@cs.du.edu>

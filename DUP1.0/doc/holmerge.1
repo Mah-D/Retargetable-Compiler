@@ -1,0 +1,22 @@
+.TH HOLMERGE "1" "Nov 21 2008" "holmerge"
+
+.SH "NAME"
+holmerge \- copy head\-of\-line from any number of input streams to stdout
+
+.SH "SYNOPSIS"
+.B holmerge
+
+.SH "DESCRIPTION"
+.PP
+holmerge reads from stdin and other open input streams and writes data from the stream that has sent most data so far to stdout.  Data that is not at the head of the line is discarded.  holmerge terminates if either all input streams give EOF or if the output stream is closed (SIGPIPE).
+.TP
+Note that due to buffering by the operating system, holmerge will most likely only work as expected if all input streams produce the same data stream.
+
+.SH "SEE ALSO"
+\fBgather\fP(1), \fBfanout\fP(1), \fBfaninany\fP(1), \fBdup\fP(1), \fBdupd\fP(1)
+
+.SH "LEGAL NOTICE"
+holmerge is released under the GPL.
+
+.SH "REPORTING BUGS"
+Please send electronic mail to <dup@cs.du.edu>

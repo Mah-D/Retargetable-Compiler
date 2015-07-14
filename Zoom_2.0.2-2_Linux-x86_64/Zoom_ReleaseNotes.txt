@@ -1,0 +1,686 @@
+========================================================================
+What's New!
+========================================================================
+Zoom 2.0
+ * Added thread time profiling
+   - find wait time due to I/O, lock contention
+   - full backtraces without frame pointers
+ * Added adaptive sampling - automatic compression of long profile data
+ * Added tree and leaf profile visualizations
+ * Improved metrics for understanding process and thread utilization
+ * Enhanced trace view for easier browsing of trace data
+ * Improved support for debug info files
+ * Changed to load profiling drivers on Zoom start rather than at boot
+ * Improved detection of profiling problems (buffer overflow, etc.)
+ * Added ability to configure profile buffer sizes
+ * Reduced memory usage
+ * Sped up sample processing
+ * Fixed cleanup of temporary files
+ * Improved user interface
+
+Zoom 2.0.2 - April 14, 2011
+ * Increased priority of sample buffer processing threads
+ * Updated RRZoomScript library documentation and example
+ * Fixed gathering of symbols when controlling with ZoomScript API
+ * Fixed rrnotify to build on SLES 10.2 (2.6.16 kernel)
+ * Fixed loading of rrprofile/rrnotify on SLES 11
+ * Fixed installation of debuginfo on OpenSUSE
+ * Fixed --verbose 0 to silence all warnings/errors
+
+========================================================================
+Table of Contents
+========================================================================
+1. Requirements
+   A. Hardware
+   B. Software
+   C. C/C++ Runtime
+   D. Kernel Headers
+   E. Debug Information
+2. Install
+   A. GUI
+   B. Command-Line
+   C. Manual Override
+   D. BusyBox
+   E. License File Path
+   F. Limiting Memory Usage
+3. Usage
+4. Uninstall
+   A. GUI
+   B. Command-Line
+   C. Manual Override
+5. Maintenance
+   A. Kernel Updates
+   B. Zoom Kernel Modules
+6. Limitations
+   A. Security
+   B. Virtualization
+   C. Frame Pointers
+   D. Zoom i386 (32-bit) on Linux x86-64 (64-bit)
+   E. libvirt Virtualization Toolkit
+   F. Zoom on Angstrom 
+   G. Crash with openSUSE 10.3
+   H. GLib Warnings with Ubuntu 9.10, Fedora 12 and Debian Squeeze
+7. License
+8. Support
+9. History
+
+
+========================================================================
+1. Requirements
+========================================================================
+A. Hardware
+
+   The RotateRight profiling kernel modules work with:
+   - Intel Atom (i386, x86-64)
+   - Intel Core 2, Core i3/i5/i7, Xeon (i386, x86-64)
+   - Intel Core, Pentium M, III (i386)
+   - Intel Pentium 4 (i386, x86-64)
+   - AMD Athlon (i386)
+   - AMD Athlon64, Athlon II (i386, x86-64)
+   - AMD Phenom, Phenom II (i386, x86-64)
+   - IBM PowerPC 970, 970FX, 970MP (ppc)  
+
+   Support via the oprofile kernel module is available on:
+   - Cortex-A8, ARM 11, MPCore (arm)
+   - Freescale 7450, 7400, 750, e500, e300 (ppc)
+   - IBM Cell Broadband Engine (ppc)
+
+B. Software
+
+   Red Hat, Fedora, SuSE Linux, openSUSE, Ubuntu, or Debian with kernel
+   2.6.15 or later. RHEL4 with kernel 2.6.9 is also supported.
+
+   On ARM, Angstrom and Debian are supported.
+
+   To install on other distributions, refer to "Install/Manual Override
+   or "Install/BusyBox".
+
+
+C. C/C++ Runtime
+   Zoom and the Zoom installer require glibc-2.4 (libstdc.so.6) or 
+   later.
+
+   For PowerPC platforms, libstdc++.so.5 is required.
+
+   * openSUSE / SuSE Linux Enterprise
+   On OpenSUSE 11.1
+   a. Open YaST.
+   b. Open "Software" and "Software Management".
+   c. Click "Available" to select uninstalled packages.
+   d. Search for "libstdc++".
+   e. Right-click on "libstdc++33" and select "Install".
+   f. Click "Apply".
+
+D. Kernel Headers
+
+   Compiling kernel modules requires the Linux kernel headers.
+
+   * Fedora / Red Hat Enterprise Linux
+   On Fedora 10 (i386) with default kernel:
+   a. Install the kernel-devel package. 
+      $ yum install kernel-devel
+   On Fedora 10 (i386) with PAE kernel:
+   a. Install the kernel-PAE package.
+      $ yum install kernel-PAE-devel
+
+   * openSUSE / SuSE Linux Enterprise
+   On openSUSE 11.1 (x86-64):
+   a. Open YaST.
+   b. Open "Software" and "Software Management".
+   c. Click "Available" to select uninstalled packages.
+   d. Search for "kernel-source".
+   e. Right-click on "kernel-source" and select "Install".
+   f. Click "Apply".
+
+   * Ubuntu
+   On Ubuntu 8.10 (x86-64):
+   a. Find kernel release.
+      $ uname -r
+      2.6.27-7-generic
+   b. Install the package with apt-get.
+      $ apt-get install linux-headers-2.6.27-7-generic
+
+E. Debug Information
+
+   To correlate source code to samples, Zoom requires code to be
+   compiled with DWARF debug information. For most compilers, pass in
+   the "-g" flag to generate this information.
+
+   GCC and other compilers for C, C++ and Fortran code generate DWARF
+   information that has been tested with Zoom.
+
+   Zoom supports the "debuginfo" packages found in Red Hat and SUSE
+   distributions and the "dbg" and "dbgsym" packages found in Ubuntu
+   and Debian distributions.
+
+   For information on installing debug information packages:
+
+   * Fedora / Red Hat Enterprise Linux
+   - Read "What are debuginfo rpms, and how do I get them?" at
+     http://fedoraproject.org/wiki/StackTraces.
+   - The source code is in the "debuginfo" packages.
+
+   * openSUSE / SuSE Linux Enterprise
+   - Read "Debuginfo Packages" at 
+     http://en.opensuse.org/Crashdump_Debugging
+   - The source code is in separate "debugsource" packages.
+
+   * Ubuntu
+   - Read https://wiki.ubuntu.com/DebuggingProgramCrash.
+   - Use "apt-get source <package>" to download the source code.
+
+
+========================================================================
+2. Install
+========================================================================
+A. GUI
+
+   To launch the graphical user interface (GUI) installer, 
+
+   $ ./install.sh
+
+B. Command-Line
+
+   If the installer does not fallback to the text-based installer:
+   $ ./install.sh --text
+
+   Please report any errors you see in the terminal and send the file
+   "/var/log/Zoom-install.log" to support@rotateright.com.
+
+C. Manual Override
+
+   Please follow the steps below if you are unable to use the GUI or
+   command-line installers.
+
+   a. Become root user in a bash shell for all operations.
+      $ sudo /bin/bash
+
+   b. Unpack the Zoom archive.
+      # tar -xvzf <archive>.tar.gz
+      # cd <archive>
+      # tar -xvf .install.tar
+      # cd .install
+
+   c. Setup Zoom.
+      # ./setup.sh extract
+
+   d. Compile and install the rrprofile and rrnotify kernel modules.
+      # tar -xvf kmod/rrprofile.tar
+      # pushd rrprofile
+      # make
+      # ./install.sh
+      # popd
+      # tar -xvf kmod/rrnotify.tar
+      # pushd rrnotify
+      # make
+      # ./install.sh
+      # popd
+
+      You may need to edit the Makefile, the install.sh script, and the
+      kernel module scripts (common/rrprofile-generic and
+      common/rrnotify-generic) for your Linux distribution.
+
+   e. Install the script for the oprofile kernel module.
+
+      If the RotateRight kernel modules do not compile (step 'd.') or
+      support your hardware, install the oprofile script:
+      # tar -xvf kmod/oprofile.tar
+      # pushd oprofile
+      # ./install.sh
+      # popd
+
+      Do not install the oprofile script if the RotateRight kernel 
+      modules compiled correctly (step 'd.').
+
+D. BusyBox
+
+   Please follow the steps below to install ZoomCLI on a system with 
+   the BusyBox environment. 
+
+   Pre-requisites:
+   * You must be the root user on the target (BusyBox) system. 
+   * Install the bash shell on the target system.
+
+   a. Ensure that the target system has oprofile support compiled in. 
+      # cat /proc/filesystems | grep oprofilefs
+      nodev	oprofilefs
+
+   b. Unpack and setup Zoom on the target system.
+      # tar -xvzf <archive>.tar.gz
+      # ./install.sh
+
+E. License File Path
+
+   The default license path is ${HOME}/.zoom/license/zoom_license.txt. 
+   Set the ZOOM_LICENSE_FILE_PATH environment variable to specify a
+   custom location for your license file:
+
+   $ export ZOOM_LICENSE_FILE_PATH=${HOME}/zoom_license.txt
+   $ Zoom
+
+F. Limiting Memory Usage
+
+   The Zoom UI utilizes a Java virtual machine. By default the Zoom UI
+   scales the maximum heap memory the JVM can use based on the total
+   system memory. Set the ZOOM_MAX_JAVA_HEAP_MB environment variable to
+   specify a custom limit:
+
+   $ export ZOOM_MAX_JAVA_HEAP_MB=4096
+   $ Zoom
+
+========================================================================
+3. Usage
+========================================================================
+To launch the GUI Zoom profiler, click its application icon or type
+'Zoom' on a terminal command-line:
+
+  $ Zoom
+
+To launch the command-line interface (CLI) zoom profiler, type 'zoom'
+on a terminal command-line:
+
+  $ zoom
+
+After profiling, a "profile_*.zoom" file will be written to the current
+working directory. This file is an archival representation of the
+profile which can be opened by the Zoom GUI application.
+
+
+========================================================================
+4. Uninstall
+========================================================================
+A. GUI
+
+   To launch the GUI uninstaller, type the following on a terminal
+   command-line:
+
+   $ sudo /opt/rotateright/uninstallZoom.sh
+
+B. Command-Line
+
+   Please use the command below if the uninstaller does not fallback to
+   the text-based installer:
+
+   $ sudo /opt/rotateright/uninstallZoom.sh --text
+
+C. Manual Override
+
+   To manually uninstall Zoom:
+
+   a. Become root user in a bash shell for all operations.
+      $ sudo /bin/bash
+
+   b. Unpack the Zoom archive and export the current directory.
+      # tar -xvzf <archive>.tar.gz
+      # tar -xvf .install.tar
+      # cd <archive>/.install
+
+   c. Remove Zoom.
+      # ./setup.sh remove
+
+   d. Uninstall the kernel modules.
+      # ./kmod/uninstall_driver.sh rrprofile
+      # ./kmod/uninstall_driver.sh rrnotify
+      # ./kmod/uninstall_driver.sh oprofile
+
+
+========================================================================
+5. Maintenance
+========================================================================
+A. Kernel Updates
+
+   In the event of a kernel upgrade, you will need to recompile
+   RotateRight's custom kernel modules:
+
+   $ sudo /opt/rotateright/Zoom/setup/install_driver.sh
+
+   The installer compiles and installs RotateRight's custom kernel
+   modules. If the installer fails to compile the kernel modules, it
+   will use the oprofile kernel module instead.
+
+   Follow the steps in the next section only if the compilation does
+   not succeed.
+
+B. Zoom Kernel Modules
+
+   a. Ensure that the correct kernel headers are installed.
+      * Fedora / Red Hat Enterprise Linux
+      kernel-devel or kernel-PAE-devel must be installed for the running
+      kernel.
+      For example, on Fedora 10 (x86-64) with default kernel:
+      $ uname -r
+      2.6.27.5-117.fc10.x86_64
+      $ rpm -q kernel-devel
+      kernel-devel-2.6.27.5-117.fc10.x86_64
+
+      * openSUSE / SuSE Linux Enterprise
+      kernel-source must be installed for the running kernel.
+      For example, on openSUSE 11.1 (x86-64):
+      $ uname -r
+      2.6.27.7-9-default
+      $ rpm -q kernel-source
+      kernel-source-2.6.27.7-9.1
+
+      * Ubuntu / Debian
+      linux-headers must be installed for the running kernel.
+      For example, on Ubuntu 8.10 (x86-64):
+      $ uname -r
+      2.6.27-7-generic
+      $ dpkg-query --show --showformat='${Package}\t${Status}\n' \
+            linux-headers-2.6.27-7-generic
+      linux-headers-2.6.27-7-generic	install ok installed
+
+   b. Untar both rrprofile.tar and rrnotify.tar. Go to their respective
+      subdirectories, build with 'make', and run 'install.sh':
+      $ tar -xvf /opt/rotateright/Zoom/setup/kmod/<kmodname.tar>
+      $ cd <kmodname>
+      $ make
+      $ sudo ./install.sh
+
+      If needed, you can remove the kernel module by executing
+      uninstall.sh.
+      $ sudo ./uninstall.sh
+
+   c. Uninstall the oprofile kernel module if you successfully built
+      both rrprofile and rrnotify.
+      $ tar -xvf kmod/oprofile.tar
+      $ cd oprofile
+      $ sudo ./uninstall.sh
+
+
+========================================================================
+6. Limitations
+========================================================================
+A. Security
+
+   Zoom uses setuid because Zoom is a system-wide profiler that may
+   require access to system-owned files.
+
+B. Virtualization
+
+   Under a virtual machine, Zoom will profile with the "OS Timer"
+   trigger. Hardware counters are not available because they are not
+   virtualized.
+
+C. Frame Pointers
+
+   Assume function A calls function B which in turn calls library L
+   (A -> B -> L). If library L omits frame pointers, Zoom will show that
+   A called L because the stack frame pointer and return address are not
+   updated inside library L.
+
+   If the library L is compiled with "-fno-omit-frame-pointer", the
+   frame pointer and return address will be correctly updated.
+
+D. Zoom i386 (32-bit) on Linux x86-64 (64-bit)
+
+   It is not possible to run Zoom i386 (32-bit) on Linux x86-64 
+   (64-bit).
+
+E. libvirt Virtualization Toolkit
+
+   Zoom remote networking is incompatible with the libvirt toolkit. 
+   Disable the libvirtd daemon before using Zoom. 
+
+F. Zoom on Angstrom 
+
+   The Zoom installer requires that bash be installed:
+
+   $ opkg install bash
+
+   Also, Zoom requires libsegfault:
+
+   $ opkg install libsegfault 
+
+G. Crash with openSUSE 10.3
+
+   On a fresh openSUSE 10.3 install, bug-buddy must be removed or
+   updated.
+
+   To remove:
+   $ sudo zypper rm bug-buddy
+
+   To update, enable online updating with YaST and type:
+   $ sudo zypper install bug-buddy
+
+   Reference:
+   - https://bugzilla.novell.com/show_bug.cgi?id=331618
+
+H. GLib Warnings with Ubuntu 9.10, Fedora 12 and Debian Squeeze
+
+   This is a known issue and should not affect Zoom.
+
+   Reference:
+   - https://bugs.launchpad.net/ubuntu/+source/glib2.0/+bug/501670
+   - https://bugzilla.redhat.com/show_bug.cgi?id=546848
+   - http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=559407
+
+
+========================================================================
+7. License
+========================================================================
+Refer to Zoom-EULA.txt.
+
+
+========================================================================
+8. Support
+========================================================================
+For sales and support, please contact support@rotateright.com.
+
+
+========================================================================
+9. History
+========================================================================
+Zoom 2.0.1 - March 21, 2011
+ * Added support for 2.6.37 kernel
+ * Added ability to set max heap memory for Zoom UI (ZOOM_MAX_JAVA_HEAP_MB)
+
+Zoom 2.0.0 - March 10, 2011
+ * Added thread time profiling
+   - find wait time due to I/O, lock contention
+   - full backtraces without frame pointers
+ * Added adaptive sampling - automatic compression of long profile data
+ * Added tree and leaf profile visualizations
+ * Improved metrics for understanding process and thread utilization
+ * Enhanced trace view for easier browsing of trace data
+ * Improved support for debug info files
+ * Changed to load profiling drivers on Zoom start rather than at boot
+ * Improved detection of profiling problems (buffer overflow, etc.)
+ * Added ability to configure profile buffer sizes
+ * Reduced memory usage
+ * Sped up sample processing
+ * Fixed cleanup of temporary files
+ * Improved user interface
+
+Zoom 1.6.8 - September 30, 2010
+ * Added support for AMD Family 11h processors
+ * Fixed kernel drivers to compile on older RHEL4.x releases
+ * Added ability to set directory for temporary files with the
+   ZOOM_TMPDIR environment variable
+
+Zoom 1.6.7 - September 2, 2010
+ * Improved compatibility on RHEL4 for newer Intel processors
+ * Fixed kernel drivers to compile on RHEL4
+ * Fixed missing event configs in the UI
+ * Fixed report bug dialog to be non-modal
+
+Zoom 1.6.6 - April 22, 2010
+ * Fixed exception when filtering callstacks
+ * Fixed exception when saving profile
+ * Added support for Intel Performance Monitoring Architecture
+ * Added support for AMD Family 11h processors
+ * Improved oprofile compatibility
+
+Zoom 1.6.5 - April 8, 2010
+ * Fixed exception in code browser due to unknown callees
+ * Fixed symbol trimmer to recognize parameterized class names
+ * Fixed code browser to respect tab width
+ * Added support for demangling of OpenMP symbols
+ * Implemented sort indicators for table and tree columns on RHEL5
+
+Zoom 1.6.4 - March 31, 2010
+ * Added support for Intel Westmere-based processors
+ * Added option to initialize oprofile in timer interrupt mode
+ * Improved detection of processors available for profiling
+ * Fixed zoom daemon to capture error text on failure
+
+Zoom 1.6.3 - February 25, 2010
+ * Added support for running inside of VirtualBox
+ * Added ability to hide self and total columns in hotspot view
+ * Fixed to allow installation on unknown Linux distributions
+ * Fixed installer to operate from /tmp
+ * Fixed installer to check for compatible platform
+ * Fixed problem with resolution of vmlinux symbols on some platforms
+ * Fixed determination of release name on some Linux distros
+ * Improved UI responsiveness for profiles containing many processes
+ * Improved zoom daemon support on localhost
+
+Zoom 1.6.2 - January 20, 2010
+ * Simplified packaging to use gzip tar file instead of makeself
+ * Fixed setup scripts to work with BusyBox
+ * Fixed to allow opening the same profile in multiple tabs
+ * Fixed to not depend on GNU iconv
+ * Fixed license errors when no network available
+ * Fixed to allow opening session files without .zoom extension
+ * Fixed exceptions due to host name resolution failure
+ * Fixed possible duplicated process entries in profile
+
+Zoom 1.6.1 - December 1, 2009
+ * Added ability to specify client port and address for remote profiling
+ * Added version check when opening a profile
+ * Added work-around for GTK 2.18 incompatibility
+ * Added support for user space CPUFreq governor
+ * Fixed possible hang during sample processing
+ * Fixed potential crash when searching for text in symbol lists
+ * Fixed bug with virtual machine detection
+ * Fixed to allow profiling with SELinux enabled (manual driver load)
+ * Fixed driver identification of Intel Core i5/i7 (Lynnfield)
+
+Zoom 1.6.0 - October 19, 2009
+ * Added static analysis of executable/library/archive/object files
+ * Added display of labels in assembly view of the code browser
+ * Added identification of Intel Core i5/i7 (Lynnfield) processors
+ * Added auto-selection of OS timer trigger in virtual machine
+ * Added ability to select ARM register alias display type (GCC, APCS)
+ * Added logic to process inline jump tables in ARM and Thumb code
+ * Disabled processor frequency scaling during profiling on ARM
+ * Fixed oprofile sample buffer parsing with no explicit cookie switch
+ * Fixed potential hang in GUI during sample processing
+ * Fixed misaligned memory accesses on ARM
+ * Fixed command line zoom to not depend on X11 libraries
+
+Zoom 1.5.1 - September 21, 2009
+ * Added support for 2.6.30 kernel
+ * Fixed source code browser navigation to caller/callee symbol
+ * Fixed several bugs with ARM disassembly
+
+Zoom 1.5.0 - August 31, 2009
+ * Added profiling for ARM Linux
+ * Added ability to highlight problem src and asm lines in code browser
+ * Added command-line profile summary option (--output_text)
+ * Added option to not gather kernel / driver symbols
+ * Improved code browser navigation
+ * Fixed timeout error when profiling for long durations
+
+Zoom 1.4.2 - June 19, 2009
+ * Fixed profiling of binaries on remote file systems (e.g. NFS)
+ * Fixed zoom (CLI) to print and log warnings by default
+ * Fixed driver startup script to display errors on load failure
+ * Fixed to show correct (maximum) processor speed in profile properties
+ * Improved zoomscript argument checking and error handling
+
+Zoom 1.4.1 - May 19, 2009
+ * Added support for custom table/tree selection color
+ * Fixed possible crash of CLI app when SIGINT or SIGQUIT is sent
+ * Fixed to use real user/group ID while writing to file system
+ * Fixed possible exception when finding text in tables
+
+Zoom 1.4.0 - April 28, 2009
+ * Added trace view - samples displayed in table form
+ * Added source-to-assembly mapping pane in code browser
+ * Added 'Focus' operation to filters - center profile on symbol/module
+ * Updated kernel modules to work with Linux kernels up to v2.6.29
+ * Switched to SOAP as default protocol for remote communication
+ * Added ability to install license from 'Help' menu
+ * Improved user interface
+
+Zoom 1.3.3 - March 30, 2009
+ * Fixed parsing of email address when requesting evaluation
+ * Added nominal timing for x86 cmpsb/cmpxchg instructions
+ * Added timing adjustment/code warning for x86 lock insts
+
+Zoom 1.3.2 - March 26, 2009
+ * Fixed potential crash when duplicate kernel modules are detected
+ * Fixed bug related to opening Code Browser on Pentium 4 or Pentium M
+ * Fixed potential exception while parsing kernel modules
+
+Zoom 1.3.1 - January 29, 2009
+ * Fixed potential crash when kernel module cannot be found
+ * Improved x86 processor instruction timing information
+
+Zoom 1.3.0 - January 20, 2009
+ * Added support for external debug info files
+ * Added ability to show kernel source and assembly
+ * Added calculation of symbol ranges when missing symbol information
+ * Added optional display of symbol sizes
+ * Added user-friendly thread names (based on root symbol name)
+ * Added support for Intel Atom and Core i7 processors
+ * Added support for VDSO (vsyscall page) symbols
+ * Fixed driver to use OS timer mode when perfmon not available
+ * Improved code analysis
+ * Improved error logging and reporting
+
+Zoom 1.2.3 - November 11, 2008
+ * Fixed possible bug when installing remotely
+ * Fixed possible crash with unknown display
+ * Improved installation process
+ * Improved bug reporting
+
+Zoom 1.2.2 - November 4, 2008
+ * Added custom driver support for RHEL4 (2.6.9)
+ * Added support for PAE kernels on RedHat distributions
+ * Improved basic profiling support via oprofile
+ * Improved error reporting and documentation
+ * Added support for resolving PLT section symbols
+ * Improved source file discovery and path resolution
+ * Fixed process/thread scope button labels with CPU filtering enabled
+ * Added link in /usr/bin for zoomscript
+ * Improved symbol truncation to remove parameters before class name
+ * Fixed to remove oprofile and rrprofile drivers before installation
+
+Zoom 1.2.1 - September 15, 2008
+ * Added basic profiling support for kernels 2.6.9 - 2.6.14
+ * Added support for Athlon XP, Pentium III, Pentium M processors
+ * Improved source file search
+ * Added extended system info to session properties
+ * Fixed regression where some kernel symbols were not resolved
+
+Zoom 1.2.0 - August 31, 2008
+ * Added smart text truncation of symbol names
+ * Improved source file path mapping and search
+ * Improved sorting and selection in code browser
+ * Added maximize/restore widgets for source and assembly views
+ * Added quick sample and address display change via double-click
+ * Improved memory handling for samples with large backtraces
+ * Added ability to hide symbols below specified sample weight
+ * Added new config (+) and delete config (-) buttons
+ * Stability and performance fixes
+
+Zoom 1.1.0 - July 25, 2008
+ * Added symbol-centric profile view with parent and child tables
+ * Added support for "OS Timer" trigger
+ * Added ability to use oprofile driver for sampling
+ * Improved summary text output
+ * Simplified installation
+ * Added support for SSSE3, SSE4.1, and SSE4a instructions
+ * Stability and performance fixes
+
+Zoom 1.0.2 - June 13, 2008
+ * Fixed license wizard to timeout if server cannot be contacted
+
+Zoom 1.0.1 - May 2, 2008
+ * Added check for bug buddy 2.20.0 on openSUSE 10.3
+ * Fixed tooltip for regular expression input
+
+
+Copyright (C) 2011 RotateRight, LLC

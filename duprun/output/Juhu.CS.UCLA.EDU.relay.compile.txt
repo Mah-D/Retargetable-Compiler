@@ -1,0 +1,4 @@
+/Users/dupper/duprun/relay/lib/relay.c: In function 'main':
+/Users/dupper/duprun/relay/lib/relay.c:14: warning: cast to pointer from integer of different size
+/Users/dupper/duprun/relay/lib/relay.c: In function '_faninany_start':
+/Users/dupper/duprun/relay/lib/relay.c:39: warning: cast from pointer to integer of different size

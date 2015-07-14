@@ -1,0 +1,8 @@
+/Users/dupper/duprun/lib/RunMain.c: In function 'ToInitAllTasks_toString':
+/Users/dupper/duprun/lib/RunMain.c:9208: warning: return discards qualifiers from pointer target type
+/Users/dupper/duprun/lib/async.c: In function '_thread_gethere':
+/Users/dupper/duprun/lib/async.c:335: warning: cast from pointer to integer of different size
+/Users/dupper/duprun/lib/async.c: In function '_thread_sethere':
+/Users/dupper/duprun/lib/async.c:343: warning: cast to pointer from integer of different size
+/Users/dupper/duprun/lib/errormsg.c: In function 'writeDebugMsg':
+/Users/dupper/duprun/lib/errormsg.c:46: warning: cast from pointer to integer of different size

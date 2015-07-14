@@ -1,0 +1,46 @@
+/**************************************************************************
+*                                                                         *
+*             Java Grande Forum Benchmark Suite - Version 2.0             *
+*                                                                         *
+*                            produced by                                  *
+*                                                                         *
+*                  Java Grande Benchmarking Project                       *
+*                                                                         *
+*                                at                                       *
+*                                                                         *
+*                Edinburgh Parallel Computing Centre                      *
+*                                                                         *
+*                email: epcc-javagrande@epcc.ed.ac.uk                     *
+*                                                                         *
+*                 Original version of this code by                        *
+*            Florian Doyon (Florian.Doyon@sophia.inria.fr)                *
+*              and  Wilfried Klauser (wklauser@acm.org)                   *
+*                                                                         *
+*      This version copyright (c) The University of Edinburgh, 1999.      *
+*                         All rights reserved.                            *
+*                                                                         *
+**************************************************************************/
+//ok
+public value Interval {
+	public final int number;
+	public final int width;
+	public final int height;
+	public final int yfrom;
+	public final int yto;
+	public final int total;
+
+	public Interval(final int number_, final int width_, final int height_, final int yfrom_, final int yto_, final int total_)
+	{
+		number = number_;
+		width = width_;
+		height = height_;
+		yfrom = yfrom_;
+		yto = yto_;
+		total = total_;
+	}
+	public String toString()
+	{
+		return number + " " + width + " " + height + " " + yfrom + " " + yto + " " + total;	
+	}
+}
+

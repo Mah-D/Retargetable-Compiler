@@ -1,0 +1,17 @@
+dispatcher0@Juhu.cs.ucla.edu:5006[6|dispatcher3:10]$/Users/dupper/Desktop/dupTestCode/a.out;
+dispatcher2@caspian:5007[9|dispatcher0:9]$/Users/dupper/Desktop/dupTestCode/a.out;
+dispatcher3@caspian:5002[11|dispatcher2:6]$faninany 1024;
+
+
+
+dispatcher5@Juhu.cs.ucla.edu:5004[2|linker2:4]$cat -;
+dispatcher6@caspian:5005[2|linker2:5]$cat -;
+dispatcher7@Juhu.cs.ucla.edu:5004[1|linker2:7]$cat -;
+dispatcher8@caspian:5005[1|linker2:8]$cat -;
+
+
+linker@caspian:5008[1>/Users/dupper/Desktop/dupTestCode/out.txt]$faninany;
+linker2@juhu:5009[1>/Users/dupper/Desktop/dupTestCode/out.txt]$faninany;
+~                                                                                                                          
+~                                                                                                                          
+~                                                                             

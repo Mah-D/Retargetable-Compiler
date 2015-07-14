@@ -1,0 +1,5 @@
+Methods	"1 Machine"	"4 Machines"	"14 Machines (Method 1)"	"14 Machines (Method 2)"	"14 Machines (Method 3)"
+"1000 bits"	0.1	0.2	0.3	0.4	0.5
+"2000 bits"	0.018114	0.063369	0.147451	0.157706	0.10
+"3000 bits"	0.1	0.2	0.3	0.4	0.5
+"4000 bits"	0.1	0.2	0.3	0.4	0.5

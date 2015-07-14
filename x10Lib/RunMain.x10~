@@ -1,0 +1,320 @@
+public class RunMain {
+	public static void main(String[] args) {
+		Program.runMain();
+	}
+}
+class Program {
+
+	public static void runMain() {
+		
+	/*	int valueInsideArray = 5;
+		final place myPlace = here;
+		Dist myDist = new Dist((region(:rank==1))[0:1], myPlace);
+		final place pl = here;
+		myDist = new Dist(myDist, 2,3 , pl.next());
+		myDist = new Dist(myDist, 4,5, pl.next().next());
+		myDist = new Dist(myDist, 6,7 , pl.next().next().next());
+		//myDist.printThis();	
+		//System.out.println("MAX_PLACES"+place.MAX_PLACES);	
+		final IntegerArray myIntegerArray = new IntegerArray(myDist);
+		
+		for(point [p]:[0:7]) {
+			place innerPlace = Program.getPlaceFromDist(myDist, p);			
+			//System.out.println("innerPlace at p ="+p+" = "+innerPlace);			
+			async(innerPlace) {
+				Program.intSetValue(myIntegerArray, p, here, p);
+			}
+		}
+		
+		final dist(:rank==1) dTemp = [0:0]-> here;
+		final int [:rank==1] t = (int[:rank==1])new int[dTemp](point p) {return 0;}; 
+		for(point [p]:[0:7]){
+		
+			place innerPlace = Program.getPlaceFromDist(myDist, p);			
+			//System.out.println("innerPlace at p ="+p+" = "+innerPlace);			
+		
+			finish {			
+				async(innerPlace) {
+					final int tempVal = Program.intGetValue(myIntegerArray, p, here);
+					async(pl)
+					{
+						t[0] += tempVal;
+					}
+				}		
+			}		
+		}
+		System.out.println(t[0]); */
+	}
+	
+	/*createIntegerArray*/
+	public static IntegerStub value[:rank==1] createIntegerArray(final Dist distArray) {
+		final int one = 1;
+		final int maxPlaces = place.MAX_PLACES;
+		final int ub = maxPlaces - one;
+		final region(:rank==1) R = [0 : ub];
+
+		final int value[:rank==1] counts = distArray.counts;
+
+		final IntegerStub value[:rank==1] temp = (IntegerStub value[:rank==1])(new IntegerStub value [R](point(:rank==1) [p]) {
+						final int count = counts[p];
+						final place pl = place.places(p);
+						final IntegerStub is = Program.createIntegerStub(pl, count);
+						return is;});
+		return temp;
+	} 
+	/*END*/
+
+	/*createIntegerStub*/
+	public static IntegerStub createIntegerStub(final place remotePlace, final int count) {
+
+		final int zero = 0;
+		final place pl = here;
+
+		final region(:rank==1) retReg = [0 : zero];
+		final dist(:rank==1) retDist = retReg -> pl;
+
+		final IntegerStub[:rank==1] retStub = (IntegerStub[:rank==1])(new IntegerStub[retDist]);
+
+		finish {
+			async(remotePlace) {
+				final IntegerStub to = new IntegerStub(count);
+				async(pl){
+					retStub[zero] = (to);
+				}
+			}
+		}
+	
+		final IntegerStub to = retStub[zero];
+		return to;
+	}
+/*END*/
+/*allocateLocalIntegerArray*/
+	public static int[:rank==1] allocateLocalIntegerArray(final int count) {
+		
+		final int one = 1;	
+		final int sizeOfChunk = count - one;
+		final region(:rank==1) localReg = [0 : sizeOfChunk];
+		final place allocPlace = here;
+		final dist(:rank==1) localDist = localReg -> allocPlace;
+
+		final int[:rank==1] temp = (int[:rank==1])(new int[localDist]);
+		return temp;
+	}
+/*END*/
+/*intGetValue*/
+	public static int intGetValue(final IntegerArray arr, final int index){
+		final place pl = here;
+		final int placeIndex = pl.id;
+		final IntegerStub value[:rank==1] contents = arr.contents;	
+		final IntegerStub indexStub = contents[placeIndex];
+		final int[:rank==1] localArray = indexStub.localArray;
+		final Dist distArray = arr.distArray;
+		final int localIndex = Program.getLocalIndex(distArray, index);
+		final int returnValue = localArray[localIndex];
+		return returnValue;
+	}
+
+/*END*/
+/*intSetValue*/	
+	public static void intSetValue(final IntegerArray arr, final int index, final int val){
+		final place pl = here;
+		final int placeIndex = pl.id;
+		final IntegerStub value[:rank==1] contents = arr.contents;	
+		final IntegerStub indexStub = contents[placeIndex];
+		final int[:rank==1] localArray = indexStub.localArray;
+		final Dist distArray = arr.distArray;
+		final int localIndex = Program.getLocalIndex(distArray, index);
+		localArray[localIndex] = (val);
+		return;
+	}
+/*END*/
+/*createDist*/	
+	/* dist:== region -> place  */
+	public static place value[:rank==1] createDist(final region(:rank==1) reg, final place pl) {
+		final place value[:rank==1] placeArray = (place value[:rank==1]) (new place value[reg] (point(:rank==1) p){return pl;});
+		return placeArray;
+	}
+
+/*END*/
+/*extendDist*/	
+	/* dist:== dist || [x:y]-> place  */
+	public static place value[:rank==1] extendDist(final Dist d1, final int x, final int y, final place pl) {
+		
+		final int one = 1;
+		final place pl1 = here;
+		final place value[:rank==1] d1Array = d1.placeArray;
+		final region(:rank==1) reg = [0 : y];
+		final dist(:rank==1) dis = reg -> pl1;
+		final place [:rank==1] temp = (place[:rank==1]) (new place[dis]);
+
+		for(point(:rank==1) p : d1Array)
+		{
+			final place tempPlace = d1Array[p];
+			temp[p] = (tempPlace);
+		}
+
+		int tail = x;
+		boolean bool = (tail<=y);
+		while(bool) // check the math here..replace with do-while
+		{
+			temp[tail] = (pl);
+			tail = tail + one;
+			bool = (tail <= y);
+		}
+		final place value[:rank==1] placeArray = (place value[:rank==1]) (new place value[reg] (point(:rank==1) p)
+										{
+											final place tempPlace = temp[p];
+											return tempPlace;
+										});
+		return placeArray;
+	}
+/*END*/
+/*getPlaceFromDist*/	
+	/* dist.get(p) */
+	public static place getPlaceFromDist(final Dist d, final int index) {
+		final place value[:rank==1] placeArray = d.placeArray;
+		final place retPlace = placeArray[index];
+		return retPlace;
+	}
+/*END*/
+/*getCounts*/
+	public static int value[:rank==1] getCounts(final Dist d) {
+		final int one = 1;
+		final int zero = 0;
+		final int maxPlaces = place.MAX_PLACES;
+		final int ub = maxPlaces - one;
+		final region(:rank==1) R = [0 : ub];
+		final place pl1 = here;
+
+		final dist(:rank==1) dis = R -> pl1;
+		final int [:rank==1] tempCounts = (int [:rank==1]) (new int[dis]);
+
+		for(point(:rank==1) p : tempCounts) {
+			tempCounts[p] = (zero);
+		}
+
+		final place value[:rank==1] placeArray = d.placeArray;
+
+		for(point(:rank==1) p : placeArray) {
+			final place pl = placeArray[p];
+			final int index = pl.id;
+			final int oldVal = tempCounts[index];
+			final int oldValPlusOne = oldVal + one;
+			tempCounts[index] = (oldValPlusOne);
+		}
+		final int value[:rank==1] counts = (int value[:rank==1]) (new int value[R](point(:rank==1) p)
+										{
+											final int tempInt = tempCounts[p];	
+											return tempInt;
+										});
+		return counts;
+	}
+/*END*/
+/*getRunningSum*/
+	public static int value[:rank==1] getRunningSum(final Dist d) {
+		
+		final int one = 1;
+		final int zero = 0;
+		final int maxPlaces = place.MAX_PLACES;
+		final int ub = maxPlaces - one;
+		final region(:rank==1) R = [0 : ub];
+		final place pl1 = here;
+
+		final dist(:rank==1) dis = R -> pl1;
+		final int [:rank==1] tempCounts = (int [:rank==1]) (new int[dis]);
+		
+		final int count = d.placeArray.region.size();
+	
+		final place value[:rank==1] placeArray = d.placeArray;
+	
+		final region(:rank==1) runReg = [0 : count];
+		final dist(:rank==1) runDist = runReg -> pl1;
+		final int [:rank==1] tempRunSum = (int [:rank==1]) (new int [runDist]);
+		
+		for(point(:rank==1) p : tempCounts) {
+			tempCounts[p] = (zero);
+		}
+	
+		for(point(:rank==1) p : placeArray) {
+			final place pl = placeArray[p];
+			final int index = pl.id;
+			final int temp = tempCounts[index];
+			tempRunSum[p] = (temp);
+			final int tempPlusOne = temp + one;
+			tempCounts[index] = (tempPlusOne);
+		}
+		
+		final int value[:rank==1] runSum = (int value[:rank==1]) (new int value[runReg](point(:rank==1) p) {
+												final int tempInt = tempRunSum[p];	
+												return tempInt;
+											});
+		return runSum;
+	}
+/*END*/
+/*getLocalIndex*/	
+	public static int getLocalIndex(final Dist myDist, final int index) {
+		final int value[:rank==1] runningSum = myDist.runningSum;
+		final int retVal = runningSum[index];
+		return retVal;
+	}
+
+}
+/*END*/
+/*IntegerArray*/
+value IntegerArray {
+
+	public final IntegerStub value[:rank==1] contents;
+	public final Dist distArray;
+
+	public IntegerArray(final Dist distArray_) {
+		distArray = distArray_;
+		contents = Program.createIntegerArray(distArray);
+	}
+	
+}
+/*END*/
+/*IntegerStub*/
+value IntegerStub {
+	public final int[:rank==1] localArray;
+	
+	public IntegerStub(final int count) {
+		localArray = Program.allocateLocalIntegerArray(count);	
+	}
+
+}
+/*END*/
+/*Dist*/
+value Dist {
+
+	public final place value[:rank==1] placeArray;
+	public final int value[:rank==1] counts;
+	public final int value[:rank==1] runningSum;
+	
+	public Dist(final region(:rank==1) reg, final place pl) {
+		placeArray = Program.createDist(reg, pl);
+		counts = Program.getCounts(this);
+		runningSum = (int value[:rank==1])(Program.getRunningSum(this));
+	}
+	
+	public Dist(final Dist d1, final int x, final int y, final place pl) {
+		placeArray = Program.extendDist(d1, x, y, pl);
+		counts = Program.getCounts(this);
+		runningSum = (int value[:rank==1])(Program.getRunningSum(this));
+	}
+/*END*/
+	/*public void printThis(){
+		System.out.println("Print Contents of Dist");
+		for(point p: placeArray){
+			System.out.println("p:placeArray = "+p+" "+" : "+placeArray[p]);
+		}
+
+		System.out.println("============================================");
+		for(point p: counts){
+			System.out.println("p:counts = "+p+" "+" : "+counts[p]);
+		}
+		System.out.println("============================================");
+		for(point p : runningSum){
+			System.out.println("p:runningSum = "+p+" : "+runningSum[p]);
+		}
+	}*/
+}

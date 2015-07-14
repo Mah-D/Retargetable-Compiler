@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/faculty/!svn/ver/8850/dup/src/applications/primeGen
+END
+test_devrandom_gen_random.sh
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/faculty/!svn/ver/8850/dup/src/applications/primeGen/test_devrandom_gen_random.sh
+END
+millerrabin.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/faculty/!svn/ver/8843/dup/src/applications/primeGen/millerrabin.c
+END
+primeMix.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/faculty/!svn/ver/8850/dup/src/applications/primeGen/primeMix.py
+END
+test_gmp_gen_random.sh
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/faculty/!svn/ver/8843/dup/src/applications/primeGen/test_gmp_gen_random.sh
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/faculty/!svn/ver/8850/dup/src/applications/primeGen/Makefile.am
+END
+devrandom_gen_random.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/faculty/!svn/ver/8843/dup/src/applications/primeGen/devrandom_gen_random.c
+END
+pow.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/faculty/!svn/ver/8843/dup/src/applications/primeGen/pow.py
+END
+gmp_gen_random.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/faculty/!svn/ver/8843/dup/src/applications/primeGen/gmp_gen_random.c
+END

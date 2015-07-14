@@ -1,0 +1,14 @@
+K 10
+svn:ignore
+V 91
+texput.log
+Makefile.in
+coverage
+html
+latex
+Makefile
+protocol.log
+protocol.aux
+protocol.pdf
+
+END

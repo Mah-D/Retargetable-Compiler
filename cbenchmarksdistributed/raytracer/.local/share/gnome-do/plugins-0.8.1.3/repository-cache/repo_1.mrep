@@ -1,0 +1,1545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name />
+  <Url>file:///usr/share/gnome-do/plugins/root.mrep</Url>
+  <Addin>
+    <Url>Do.Alias_1.0.mpack</Url>
+    <Addin>
+      <Id>Alias</Id>
+      <Namespace>Do</Namespace>
+      <Name>Alias</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>David Siegel</Author>
+      <Copyright />
+      <Url />
+      <Description>Assign alternate names to items.</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.AptURL_1.0.mpack</Url>
+    <Addin>
+      <Id>AptURL</Id>
+      <Namespace>Do</Namespace>
+      <Name>AptURL Package Installer</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Christer Edwards</Author>
+      <Copyright />
+      <Url />
+      <Description>Install apt packages by name.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Archive_1.0.mpack</Url>
+    <Addin>
+      <Id>Archive</Id>
+      <Namespace>Do</Namespace>
+      <Name>Archive</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Guillaume Beland</Author>
+      <Copyright />
+      <Url />
+      <Description>Create and extract archive files.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Banshee_1.0.mpack</Url>
+    <Addin>
+      <Id>Banshee</Id>
+      <Namespace>Do</Namespace>
+      <Name>Banshee Media Player</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Alex Launi</Author>
+      <Copyright />
+      <Url />
+      <Description>Search your media collection and control playback.</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Bibtex_1.8.mpack</Url>
+    <Addin>
+      <Id>Bibtex</Id>
+      <Namespace>Do</Namespace>
+      <Name>Bibtex</Name>
+      <Version>1.8</Version>
+      <BaseVersion />
+      <Author>Niall Murphy</Author>
+      <Copyright />
+      <Url />
+      <Description>Quickly open documents linked from BibTeX files.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Cl.ickable_1.0.mpack</Url>
+    <Addin>
+      <Id>Cl.ickable</Id>
+      <Namespace>Do</Namespace>
+      <Name>Cl.ickable WebClips</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Idealab</Author>
+      <Copyright />
+      <Url />
+      <Description>Save clips on Cl.ickable.com</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.ClawsMail_1.0.mpack</Url>
+    <Addin>
+      <Id>ClawsMail</Id>
+      <Namespace>Do</Namespace>
+      <Name>ClawsMail</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Karol Będkowski</Author>
+      <Copyright />
+      <Url />
+      <Description>Search contacts in your ClawsMail address book.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Confluence_1.0.mpack</Url>
+    <Addin>
+      <Id>Confluence</Id>
+      <Namespace>Do</Namespace>
+      <Name>Confluence</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>John Wood</Author>
+      <Copyright />
+      <Url />
+      <Description>Interact with Confluence wikis.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.DiskMounter_1.0.mpack</Url>
+    <Addin>
+      <Id>DiskMounter</Id>
+      <Namespace>Do</Namespace>
+      <Name>Disk Mounter</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Guillaume Béland</Author>
+      <Copyright />
+      <Url />
+      <Description>Mount and unmount drive volumes in GNOME.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Emesene_1.0.mpack</Url>
+    <Addin>
+      <Id>Emesene</Id>
+      <Namespace>Do</Namespace>
+      <Name>Emesene</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Luis Miguel Montiel G</Author>
+      <Copyright />
+      <Url />
+      <Description>Search your buddies and initiate chats.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Epiphany_1.0.mpack</Url>
+    <Addin>
+      <Id>Epiphany</Id>
+      <Namespace>Do</Namespace>
+      <Name>Epiphany</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>David Siegel</Author>
+      <Copyright />
+      <Url />
+      <Description>Search your Epiphany bookmarks.</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Evolution_1.2.mpack</Url>
+    <Addin>
+      <Id>Evolution</Id>
+      <Namespace>Do</Namespace>
+      <Name>Evolution</Name>
+      <Version>1.2</Version>
+      <BaseVersion />
+      <Author>David Siegel</Author>
+      <Copyright />
+      <Url />
+      <Description>Search your Evolution contacts.</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.EyeOfGNOME_1.0.mpack</Url>
+    <Addin>
+      <Id>EyeOfGNOME</Id>
+      <Namespace>Do</Namespace>
+      <Name>Eye of GNOME Slideshow</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>David Siegel</Author>
+      <Copyright />
+      <Url />
+      <Description>Play slideshows in Eye of GNOME.</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.File_2.5.mpack</Url>
+    <Addin>
+      <Id>File</Id>
+      <Namespace>Do</Namespace>
+      <Name>Files and Folders</Name>
+      <Version>2.5</Version>
+      <BaseVersion />
+      <Author>David Siegel, Alex Launi, Ankit Solanki, Chris Szikszoy</Author>
+      <Copyright />
+      <Url />
+      <Description>Search, browse, and perform other actions on files and folders.</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Firefox_2.2.mpack</Url>
+    <Addin>
+      <Id>Firefox</Id>
+      <Namespace>Do</Namespace>
+      <Name>Firefox</Name>
+      <Version>2.2</Version>
+      <BaseVersion />
+      <Author>David Siegel</Author>
+      <Copyright />
+      <Url />
+      <Description>Search Firefox 3 bookmarks.</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Flickr_1.4.mpack</Url>
+    <Addin>
+      <Id>Flickr</Id>
+      <Namespace>Do</Namespace>
+      <Name>Flickr</Name>
+      <Version>1.4</Version>
+      <BaseVersion />
+      <Author>Alex Launi</Author>
+      <Copyright />
+      <Url />
+      <Description>Upload photos to Flickr.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.GMail_1.5.mpack</Url>
+    <Addin>
+      <Id>GMail</Id>
+      <Namespace>Do</Namespace>
+      <Name>Google Contacts</Name>
+      <Version>1.5</Version>
+      <BaseVersion />
+      <Author>Alex Launi</Author>
+      <Copyright />
+      <Url />
+      <Description>Search your GMail contacts.</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.GNOMEDictionary_1.0.mpack</Url>
+    <Addin>
+      <Id>GNOMEDictionary</Id>
+      <Namespace>Do</Namespace>
+      <Name>GNOME Dictionary</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>David Siegel</Author>
+      <Copyright />
+      <Url />
+      <Description>Look up word definitions in GNOME Dictionary.</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.GNOMEScreenshot_1.0.mpack</Url>
+    <Addin>
+      <Id>GNOMEScreenshot</Id>
+      <Namespace>Do</Namespace>
+      <Name>GNOME Screenshot</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>David Siegel</Author>
+      <Copyright />
+      <Url />
+      <Description>Take screenshots with optional delay.</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.GNOMESession_1.5.mpack</Url>
+    <Addin>
+      <Id>GNOMESession</Id>
+      <Namespace>Do</Namespace>
+      <Name>GNOME Session Management</Name>
+      <Version>1.5</Version>
+      <BaseVersion />
+      <Author>David Siegel</Author>
+      <Copyright />
+      <Url />
+      <Description>Log out, lock your screen, shutdown, suspend, etc.</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.GNOMETerminal_1.1.mpack</Url>
+    <Addin>
+      <Id>GNOMETerminal</Id>
+      <Namespace>Do</Namespace>
+      <Name>GNOME Terminal</Name>
+      <Version>1.1</Version>
+      <BaseVersion />
+      <Author>David Siegel, Tim McLaughlin</Author>
+      <Copyright />
+      <Url />
+      <Description>Run commands and open new terminals.</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.GoogleCalculator_1.0.mpack</Url>
+    <Addin>
+      <Id>GoogleCalculator</Id>
+      <Namespace>Do</Namespace>
+      <Name>Google Calculator</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>David Siegel</Author>
+      <Copyright />
+      <Url />
+      <Description>Perform calculations, and currency/quantity conversions.</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.GoogleCalendar_1.5.mpack</Url>
+    <Addin>
+      <Id>GoogleCalendar</Id>
+      <Namespace>Do</Namespace>
+      <Name>Google Calendar</Name>
+      <Version>1.5</Version>
+      <BaseVersion />
+      <Author>Alex Launi</Author>
+      <Copyright />
+      <Url />
+      <Description>Create, search, and browse Google calendar events.</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.GoogleDocs_1.0.mpack</Url>
+    <Addin>
+      <Id>GoogleDocs</Id>
+      <Namespace>Do</Namespace>
+      <Name>Google Docs</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Peng Deng</Author>
+      <Copyright />
+      <Url />
+      <Description>Search documents, spreadsheets, and presentations on Google Docs.</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.GoogleMaps_1.1.mpack</Url>
+    <Addin>
+      <Id>GoogleMaps</Id>
+      <Namespace>Do</Namespace>
+      <Name>Google Maps</Name>
+      <Version>1.1</Version>
+      <BaseVersion />
+      <Author>DR Colkitt</Author>
+      <Copyright />
+      <Url />
+      <Description>Map a location or route in Google maps.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.GoogleSearch_1.5.mpack</Url>
+    <Addin>
+      <Id>GoogleSearch</Id>
+      <Namespace>Do</Namespace>
+      <Name>Google Search</Name>
+      <Version>1.5</Version>
+      <BaseVersion />
+      <Author>Brian Lucas</Author>
+      <Copyright />
+      <Url />
+      <Description>Perform Google Searches from Do.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.ImageShack_1.1.mpack</Url>
+    <Addin>
+      <Id>ImageShack</Id>
+      <Namespace>Do</Namespace>
+      <Name>ImageShack</Name>
+      <Version>1.1</Version>
+      <BaseVersion />
+      <Author>Jason Jones</Author>
+      <Copyright />
+      <Url />
+      <Description>Upload images to ImageShack.</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.JIRA_2.3.mpack</Url>
+    <Addin>
+      <Id>JIRA</Id>
+      <Namespace>Do</Namespace>
+      <Name>JIRA Integration</Name>
+      <Version>2.3</Version>
+      <BaseVersion />
+      <Author>Andrew Franklin</Author>
+      <Copyright />
+      <Url />
+      <Description>Creates fast lookup links for JIRA issues.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Launchpad_1.1.mpack</Url>
+    <Addin>
+      <Id>Launchpad</Id>
+      <Namespace>Do</Namespace>
+      <Name>Launchpad</Name>
+      <Version>1.1</Version>
+      <BaseVersion />
+      <Author>Ken Simon, David Siegel</Author>
+      <Copyright />
+      <Url />
+      <Description>Search various Launchpad properties (e.g. code, bugs, people).</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.LocateFiles_1.1.mpack</Url>
+    <Addin>
+      <Id>LocateFiles</Id>
+      <Namespace>Do</Namespace>
+      <Name>Locate Files</Name>
+      <Version>1.1</Version>
+      <BaseVersion />
+      <Author>David Siegel</Author>
+      <Copyright />
+      <Url />
+      <Description>Find files on your computer using the GNU locate command.</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.MPD_1.0.mpack</Url>
+    <Addin>
+      <Id>MPD</Id>
+      <Namespace>Do</Namespace>
+      <Name>Music Player Daemon</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Zachary Goldberg</Author>
+      <Copyright />
+      <Url />
+      <Description>Search and play music from MPD.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.ManPages_1.2.mpack</Url>
+    <Addin>
+      <Id>ManPages</Id>
+      <Namespace>Do</Namespace>
+      <Name>Read Manual Pages (man)</Name>
+      <Version>1.2</Version>
+      <BaseVersion />
+      <Author>J. Carlos Navea</Author>
+      <Copyright />
+      <Url />
+      <Description>Search and view manual pages.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Microblog_1.0.mpack</Url>
+    <Addin>
+      <Id>Microblog</Id>
+      <Namespace>Do</Namespace>
+      <Name>Microblogging (Twitter)</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Jacob Andreas, Alex Launi</Author>
+      <Copyright />
+      <Url />
+      <Description>Update your microblog (e.g. Twitter, Identi.ca).</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.NX_1.0.mpack</Url>
+    <Addin>
+      <Id>NX</Id>
+      <Namespace>Do</Namespace>
+      <Name>NX</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Sean Dague</Author>
+      <Copyright />
+      <Url />
+      <Description>Search and connect to NX hosts.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.OpenSearch_1.2.mpack</Url>
+    <Addin>
+      <Id>OpenSearch</Id>
+      <Namespace>Do</Namespace>
+      <Name>OpenSearch Web Search</Name>
+      <Version>1.2</Version>
+      <BaseVersion />
+      <Author>Jason Jones</Author>
+      <Copyright />
+      <Url />
+      <Description>Search the web using your installed OpenSearch plugins.</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Opera_1.0.mpack</Url>
+    <Addin>
+      <Id>Opera</Id>
+      <Namespace>Do</Namespace>
+      <Name>Opera</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>goto</Author>
+      <Copyright />
+      <Url />
+      <Description>Search your Opera 6 bookmarks.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Pastebin_1.1.mpack</Url>
+    <Addin>
+      <Id>Pastebin</Id>
+      <Namespace>Do</Namespace>
+      <Name>Pastebin</Name>
+      <Version>1.1</Version>
+      <BaseVersion />
+      <Author>Jason Jones</Author>
+      <Copyright />
+      <Url />
+      <Description>Paste text to an online pastebin.</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Pidgin_1.6.mpack</Url>
+    <Addin>
+      <Id>Pidgin</Id>
+      <Namespace>Do</Namespace>
+      <Name>Pidgin</Name>
+      <Version>1.6</Version>
+      <BaseVersion />
+      <Author>David Siegel, Alex Launi</Author>
+      <Copyright />
+      <Url />
+      <Description>Search buddies and initiate chats in Pidgin.</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.PingFM_1.0.mpack</Url>
+    <Addin>
+      <Id>PingFM</Id>
+      <Namespace>Do</Namespace>
+      <Name>Ping.FM</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Peng Deng</Author>
+      <Copyright />
+      <Url />
+      <Description>Post microblog/status updates via Ping.FM</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Putty_1.0.mpack</Url>
+    <Addin>
+      <Id>Putty</Id>
+      <Namespace>Do</Namespace>
+      <Name>Putty</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Karol Będkowski</Author>
+      <Copyright />
+      <Url />
+      <Description>Access saved Putty sessions.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Quote_1.1.mpack</Url>
+    <Addin>
+      <Id>Quote</Id>
+      <Namespace>Do</Namespace>
+      <Name>Quote</Name>
+      <Version>1.1</Version>
+      <BaseVersion />
+      <Author>Alex Launi, Jason Jones</Author>
+      <Copyright />
+      <Url />
+      <Description>Post quotes to an online quoting service (e.g. BuBash.org).</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.RSS_1.0.mpack</Url>
+    <Addin>
+      <Id>RSS</Id>
+      <Namespace>Do</Namespace>
+      <Name>Simple RSS Reader</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Jason Imison</Author>
+      <Copyright />
+      <Url />
+      <Description>A simple RSS feed reader.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.RememberTheMilk_1.0.mpack</Url>
+    <Addin>
+      <Id>RememberTheMilk</Id>
+      <Namespace>Do</Namespace>
+      <Name>Remember The Milk</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Peng Deng</Author>
+      <Copyright />
+      <Url />
+      <Description>Manage tasks with Remember The Milk.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.RequestTracker_1.0.mpack</Url>
+    <Addin>
+      <Id>RequestTracker</Id>
+      <Namespace>Do</Namespace>
+      <Name>Request Tracker</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Chris Jones</Author>
+      <Copyright />
+      <Url />
+      <Description>Show tickets from Request Tracker.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Rhythmbox_2.1.mpack</Url>
+    <Addin>
+      <Id>Rhythmbox</Id>
+      <Namespace>Do</Namespace>
+      <Name>Rhythmbox</Name>
+      <Version>2.1</Version>
+      <BaseVersion />
+      <Author>David Siegel</Author>
+      <Copyright />
+      <Url />
+      <Description>Search and play music in Rhythmbox.</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Riptide_1.0.mpack</Url>
+    <Addin>
+      <Id>Riptide</Id>
+      <Namespace>Do</Namespace>
+      <Name>Riptide</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Jason Smith</Author>
+      <Copyright />
+      <Url />
+      <Description>'Do' away with torrent sites!</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.SSH_1.1.mpack</Url>
+    <Addin>
+      <Id>SSH</Id>
+      <Namespace>Do</Namespace>
+      <Name>SSH</Name>
+      <Version>1.1</Version>
+      <BaseVersion />
+      <Author>Peter Stuifzand</Author>
+      <Copyright />
+      <Url />
+      <Description>Search and connect to SSH hosts.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Shelf_1.2.mpack</Url>
+    <Addin>
+      <Id>Shelf</Id>
+      <Namespace>Do</Namespace>
+      <Name>Shelf</Name>
+      <Version>1.2</Version>
+      <BaseVersion />
+      <Author>Jason Smith</Author>
+      <Copyright />
+      <Url />
+      <Description>Store items on a 'shelf' for quick access.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Skype_1.2.mpack</Url>
+    <Addin>
+      <Id>Skype</Id>
+      <Namespace>Do</Namespace>
+      <Name>Skype</Name>
+      <Version>1.2</Version>
+      <BaseVersion />
+      <Author>kiwanami</Author>
+      <Copyright />
+      <Url />
+      <Description>Make calls, chats, change your status, and more.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.SqueezeCenter_1.1.mpack</Url>
+    <Addin>
+      <Id>SqueezeCenter</Id>
+      <Namespace>Do</Namespace>
+      <Name>SqueezeCenter</Name>
+      <Version>1.1</Version>
+      <BaseVersion />
+      <Author>Anders Thomsen</Author>
+      <Copyright />
+      <Url />
+      <Description>Control Logitech Squeezebox and Transport audio players.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.StockQuote_1.0.mpack</Url>
+    <Addin>
+      <Id>StockQuote</Id>
+      <Namespace>Do</Namespace>
+      <Name>Stock Quote</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>DR Colkitt</Author>
+      <Copyright />
+      <Url />
+      <Description>Get live stock quotes from Google Finance.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.SystemServices_1.0.mpack</Url>
+    <Addin>
+      <Id>SystemServices</Id>
+      <Namespace>Do</Namespace>
+      <Name>System Services</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Karol Będkowski, David Siegel</Author>
+      <Copyright />
+      <Url />
+      <Description>Start, stop, and restart system services.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Tasque_1.0.mpack</Url>
+    <Addin>
+      <Id>Tasque</Id>
+      <Namespace>Do</Namespace>
+      <Name>Tasque</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Guillaume Béland</Author>
+      <Copyright />
+      <Url />
+      <Description>Create new tasks in Tasque.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.TerminalServerClient_1.1.mpack</Url>
+    <Addin>
+      <Id>TerminalServerClient</Id>
+      <Namespace>Do</Namespace>
+      <Name>Terminal Server Client</Name>
+      <Version>1.1</Version>
+      <BaseVersion />
+      <Author>Ankit Solanki</Author>
+      <Copyright />
+      <Url />
+      <Description>Search and open Terminal Server Client connections.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Text_1.0.mpack</Url>
+    <Addin>
+      <Id>Text</Id>
+      <Namespace>Do</Namespace>
+      <Name>Text</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>David Siegel</Author>
+      <Copyright />
+      <Url />
+      <Description>Play with text! What could be more fun?</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Thunderbird_1.0.mpack</Url>
+    <Addin>
+      <Id>Thunderbird</Id>
+      <Namespace>Do</Namespace>
+      <Name>Thunderbird</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>David Siegel</Author>
+      <Copyright />
+      <Url />
+      <Description>Search your Thunderbird contacts.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.TinyUrl_1.0.mpack</Url>
+    <Addin>
+      <Id>TinyUrl</Id>
+      <Namespace>Do</Namespace>
+      <Name>TinyUrl</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>David Siegel</Author>
+      <Copyright />
+      <Url />
+      <Description>Make unwieldy urls tiny.</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Tomboy_1.3.mpack</Url>
+    <Addin>
+      <Id>Tomboy</Id>
+      <Namespace>Do</Namespace>
+      <Name>Tomboy</Name>
+      <Version>1.3</Version>
+      <BaseVersion />
+      <Author>Rick Harding</Author>
+      <Copyright />
+      <Url />
+      <Description>Search and create new Tomboy notes.</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.TrackerSearch_1.0.mpack</Url>
+    <Addin>
+      <Id>TrackerSearch</Id>
+      <Namespace>Do</Namespace>
+      <Name>Tracker Search</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Katriel Traum</Author>
+      <Copyright />
+      <Url />
+      <Description>Initiate Tracker searches.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Translate_1.0.mpack</Url>
+    <Addin>
+      <Id>Translate</Id>
+      <Namespace>Do</Namespace>
+      <Name>Translate</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Chris Szikszoy</Author>
+      <Copyright />
+      <Url />
+      <Description>Translate text and websites.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.VinagreVNC_1.0.mpack</Url>
+    <Addin>
+      <Id>VinagreVNC</Id>
+      <Namespace>Do</Namespace>
+      <Name>Vinagre VNC</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Alex Launi</Author>
+      <Copyright />
+      <Url />
+      <Description>Browse your VNC Viewer bookmarks and connect to remote servers.</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.VirtualBox_1.3.mpack</Url>
+    <Addin>
+      <Id>VirtualBox</Id>
+      <Namespace>Do</Namespace>
+      <Name>VirtualBox</Name>
+      <Version>1.3</Version>
+      <BaseVersion />
+      <Author>Chris Szikszoy</Author>
+      <Copyright />
+      <Url />
+      <Description>Control virtual machines in VirtualBox.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.VolumeControl_1.0.mpack</Url>
+    <Addin>
+      <Id>VolumeControl</Id>
+      <Namespace>Do</Namespace>
+      <Name>Volume Control</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Alex Launi</Author>
+      <Copyright />
+      <Url />
+      <Description>Control your system volume.</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.WindowManager_1.2.mpack</Url>
+    <Addin>
+      <Id>WindowManager</Id>
+      <Namespace>Do</Namespace>
+      <Name>Window Manager</Name>
+      <Version>1.2</Version>
+      <BaseVersion />
+      <Author>Jason Smith</Author>
+      <Copyright />
+      <Url />
+      <Description>Control your windows or groups of windows with Do.</Description>
+      <Category>Official</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Woof_1.0.mpack</Url>
+    <Addin>
+      <Id>Woof</Id>
+      <Namespace>Do</Namespace>
+      <Name>Woof! (Web Offer One File)</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Mathieu Cadet</Author>
+      <Copyright />
+      <Url />
+      <Description>Send files and folders at blazing speed to Pidgin contacts on your local network.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Wordnet_1.0.mpack</Url>
+    <Addin>
+      <Id>Wordnet</Id>
+      <Namespace>Do</Namespace>
+      <Name>Wordnet</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Ankit Solanki</Author>
+      <Copyright />
+      <Url />
+      <Description>Define words on Wordnet.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.YouTube_1.0.mpack</Url>
+    <Addin>
+      <Id>YouTube</Id>
+      <Namespace>Do</Namespace>
+      <Name>YouTube</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Luis Miguel Montiel G</Author>
+      <Copyright />
+      <Url />
+      <Description>Search your favorites, subscriptions, uploaded videos, and more.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.Zim_1.0.mpack</Url>
+    <Addin>
+      <Id>Zim</Id>
+      <Namespace>Do</Namespace>
+      <Name>Zim</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Karol Będkowski</Author>
+      <Copyright />
+      <Url />
+      <Description>Access Zim pages.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.delicious_2.0.mpack</Url>
+    <Addin>
+      <Id>delicious</Id>
+      <Namespace>Do</Namespace>
+      <Name>del.icio.us Tag Search</Name>
+      <Version>2.0</Version>
+      <BaseVersion />
+      <Author>Jacob Andreas, Alex Launi</Author>
+      <Copyright />
+      <Url />
+      <Description>Search your del.icio.us bookmarks.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+  <Addin>
+    <Url>Do.xmms2_1.0.mpack</Url>
+    <Addin>
+      <Id>xmms2</Id>
+      <Namespace>Do</Namespace>
+      <Name>xmms2</Name>
+      <Version>1.0</Version>
+      <BaseVersion />
+      <Author>Scott Albertine</Author>
+      <Copyright />
+      <Url />
+      <Description>Search and play xmms2 music.</Description>
+      <Category>Community</Category>
+      <Dependencies>
+        <AddinDependency>
+          <AddinId>Universe</AddinId>
+          <Version>1.0</Version>
+        </AddinDependency>
+      </Dependencies>
+      <OptionalDependencies />
+    </Addin>
+  </Addin>
+</Repository>

@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/faculty/!svn/ver/8851/dup/src/applications
+END
+configure.ac
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/faculty/!svn/ver/8843/dup/src/applications/configure.ac
+END
+AUTHORS
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/faculty/!svn/ver/8713/dup/src/applications/AUTHORS
+END
+INSTALL
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/faculty/!svn/ver/8814/dup/src/applications/INSTALL
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/faculty/!svn/ver/8713/dup/src/applications/ChangeLog
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/faculty/!svn/ver/8713/dup/src/applications/COPYING
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/faculty/!svn/ver/8843/dup/src/applications/Makefile.am
+END
+NEWS
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/faculty/!svn/ver/8713/dup/src/applications/NEWS
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/faculty/!svn/ver/8713/dup/src/applications/README
+END
+bootstrap
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/faculty/!svn/ver/8713/dup/src/applications/bootstrap
+END

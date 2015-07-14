@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/faculty/!svn/ver/10115/dup
+END
+configure.ac
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/faculty/!svn/ver/8846/dup/configure.ac
+END
+HACKING
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/faculty/!svn/ver/1549/dup/HACKING
+END
+AUTHORS
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/faculty/!svn/ver/9205/dup/AUTHORS
+END
+INSTALL
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/faculty/!svn/ver/1540/dup/INSTALL
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/faculty/!svn/ver/10115/dup/ChangeLog
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/faculty/!svn/ver/1529/dup/COPYING
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/faculty/!svn/ver/1856/dup/Makefile.am
+END
+NEWS
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/faculty/!svn/ver/9205/dup/NEWS
+END
+pre-commit
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/faculty/!svn/ver/5219/dup/pre-commit
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/faculty/!svn/ver/9205/dup/README
+END
+bootstrap
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/faculty/!svn/ver/2209/dup/bootstrap
+END

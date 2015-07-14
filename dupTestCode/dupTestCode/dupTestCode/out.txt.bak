@@ -1,0 +1,161 @@
+Starting Dispatcher
+1:Dispatcher sending ready Msg
+1:started writing msg
+1:File descriptor is accessible5
+1:thread locked and unlocked successful
+1:msg written on file descriptor5
+1:Finished writing msg to place 0
+1:Dispatcher waiting for normal msgs
+1:Dispatcher Starting to loop read a msg0
+1:Read Msg started reading messages
+1:File descriptor is accessible4
+Starting Dispatcher
+2:Dispatcher sending ready Msg
+2:started writing msg
+2:File descriptor is accessible5
+2:thread locked and unlocked successful
+2:msg written on file descriptor5
+2:Finished writing msg to place 0
+2:Dispatcher waiting for normal msgs
+2:Dispatcher Starting to loop read a msg0
+2:Read Msg started reading messages
+2:File descriptor is accessible4
+101:relayer started
+101:relayer started thread
+101:relayer started thread
+101:File descriptor is accessible13
+101:File descriptor is accessible14
+101:relayer started thread
+101:File descriptor is accessible15
+102:relayer started
+102:relayer started thread
+102:relayer started thread
+102:relayer started thread
+102:File descriptor is accessible16
+102:File descriptor is accessible17
+102:File descriptor is accessible18
+100:relayer started
+100:relayer started thread
+100:relayer started thread
+100:relayer started thread
+100:File descriptor is accessible10
+100:File descriptor is accessible11
+100:msg read on file descriptor11
+100:thread locked and unlocked successful
+100:msg written on file descriptor11
+100:File descriptor is accessible11
+100:File descriptor is accessible12
+100:msg read on file descriptor12
+100:thread locked and unlocked successful
+100:msg written on file descriptor12
+100:File descriptor is accessible12
+Starting Dispatcher
+0:Dispatcher waiting for msg
+0:Read Msg started reading messages
+0:File descriptor is accessible4
+0:msg read on file descriptor4
+0:My Type4 my Msg = READY from 1
+0:Dispatcher received Msgs from a place
+0:Dispatcher waiting for msg
+0:Read Msg started reading messages
+0:File descriptor is accessible4
+0:msg read on file descriptor4
+0:My Type4 my Msg = READY from 2
+0:Dispatcher received Msgs from a place
+0:Dispatcher received all N-1 Msgs
+0:Starting the termination of the dispatcher at place
+0:Dispatcher waiting for normal msgs
+0:Dispatcher Starting to loop read a msg0
+0:Read Msg started reading messages
+0:File descriptor is accessible4
+0:RunMain Started
+0:M Started
+THIS IS TASK DISPATCH 100330
+0:started writing msg
+0:File descriptor is accessible6
+0:thread locked and unlocked successful
+0:msg written on file descriptor6
+0:Finished writing msg to place 1
+THIS IS TASK DISPATCH2 100330
+0:M Finished
+101:msg read on file descriptor13
+1:msg read on file descriptor4
+101:thread locked and unlocked successful
+101:msg written on file descriptor13
+101:File descriptor is accessible13
+1:My Type0 my Msg = 0 from 0
+1:Read one msg
+1:Dispatcher Starting to loop read a msg1
+1:Read Msg started reading messages
+1:File descriptor is accessible4
+100:msg read on file descriptor11
+1:In _thread_start *************
+1:passed this point ************
+0:Thread Run Started
+1:Async One StartedTHIS IS TASK DISPATCH 1003a0
+1:started writing msg
+1:File descriptor is accessible5
+1:thread locked and unlocked successful
+1:msg written on file descriptor5
+1:Finished writing msg to place 0
+THIS IS TASK DISPATCH2 1003a0
+100:thread locked and unlocked successful
+100:msg written on file descriptor11
+100:File descriptor is accessible11
+0:msg read on file descriptor4
+0:My Type0 my Msg =   from 1
+0:Read one msg
+0:Dispatcher Starting to loop read a msg1
+0:Read Msg started reading messages
+0:File descriptor is accessible4
+0:In _thread_start *************
+0:passed this point ************
+0:Thread Run Started
+The final value of y at place 0 is: -1073741821THIS IS TASK START 1003a0
+THIS IS TASK DEREGISTER SEND 1003a0
+0:started writing msg
+0:File descriptor is accessible6
+0:thread locked and unlocked successful
+0:msg written on file descriptor6
+0:Finished writing msg to place 1
+0:passed this point ================
+101:msg read on file descriptor13
+1:msg read on file descriptor4
+101:thread locked and unlocked successful
+101:msg written on file descriptor13
+101:File descriptor is accessible13
+1:My Type3 my Msg =   from 0
+1:Read one msg
+1:Dispatcher Starting to loop read a msg2
+1:Read Msg started reading messages
+1:File descriptor is accessible4
+THIS IS TASK DEREGISTER 1003a0
+1:Deregistering the message1================
+1:Deregistering the message2================
+1:Deregistering the message3================
+1:Deregistering the message4================
+1:Deregistering the message5================
+THIS IS TASK START 1003a0
+THIS IS TASK DEREGISTER SEND 1003a0
+100:msg read on file descriptor11
+100:thread locked and unlocked successful
+100:msg written on file descriptor11
+100:File descriptor is accessible11
+0:msg read on file descriptor4
+0:My Type3 my Msg =   from 1
+0:Read one msg
+0:Dispatcher Starting to loop read a msg2
+0:Read Msg started reading messages
+0:File descriptor is accessible4
+1:started writing msg
+1:File descriptor is accessible5
+1:thread locked and unlocked successful
+1:msg written on file descriptor5
+1:Finished writing msg to place 0
+1:passed this point ================
+THIS IS TASK DEREGISTER 1003a0
+0:Deregistering the message1================
+0:Deregistering the message2================
+0:Deregistering the message3================
+0:Deregistering the message4================
+0:Deregistering the message5================

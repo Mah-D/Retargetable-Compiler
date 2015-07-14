@@ -1,0 +1,2 @@
+nodeFANINANY@127.0.0.1:55555[0</usr/share/dict/words, 1|nodeFANOUT:0]$ faninany;
+nodeFANOUT@127.0.0.1:55555[1>/dev/tty, 3|nodeFANINANY:3]$ fanout;

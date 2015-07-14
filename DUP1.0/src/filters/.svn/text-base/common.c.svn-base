@@ -1,0 +1,675 @@
+/*
+     This file is part of DUP.
+     (C) 2008, 2009 The DUP team
+
+     DUP is free software; you can redistribute it and/or modify
+     it under the terms of the GNU General Public License as published
+     by the Free Software Foundation; either version 2, or (at your
+     option) any later version.
+
+     DUP is distributed in the hope that it will be useful, but
+     WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+     General Public License for more details.
+
+     You should have received a copy of the GNU General Public License
+     along with DUP; see the file COPYING.  If not, write to the
+     Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+     Boston, MA 02111-1307, USA.
+*/
+/**
+ * @file filters/common.c
+ * @brief routines shared by many filters
+ * @author Christian Grothoff
+ * @author Matt Rutherford
+ * @author Jasmine Garoot
+ */
+
+#include "dup_filter_lib.h"
+
+/**
+ * Should we print warnings when the last record
+ * read from some input is too short and discarded?
+ */
+#define WARN_SHORT_RECORDS 0
+
+/**
+ * Check if the given file descriptor is valid.
+ *
+ * @param fd file descriptor to check
+ * @return 0 if not, 1 if it is valid
+ */
+int
+DUP_get_fd (int fd)
+{
+  int flags;
+
+  errno = 0;
+  flags = fcntl (fd, F_GETFD);
+  if ((flags == -1) && (errno == EBADF))
+    return 0;
+  return 1;
+}
+
+/**
+ * Write the specified number of bytes to the given
+ * file descriptor (may block).
+ * This function will print an error message
+ * and abort the program with exit(1) on
+ * write error (other than SIGPIPE).
+ *
+ * @param fd descriptor to write to
+ * @param buf data to write
+ * @param size number of bytes to write
+ * @return 1 on success,
+ *         0 if fd was closed by other side;
+ */
+int
+DUP_write_all (int fd, const char *buf, size_t size)
+{
+  size_t pos = 0;
+  ssize_t out_size;
+
+  while (pos < size)
+    {
+      out_size = DUP_write (fd, &buf[pos], size - pos);
+      if (out_size == 0)
+        {
+          /* if (sole) output stream  is closed, we're done
+             (can this happen? should we not always get EPIPE
+             or something like it?) */
+          return 0;
+        }
+      pos += out_size;
+    }
+  return 1;
+}
+
+static void
+catcher (int sig)
+{
+}
+
+/**
+ * Install a signal handler to ignore SIGPIPE.
+ */
+void
+DUP_ignore_sigpipe ()
+{
+  struct sigaction oldsig;
+  struct sigaction sig;
+
+  sig.sa_handler = &catcher;
+  sigemptyset (&sig.sa_mask);
+#ifdef SA_INTERRUPT
+  sig.sa_flags = SA_INTERRUPT;  /* SunOS */
+#else
+  sig.sa_flags = SA_RESTART;
+#endif
+  if (0 != sigaction (SIGPIPE, &sig, &oldsig))
+    fprintf (stderr,
+             "Failed to install SIGPIPE handler: %s\n", strerror (errno));
+}
+
+
+/**
+ * Parse the record size argument.
+ *
+ * @param argc number of arguments
+ * @param argv command line arguments
+ * @param buf_size set to desired buffer size
+ * @return -1 on error, 0 if record-based, 1 if newline-based
+ */
+int
+DUP_parse_record_size_arguments (int argc, char **argv, size_t * buf_size)
+{
+  unsigned int bsize;
+
+  if (argc == 1)
+    {
+      *buf_size = DEFAULT_BUF_SIZE;
+      return 1;
+    }
+  if ((1 != sscanf (argv[1],
+                    "%u", &bsize)) || (bsize == 0))
+    {
+      fprintf (stderr,
+               "Invalid argument `%s', specify a positive buffer size!\n",
+               argv[1]);
+      return -1;
+    }
+  *buf_size = bsize;
+  return 0;
+}
+
+/**
+ * If the given buffer contains an entire line,
+ * process it and update the buffer.  Only processes
+ * a single line, even if the buffer contains
+ * more than one.
+ *
+ * @param buffer the buffer to check for a line
+ * @param sidx number of bytes from the beginning of the buffer that
+ *             do not need to be searched anymore (by reference)
+ * @param val_start offset in the buffer where valid data starts; 
+ *         note that valid data can wrap around (by reference)
+ * @param val_count number of valid bytes in the buffer (by reference)
+ * @param buffer_size total size of the buffer
+ * @param proc function to call on each line
+ * @param proc_cls extra argument to proc
+ * @return -1 if proc returned -1
+ *          0 if proc returned 0
+ *          1 if proc returned 1
+ *          2 if buffer contained no
+ *            newline between index and position.
+ */
+int
+DUP_try_process_line (char *buffer,
+                      size_t *sidx,
+		      size_t *val_start,
+                      size_t *val_count,
+                      size_t buffer_size,
+                      DUP_LineProcessor proc, void *proc_cls)
+{
+  size_t line_size;
+  char *end;
+  int ret;
+  size_t search_start;
+  size_t search_size;
+  size_t search_range;
+  
+  search_start = *val_start + *sidx;
+  search_size = *val_count - *sidx;
+  if ( (search_start >= buffer_size) ||
+       (search_start < *val_start) )
+    {
+      /* 1st part already searched */
+      search_start = buffer_size; /* do not really search for 1st round */
+      search_range = 0;
+      end = NULL;
+    }
+  else
+    {
+      /* search 1st part (middle of buffer) */
+      search_range = buffer_size - search_start;
+      if (search_range > search_size)
+	search_range = search_size;
+      end = memchr (&buffer[search_start],
+		    '\n', 
+		    search_range);
+      *sidx += search_range; /* reset to 0 anyway if we found something */
+    }
+  if ( (end != NULL) ||
+       (search_range == search_size) )
+    {
+      if (end == NULL)
+	{
+	  /* no newline, no 2nd part, done! */
+	  return 2;
+	}
+      /* line in one contiguous block */
+      line_size = 1 + (end - &buffer[*val_start]);
+      if (line_size > buffer_size) abort (); /* logic error */
+      ret = proc (proc_cls, &buffer[*val_start], end);
+      *val_start += line_size;
+      *val_count -= line_size;
+      *sidx = 0;
+      return ret;
+    }
+  /* search 2nd part (beginning of buffer) */
+  search_size = *val_count - *sidx;
+  search_start = *val_start + *sidx;
+  if (search_start >= buffer_size)
+    search_start -= buffer_size; /* wrap around, expected to happen */
+  if (search_start + search_size > buffer_size) abort (); /* logic error */
+  end = memchr (&buffer[search_start], '\n', search_size);
+  if (end == NULL)
+    {
+      /* still no line */
+      *sidx += search_size;
+      return 2;
+    }
+  /* line in two blocks, need to call 'proc' twice! */
+  line_size = *sidx + 1 + (end - &buffer[search_start]);
+  ret = proc (proc_cls, &buffer[*val_start], &buffer[buffer_size-1]);
+  if (ret != 1)
+    {
+      /* outch, let's hope we don't get called again (this would
+	 always be unclean!) */
+      *val_count -= (buffer_size - *val_start);
+      *val_start = 0;
+      *sidx = 0;
+      return ret;
+    }
+  ret = proc (proc_cls, buffer, end);
+  *val_count -= line_size;
+  *val_start = *val_start + line_size;
+  if ( (*val_start) > buffer_size)
+    *val_start -= buffer_size;
+  *sidx = 0;
+  return ret;
+}
+
+/**
+ * Similar to DUP_try_process_line except search for a
+ * user suplied end of line marker.
+ *
+ * @param buffer the buffer to check for a line
+ * @param sidx number of bytes from the beginning of the buffer that
+ *             do not need to be searched anymore (by reference)
+ * @param val_start offset in the buffer where valid data starts; 
+ *         note that valid data can wrap around (by reference)
+ * @param val_count number of valid bytes in the buffer (by reference)
+ * @param buffer_size total size of the buffer
+ * @param proc function to call on each line
+ * @param proc_cls extra argument to proc
+ * @param knot buffer containing end of line marker
+ * @param knot_size size of knot buffer
+ * @return -1 if proc returned -1
+ *          0 if proc returned 0
+ *          1 if proc returned 1 or if search of valid data is not finished.
+ *          2 if buffer contained no
+ *            newline between index and position.
+ */
+int
+DUP_try_process_cord (char *buffer,
+                      size_t *sidx,
+		      size_t *val_start,
+                      size_t *val_count,
+                      size_t buffer_size,
+                      DUP_LineProcessor proc, void *proc_cls,
+		      const char *knot, size_t knot_size)
+{
+  if (knot_size < 1){
+    fprintf(stderr, "DUP_try_process_cord must have a knot_size of 1 or more.\n");
+    abort();
+  }
+  size_t line_size;
+  char *end;
+  int ret;
+  size_t search_start;
+  size_t search_size;
+  size_t search_range;
+  
+  search_start = *val_start + *sidx;
+  search_size = *val_count - *sidx;
+  if ( (search_start >= buffer_size) ||
+       (search_start < *val_start) )
+    {
+      /* 1st part already searched */
+      search_start = buffer_size; /* do not really search for 1st round */
+      search_range = 0;
+      end = NULL;
+    }
+  else
+    {
+      /* search 1st part (middle of buffer) */
+      search_range = buffer_size - search_start;
+      if (search_range > search_size)
+	search_range = search_size;
+      end = memchr (&buffer[search_start],
+		    knot[0], 
+		    search_range);
+    }
+  if ( (end != NULL) ||
+       (search_range == search_size) )
+    {
+      if (end == NULL)
+	{
+	  /* no newline, no 2nd part, done! */
+      *sidx += search_range; /* reset to 0 anyway if we found something */
+	  return 2;
+	}
+      /* line might be in one contiguous block */
+      line_size = 1 + (end - &buffer[*val_start]);
+      if (line_size > buffer_size) abort (); /* logic error */
+      size_t searched_size = (end - &buffer[search_start]);
+      if (searched_size + knot_size <= search_range) { /* memcmp won't go past end of buffer */
+        if (memcmp(end, knot, knot_size) == 0){ /* yay we found an end of line */
+          ret = proc (proc_cls, &buffer[*val_start], (end + (knot_size - 1)));
+          *val_start += line_size + knot_size - 1;
+          *val_count -= line_size + knot_size - 1;
+          *sidx = 0;
+          return ret;
+	} else { /* no end of line but we need to finish 1st part of search*/
+	  *sidx += searched_size + 1;
+	  return 1;
+	}
+      } else if (searched_size + knot_size > search_size) { /* memcmp will go past valid data */
+        *sidx += searched_size; /* try memcmp next time with more to search*/
+	return 2;
+      } else { /* may have to wrap a memcmp to start of buffer */
+        size_t check_size = (&buffer[buffer_size] - end);
+	if (memcmp(end, knot, check_size) == 0){
+	  if (memcmp(buffer, &knot[check_size], knot_size - check_size) == 0){
+	    ret = proc(proc_cls, &buffer[*val_start], &buffer[buffer_size-1]);
+	    if (ret != 1){
+	      *val_count -= (buffer_size - *val_start);
+	      *val_start = 0;
+	      *sidx = 0;
+	      return ret;
+	    }
+	    ret = proc(proc_cls, buffer, &buffer[(knot_size - check_size) - 1]);
+            *val_count -= line_size + knot_size - 1;
+	    *val_start = knot_size -check_size;
+	    if ((*val_start)>buffer_size) *val_start -= buffer_size; /* you got problems... */
+	    *sidx = 0;
+	    return ret;
+	  } else {
+	    *sidx += searched_size + 1;
+	    return 1;
+	  }
+	} else {
+	  *sidx += searched_size + 1;
+	  return 1;
+	}
+      }
+    }
+  *sidx += search_range;
+  /* search 2nd part (beginning of buffer) */
+  search_size = *val_count - *sidx;
+  search_start = *val_start + *sidx;
+  if (search_start >= buffer_size)
+    search_start -= buffer_size; /* wrap around, expected to happen */
+  if (search_start + search_size > buffer_size) abort (); /* logic error */
+  end = memchr (&buffer[search_start], knot[0], search_size);
+  if (end == NULL)
+    {
+      /* still no line */
+      *sidx += search_size;
+      return 2;
+    }
+  size_t searched_size = (end - &buffer[search_start]);
+  if (searched_size + knot_size > search_size) {
+    *sidx += searched_size;
+    return 2;
+  }
+  if (memcmp(end, knot, knot_size) != 0){
+    *sidx += searched_size + 1;
+    return 1;
+  }
+  /* line in two blocks, need to call 'proc' twice! */
+  line_size = *sidx + 1 + (end - &buffer[search_start]);
+  ret = proc (proc_cls, &buffer[*val_start], &buffer[buffer_size-1]);
+  if (ret != 1)
+    {
+      /* outch, let's hope we don't get called again (this would
+	 always be unclean!) */
+      *val_count -= (buffer_size - *val_start);
+      *val_start = 0;
+      *sidx = 0;
+      return ret;
+    }
+  ret = proc (proc_cls, buffer, end);
+  *val_count -= line_size;
+  *val_start = *val_start + line_size;
+  if ( (*val_start) > buffer_size)
+    *val_start -= buffer_size;
+  *sidx = 0;
+  return ret;
+}
+
+/**
+ * Read from fd using "*buffer" for buffer management.  When called,
+ * "*buffer" already has "*position" valid bytes in it.  If a new line
+ * ('\n') is found, call the proc function on it.  If the last
+ * character read is not a new line, leave the remaining characters in
+ * "*buffer" for future reference and update "*position" accordingly.
+ * This function may grow "*buffer" if "*position" is already
+ * "*buf_size".  When growing, an extra character will be allocated to
+ * allow clients to do things like adding 0-termination.
+ *
+ * @param fd descriptor to read from
+ * @param buffer where to read to (by reference)
+ * @param buf_size size of the buffer (by reference)
+ * @param val_start offset in the buffer where valid data starts; 
+ *         note that valid data can wrap around (by reference)
+ * @param val_count number of valid bytes already in buffer (by reference)
+ * @param proc function to call on each line read
+ * @param proc_cls cls argument to the proc function
+ * @return 1 to continue processing (success)
+ *         0 to abort processing with success
+ *           (successful return code from proc)
+ *        -1 abort with error (unexpected read error
+ *           or abort with error returned by proc)
+ *        -2 got EOF reading
+ */
+int
+DUP_try_read_line (int fd,
+                   char **buffer,
+                   size_t *buf_size,
+		   size_t *val_start,
+                   size_t *val_count,
+		   DUP_LineProcessor proc,
+                   void *proc_cls)
+{
+  int ret;
+  size_t sidx;
+  size_t nsize;
+  size_t ninc;
+  size_t read_max;
+  char *read_start;
+  ssize_t read_size;
+  
+  if ( (*val_count) == (*buf_size) )
+    {
+      ninc = *buf_size + 8;
+      nsize = (*buf_size) + ninc;
+      *buffer = realloc (*buffer, nsize);
+      if (0 != (*val_start))
+	{
+	  memcpy (&(*buffer)[*val_start + ninc],
+		  &(*buffer)[*val_start],
+		  (*buf_size) - (*val_start));
+	  *val_start += ninc;
+	}
+      *buf_size = nsize;
+    }
+
+  if ( (*val_start) + (*val_count) < (*buf_size) )
+    {
+      read_max = (*buf_size) - ( (*val_start) + (*val_count) );
+      read_start = &(*buffer)[(*val_start) + (*val_count)];
+    }
+  else
+    {
+      read_max = (*buf_size) - (*val_count);
+      read_start = &(*buffer)[(*val_start) + (*val_count) - (*buf_size)];
+    }
+  read_size = DUP_read (fd, read_start, read_max);
+  if (read_size > 0)
+    {
+      sidx = *val_count; /* no need to search the 'old' data */
+      *val_count += read_size;
+
+      while (1 == (ret = DUP_try_process_line (*buffer,
+                                               &sidx,
+                                               val_start,
+					       val_count,
+                                               *buf_size,
+                                               proc, proc_cls)));
+      if (ret <= 0)
+        return ret;
+      return 1;
+    }
+  if ((*val_count) > 0)
+    {
+      /* process last line (lacking '\n') */
+
+      if ( (*buf_size) >= (*val_start) + (*val_count) )
+	{
+	  /* single block */
+	  ret = proc (proc_cls, 
+		      &(*buffer)[*val_start], 
+		      &(*buffer)[(*val_start) + (*val_count) - 1]);
+	  if (ret == 1)
+	    ret = -2;
+	  *val_count = 0;
+	}
+      else
+	{
+	  /* two blocks */
+	  ret = proc (proc_cls,
+		      &(*buffer)[*val_start],
+		      &(*buffer)[*buf_size - 1]);
+	  if (ret != 1)
+	    {
+	      /* outch, let's hope we don't get called again (this would
+		 always be unclean!) */
+	      *val_count -= (*buf_size) - (*val_start);
+	      *val_start = 0;
+	      return ret;
+	    }
+	  ret = proc (proc_cls,
+		      *buffer,
+		      &(*buffer)[(*val_count) + (*val_start) - (*buf_size) - 1]);
+	  *val_count = 0;
+	  *val_start = 0;
+	  if (ret == 1)
+	    ret = -2;
+	  return ret;
+	}
+      return ret;
+    }
+  return -2;
+}
+
+
+/**
+ * Read from fd using "buffer" for buffer management.  When called,
+ * "buffer" already has "*position" valid bytes in it.  If a block
+ * of the given block size is complete, call the proc function on it.
+ * If the block is incomplete, leave the remaining characters in
+ * "buffer" for future reference and update "*position" accordingly.
+ *
+ * @param fd descriptor to read from
+ * @param buffer where to read to
+ * @param buf_size size of each block
+ * @param position bytes already in buffer (by reference)
+ * @param proc function to call on each block read
+ * @param proc_cls cls argument to the proc function
+ * @return 1 to continue processing (success)
+ *         0 to abort processing with success
+ *           (successful return code from proc)
+ *        -1 abort with error (unexpected read error
+ *           or abort with error returned by proc)
+ *        -2 got EOF reading
+ */
+int
+DUP_try_read_block (int fd,
+                    char *buffer,
+                    size_t buf_size,
+                    size_t * position, DUP_LineProcessor proc, void *proc_cls)
+{
+  ssize_t read_size;
+
+  read_size = DUP_read (fd, &buffer[*position], buf_size - (*position));
+  if (read_size == 0)
+    {
+      /* end of file */
+#if WARN_SHORT_RECORDS
+      if (position > 0)
+        {
+          fprintf (stderr,
+                   "Last record incomplete: %u out of %u bytes!\n",
+                   position, buf_size);
+        }
+#endif
+      return -2;
+    }
+  *position += read_size;
+  if (buf_size != *position)
+    return 1;
+  *position = 0;
+  return proc (proc_cls, buffer, &buffer[buf_size - 1]);
+}
+
+/**
+ * Do a read call and check for errors.
+ * If read returns -1, print an error
+ * message and abort. Otherwise
+ * behave just like read.
+ *
+ * @param fd file descriptor to read from
+ * @param buf buffer to read to
+ * @param size number of bytes to read at most
+ * @return number of bytes read (0 or more)
+ */
+ssize_t
+DUP_read (int fd, char *buf, size_t size)
+{
+  ssize_t ret;
+
+  ret = read (fd, buf, size);
+  if (ret < 0)
+    {
+      if (errno == EINTR)
+        return 0;               /* retry */
+      fprintf (stderr, "read failed on fd %d: %s\n", fd, strerror (errno));
+      exit (1);
+    }
+  return ret;
+}
+
+
+
+/**
+ * Do a select call and check for errors.
+ * If read returns -1 or 0, print an error
+ * message and abort. Otherwise
+ * behave just like select (with no timeout).
+ *
+ * @param maxfd max fd
+ * @param rs read set
+ * @param ws write set
+ * @param es error set
+ * @return number of fds ready (will be positive)
+ */
+int
+DUP_select (int maxfd, fd_set * rs, fd_set * ws, fd_set * es)
+{
+  int reti;
+
+  reti = select (maxfd, rs, ws, es, NULL);
+  if (reti == -1)
+    {
+      fprintf (stderr, "Call to `select' failed: %s\n", strerror (errno));
+      exit (1);
+    }
+  if (reti == 0)
+    {
+      /* no file descriptors available for read,
+         why did select return!? */
+      fprintf (stderr, "Internal logic error. Aborting.\n");
+      exit (1);
+    }
+  return reti;
+}
+
+/**
+ * Do a write call and check for errors.
+ * If write returns -1 (and it is not
+ * SIGPIPE), print an error
+ * message and abort. Otherwise
+ * behave just like write.
+ *
+ * @param fd file descriptor to write to
+ * @param buf buffer to write from
+ * @param size number of bytes to write at most
+ * @return number of bytes written (0 or more)
+ */
+ssize_t
+DUP_write (int fd, const char *buf, size_t size)
+{
+  ssize_t out_size;
+
+  out_size = write (fd, buf, size);
+  if (out_size < 0)
+    {
+      if (errno == EPIPE)
+        return 0;
+      fprintf (stderr, "Write error: %s\n", strerror (errno));
+      exit (1);
+    }
+  return out_size;
+}

@@ -1,0 +1,173 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/faculty/!svn/ver/10115/dup/src/dup
+END
+test_multisystem_dup.sh
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/faculty/!svn/ver/8841/dup/src/dup/test_multisystem_dup.sh
+END
+parser.cc
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/faculty/!svn/ver/2084/dup/src/dup/parser.cc
+END
+test_option_c.sh
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/faculty/!svn/ver/8757/dup/src/dup/test_option_c.sh
+END
+dupparse.yy
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/faculty/!svn/ver/5732/dup/src/dup/dupparse.yy
+END
+control_connection.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/faculty/!svn/ver/8767/dup/src/dup/control_connection.cc
+END
+test_openfd.sh
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/faculty/!svn/ver/8732/dup/src/dup/test_openfd.sh
+END
+control_connection.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/faculty/!svn/ver/8767/dup/src/dup/control_connection.h
+END
+connection.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/faculty/!svn/ver/8767/dup/src/dup/connection.h
+END
+edge.cc
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/faculty/!svn/ver/8816/dup/src/dup/edge.cc
+END
+edge.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/faculty/!svn/ver/8816/dup/src/dup/edge.h
+END
+duplex.l
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/faculty/!svn/ver/5732/dup/src/dup/duplex.l
+END
+test_duplicate_fd.sh
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/faculty/!svn/ver/8841/dup/src/dup/test_duplicate_fd.sh
+END
+dup_string.cc
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/faculty/!svn/ver/6001/dup/src/dup/dup_string.cc
+END
+process.cc
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/faculty/!svn/ver/10115/dup/src/dup/process.cc
+END
+test_nested_dup.sh
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/faculty/!svn/ver/8749/dup/src/dup/test_nested_dup.sh
+END
+test_problems.log
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/faculty/!svn/ver/2174/dup/src/dup/test_problems.log
+END
+dup_string.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/faculty/!svn/ver/5220/dup/src/dup/dup_string.h
+END
+process.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/faculty/!svn/ver/5220/dup/src/dup/process.h
+END
+test_parser.sh
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/faculty/!svn/ver/2049/dup/src/dup/test_parser.sh
+END
+strnfuncs.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/faculty/!svn/ver/2516/dup/src/dup/strnfuncs.c
+END
+globals.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/faculty/!svn/ver/8749/dup/src/dup/globals.h
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/faculty/!svn/ver/8841/dup/src/dup/Makefile.am
+END
+test_simple_dup.sh
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/faculty/!svn/ver/8840/dup/src/dup/test_simple_dup.sh
+END
+strnfuncs.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/faculty/!svn/ver/2516/dup/src/dup/strnfuncs.h
+END
+dup.cc
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/faculty/!svn/ver/8767/dup/src/dup/dup.cc
+END
+data_connection.cc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/faculty/!svn/ver/8749/dup/src/dup/data_connection.cc
+END
+cycle_filter.sh
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/faculty/!svn/ver/2165/dup/src/dup/cycle_filter.sh
+END
+data_connection.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/faculty/!svn/ver/8729/dup/src/dup/data_connection.h
+END

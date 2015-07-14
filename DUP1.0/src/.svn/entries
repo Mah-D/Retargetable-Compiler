@@ -1,0 +1,80 @@
+10
+
+dir
+10123
+https://svn.cs.du.edu/faculty/dup/src
+https://svn.cs.du.edu/faculty
+
+
+
+2010-10-10T09:14:39.772966Z
+10115
+grothoff
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+23489819-bdc3-4720-a46c-74add9bfb0b2
+
+include
+dir
+
+applications
+dir
+
+dup
+dir
+
+filters
+dir
+
+Makefile.am
+file
+
+
+
+
+2010-10-12T05:31:49.143599Z
+0cbcaebb906ec5f6452ae2325b5bacaa
+2010-06-07T10:01:16.320591Z
+8715
+grothoff
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+45
+
+utilities
+dir
+
+dupd
+dir
+

@@ -1,0 +1,384 @@
+\documentclass[12pt]{article}
+
+\title{DUP Protocol Specification 2.0}
+\author{Jeff Keene \and Christian Grothoff}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This document specifies the second version of the DUP protocol.  It
+specifies the information sent from DUP to the DUPDs as well as the
+format of the messages between multiple DUPDs.  The main changes in
+this version are the use of {\tt ssh} to support authentication of
+users and to secure the communication of the session information.
+\end{abstract}
+
+\section{Preliminaries}
+
+All integers in the protocol are unsigned and transmitted in
+big-endian format (network byte order) unless specified otherwise.
+All strings are in UTF-8 encoding, limited to 64k characters, prefixed
+with a 16-bit integer that gives their length including the
+0-terminator (which is also transmitted).  Strings should not include
+characters with value 0, if they do, the receiving side is allowed
+to ignore all characters after the first zero.   
+
+\section{Terminology}
+
+\begin{description}
+\item[Session]{Each time {\tt dup} is started with a multistream pipeline
+               specification {\tt dup} creates a session.  This session
+               corresponds to a set of processes and streams connected
+               according to the specification.}
+\item[Process]{We will refer to a process as both the command line
+               and file-descriptor specifications for running a UNIX/POSIX
+               process as well as for the actual running process}
+\item[Stream]{A stream can be a TCP stream (used only in one direction) connecting
+              processes running on different systems or a pipe connecting 
+              processes on the same
+              system or a file descriptor reading from, writing to or appending to
+              a file, device or named pipe (fifo)}
+\end{description}
+
+\section{Protocol Overview}
+
+The protocol includes message exchanges between two parties in
+three distinct situations:
+
+\begin{enumerate}
+ \item{{\tt dup} to {\tt dupd}: {\tt dup} informs {\tt dupd} about a new session that {\tt dupd}
+       will be asked to facilitate; this exchange (including launching of {\tt dupd} is done
+       using {\tt ssh}}
+ \item{{\tt dupd} to {\tt dupd}: {\tt dupd} initiates a stream with another {\tt dupd} as
+       part of the requirements for a particular session}
+ \item{{\tt dup} to {\tt dupd}: {\tt dup} initiates a stream with a {\tt dupd} as part
+       of the requirements for a particular session}
+\end{enumerate}
+
+For each session, first {\tt dup} will use the first type of protocol to
+inform all participating {\tt dupd}s about the session; those {\tt dupd}s will
+then start to establish streams with each other using the second
+protocol.  Note that some {\tt dupd}s may receive requests from other {\tt dupd}s
+before {\tt dup} had a chance to give them their session data.  {\tt dup} will
+also contact {\tt dupd}s to initiate streams with them; this phase also
+overlaps with {\tt dupd}s contacting other {\tt dupd}s but is guaranteed to happen
+after the {\tt dupd}s received the session information from {\tt dup}.  After all
+of the streams have been established, the {\tt dupd}s signal success to {\tt dup}
+(using {\tt stdout} from the {\tt ssh} stream that was used for the session information protocol).  {\tt dup}
+then sends a final communication to all {\tt dupd}s using the session
+information protocol signaling them to {\tt fork} and {\tt exec}.  Finally, 
+{\tt dup} can use {\tt SIGHUP} to ask all {\tt dupd}s to terminate early,
+and the {\tt dupd}s signal termination to {\tt dup} simply by exiting (end of the
+{\tt ssh} session).
+
+\section{{\tt dup} to {\tt dupd}: The New Session Protocol}
+
+First, {\tt dup} uses {\tt ssh} to login to the remote host and start
+{\tt dupd}.  Afterwards, the two systems communicate via the {\tt
+  stdin} and {\tt stdout} streams provided by {\tt ssh}.  The protocol
+includes three exchanges:
+\begin{enumerate}
+ \item{{\tt dup} to {\tt dupd}: transmission of session information}
+ \item{{\tt dupd} to {\tt dup}: confirmation of success establishing
+       all required streams and finding applications; or
+       signal of error (in which case the stream is
+       closed)}
+ \item{{\tt dup} to {\tt dupd}: all {\tt dupd}s involved signalled success,
+       {\tt fork} and {\tt exec}; or {\tt dup} closes the stream,
+       in which case all session state is cleaned up}
+\end{enumerate}
+
+
+\subsection{Transmission of Session Information}
+
+In the first step, {\tt dup} sends the following information to {\tt dupd} (in
+this order):
+
+\begin{enumerate}
+ \item{32-bit ``magic'' number (0xDDFF8600)}
+ \item{16-bit version number (1 for now) ({\bf changed in 2.0})}
+ \item{16-bit port number ({\bf new in 2.0})}
+ \item{No session number anymore ({\bf removed in 2.0})}
+ \item{32-bit number of processes $P$ at the respective {\tt dupd} for
+       this session}
+\end{enumerate}
+
+At this point, {\tt dupd} attempts to bind to the given port and
+either sends back a 32-bit value of zero for ``OK'' or a 32-bit 
+error code of 20 (failed to bind to port), followed by an error message.
+{\tt dup} can then abort the session by closing the stream, or continue
+with:
+
+\begin{enumerate}
+ \setcounter{enumi}{5}
+ \item{$P$ times process information, each containing information
+       about a process. The first process should locally have the
+       number one, the next two, and so on until $P$. Zero is not 
+       a valid process number.  For each process, the following
+       information is transmitted:
+% Q: Doesn't this imply that a single process can have different process numbers on different dupds?
+% A: No, all DUPDs will refer to a process using the offset in the table of the DUPD that will fork+exec
+%    the process.
+%
+% Q: Why can't we just let dup compute a single set of process numbers and maintain that consistently
+%    through the session?
+% A: Then we would get either sparse tables for the processes for the DUPDs or non-constant access
+%    time when the DUPD looks up the process.
+ \begin{enumerate}
+  \item{32-bit number $D$ giving the number of file descriptors for the process}
+  \item{32-bit number $A$ giving the number of arguments for the process,
+        including the name of the process itself; $A > 0$}
+% Q: Why can't the command be just one string?  Is there as good reason for chunking it?
+% A: Yes, we don't want to do the lexing of quotes and escapes in DUPD, especially
+%    since we already run a lexer in DUP which can easily do the work.
+  \item{$A$ strings giving the name of the process and its arguments}
+  \item{$D$ I/O descriptors (transmitted in any order) consisting of:
+   \begin{enumerate}
+    \item{A 16-bit flags word.  The lowest three bits
+          indicate what this descriptor will be for: 
+    \begin{description}
+      \item[000]{Transmitting to another {\tt dupd}}
+      \item[001]{Receiving from another {\tt dupd}}
+      \item[010]{Transmitting to {\tt dup}}
+      \item[011]{Receiving from {\tt dup}}
+      \item[100]{Reading from a file}
+      \item[101]{Writing to a file}
+      \item[110]{Appending to a file}
+      \item[111]{Pipe between local processes}
+    \end{description}
+          All other bits in the flags word should be zero in this version
+          of the protocol and ignored by {\tt dupd}.}
+    \item{A 16-bit port number with the port of the remote
+          {\tt dupd} if we are transmitting to another {\tt dupd}, otherwise zero;
+          if this is a pipe between local processes, the sending process
+          has a non-zero port number (1)}
+    \item{A 32-bit integer specifying the file descriptor
+          that this I/O description talks about for this
+          process}
+    \item{A 32-bit integer specifying the file descriptor
+          that this I/O description talks about with
+          respect to the remote process (0 for file IO)}
+    \item{A 32-bit integer specifying the number of the
+          respective (remote) process (0 for file IO or reading/writing from/to {\tt dup})}
+    \item{A 64-bit ``random'' stream identification number that the initiating 
+          process will transmit to the receiving process to authenticate itself;
+          for pipes and file IO (flag values of 1xx) , this value is always zero ({\bf new in 2.0})}
+    \item{A string, interpreted depending on the specifics
+          of the flags word: 
+      \begin{itemize}
+        \item{The string represents the hostname 
+              of the remote {\tt dupd} if we are transmitting to
+              another {\tt dupd}}
+        \item{The string is a filename if we are doing file IO}
+        \item{The string should be empty (empty string, not no string!) otherwise}
+      \end{itemize}}
+   \end{enumerate}}
+ \end{enumerate}}
+\end{enumerate}
+
+% Q: In the case of an ``edge'' receiving input from another dupd would it make sense to send the host name and port
+%    of the other dupd?  This way we can check to be sure that when the connection is made, the connecting dupd is whom
+%    we expect it to be.
+% A: The source port is chosen at random and thus useless.  The IP maybe masked by NAT,
+%    so the validation may fail even for the correct DUPD.  We don't do security yet
+%    for a reason; once we start doing it, we'll do it right (with keys/certs/etc.).
+
+At this point, {\tt dup} should also connect to {\tt dupd} with
+TCP streams relevant to the session using the
+protocol described in Section~\ref{sec:dupstrdupd}.
+{\tt dupd} is expected to establish connections with other
+{\tt dupd}s according to the protocol in Section~\ref{sec:dupdtodupd}.
+If {\tt dupd} encounters an error in processing the session
+information it should transmit an error message, otherwise
+a success code.  If {\tt dupd} signals anything but 
+``success'' (0), then the error code is followed by a
+plaintext error message and then the end of the stream.
+
+\begin{enumerate}
+  \item{32-bit integer representing the error code:
+   \begin{description}
+    \item[0]{Success (ready to run / go)}
+    \item[1]{Out of memory}
+    \item[2]{Out of file descriptors / sockets}
+    \item[3]{Access denied}
+    \item[4]{Failure to resolve hostname}
+    \item[5]{Protocol not supported}
+    \item[6]{Failure to connect}
+    \item[7]{Failure to open file for reading}
+    \item[8]{Failure to open file for writing}
+    \item[9]{Failure to open file for appending}
+    \item[10]{Failure to transmit I/O request to other {\tt dupd} (write error)}
+    \item[11]{Failure to transmit I/O request to other {\tt dupd} (timeout on write)}
+    \item[12]{Failure to receive all required I/O connections before timeout (session timeout)}
+    \item[13]{Invalid request (protocol violation by {\tt dup} control)}
+    \item[14]{Invalid request (protocol violation by other {\tt dupd})}
+    \item[15]{Invalid request (protocol violation by {\tt dup} data stream)}
+
+    \item[16]{Failure to {\tt fork}}
+    \item[17]{Duplicate session number}
+    \item[18]{Unsupported protocol version}
+    \item[19]{Failure to open binary for {\tt exec}}
+    \item[20]{Failed to bind to port ({\bf new in 2.0})}
+    \item[98]{Internal error}
+    \item[99]{Unknown error}
+    \item[-1]{Still waiting for connections (not really an error,
+              should not be transmitted over the network)}
+   \end{description}}
+  \item{Unless ``success'' is signaled, the error code is followed
+        by a string describing the error in English.  Note that 
+        unlike all other strings in the protocol, this string
+        is {\bf not} length-prefixed or 0-terminated}
+\end{enumerate}
+
+% Q: does dupd send error messages only to dup or does dupd also send error messages to another dupd?
+% A: DUPD only sends error messages to DUP; on error, it simply only closes the TCP streams with
+%    other DUPDs.
+ 
+
+Note that {\tt dupd} is {\bf not} allowed to start any of the processes at
+this time.  After {\tt dup} has received ``success'' status messages from
+all {\tt dupd}s, it may sent a ``go'' message to all {\tt dupd}s.  If any of the
+{\tt dupd}s transmits a failure code, {\tt dup} {\bf must} close all connections
+with all {\tt dupd}s and not send a ``go'' message.  Closing the control
+connection to a {\tt dupd} before sending a ``go'' messages indicates to the
+{\tt dupd}s that they should clean up the session state and not start the
+various processes.  Note that {\tt dupd} should watch for the control
+connection closing while it is trying to resolve hostnames, trying to
+establish connections with other {\tt dupd}s and waiting for connections
+from other {\tt dupd}s.  The ``go'' message has the following format:
+
+\begin{enumerate}
+  \item{No more 64-bit session identifier ({\bf removed in 2.0})}
+  \item{32-bit integer (all zeros) ({\bf changed in 2.0)}}
+\end{enumerate}
+
+{\bf Timeouts: } The timeout for {\tt dupd} should be 120s for the initial
+phase of establishing I/O connections.  If {\tt dupd} returns a ``success''
+code, it should add another 120s to the timeout (which means that {\tt dupd}
+would wait for at most 240s for the ``go'' message after receiving the
+session specification).  If {\tt dupd} does not receive a ``go'' message
+after this period of time and the control connection is still open,
+{\tt dupd} is allowed to clean up the session.  In this case, {\tt dupd} should
+log an error message to {\tt stderr}.  Both {\tt dup} and {\tt dupd} are
+responsible for making sure that sessions that failed to either
+establish all required connections after 120s or failed to ``go'' 240s
+after the transmission of the session information are closed.  The
+protocol allows both {\tt dup} and {\tt dupd} to signal each other that a timeout
+occured; nevertheless, both components are individually required to
+check for timeouts.  Data connections between {\tt dup} and {\tt dupd}
+as well as data connections between two {\tt dupd}s also time out after
+120s if the respective data stream could not be matched with a session;
+if the stream was matched with a session, it is destroyed when the
+session times out.
+
+{\bf Resource management: } {\tt dupd} may run out of memory or file
+descriptors. {\tt dupd} may also refuse session specifications instantly if the number of
+file descriptors exceeds system limitations ({\tt dupd} does not have to hit
+the system limit first; it is sufficient if {\tt dupd} predicts that it will
+hit the limit).  While anticipating such resource exhaustion is legal,
+it is not required (especially since the limits may not be known.
+
+{\bf Performance: } {\tt dup} is expected to disable TCP CORK for the
+``success'' messages.  {\tt dupd} is expected to disable TCP CORK for the
+``go'' message.
+
+\subsection{Establishing {\tt dupd} to {\tt dupd} connections} \label{sec:dupdtodupd}
+
+For each session and for each process and each I/O descriptor of
+type ``transmitting to another {\tt dupd}'', {\tt dupd} will resolve the
+respective hostname and establish a TCP connection to the
+specified port.  {\tt dupd} will then transmit the following information
+(before {\tt dup}ing the bound socket to the respective process file
+descriptor in the ``go'' step):
+
+\begin{enumerate}
+ \item{32-bit ``magic'' number (0xEEFF8600)}
+ \item{32-bit version number (0 for now)}
+ \item{64-bit session number (from {\tt dup}'s message)}
+ \item{32-bit number indicating the number of the
+       remote process (based on the order of the 
+       process information as received from {\tt dup}; must not be zero)}
+ \item{32-bit number indicating the file descriptor 
+       that this connection should be bound to by the target {\tt dupd}}
+\end{enumerate}
+
+No response is expected or transmitted.  The initiating {\tt dupd}
+must shutdown the connection for reading in this version of the
+protocol.  The receiving {\tt dupd} must shutdown the connection for
+writing in this version of the protocol.  If the receiving {\tt dupd}
+is unaware of the specified session, it should keep the request for
+240s before closing the connection in anticipation of receiving
+session information from {\tt dup} later.  If {\tt dupd} times out a
+connection from another {\tt dupd} because it lacks session data, it
+should log an error message to {\tt stderr}. If the receiving {\tt
+dupd} has session information for the given session number but the
+process or file descriptor numbers do not match any of its control
+information, it should signal a protocol violation to {\tt dup} (type
+13) for the respective session.  If {\tt dupd} receives two valid TCP
+connections both claiming to be for the same session, process and file
+descriptor, {\tt dupd} is to close and ignore the second connection.
+An error should be logged to {\tt stderr} but processing of the
+session (using the first TCP connection) should continue.
+
+{\bf Performance: } {\tt dupd} is expected to disable TCP CORK for the
+message.  {\tt dupd} is expected to re-enable TCP CORK for the
+application afterwards.
+
+
+\subsection{Establishing {\tt dup} to {\tt dupd} connections} \label{sec:dupstrdupd}
+
+For each file descriptor forwarded from {\tt dup} to {\tt dupd}, {\tt dup} is
+expected to establish a TCP connection with the respective 
+{\tt dupd} and (after transmitting ``go'') connect the respective
+TCP streams with its file descriptors by starting {\tt cat} 
+processes.  This section describes the protocol used by {\tt dup}
+to contact {\tt dupd} for forwarding its own file descriptors 
+(such that {\tt dup} becomes a filter).
+
+We need to distinguish two cases.  First, if {\tt dup} is 
+establishing a connection for {\bf reading} from the 
+process started by {\tt dupd}.  In this first case, {\tt dup}
+sends:
+
+\begin{enumerate}
+ \item{32-bit ``magic'' number (0xFEFF8600)}
+ \item{32-bit version number (0 for now)}
+ \item{No 64-bit session number ({\bf removed in 2.0)}}
+ \item{32-bit number of the remote process (must not be zero)}
+ \item{32-bit number corresponding to the desired file
+       descriptor of the remote process; the remote
+       process will write to this file descriptor}
+ \item{64-bit stream identification number from {\tt dup} ({\bf new in 2.0})}
+\end{enumerate}
+
+After sending this information, {\tt dup} performs a shutdown
+on the socket for writing.  {\tt dupd} will perform a shutdown
+on the socket for reading after reading the entire
+message.  
+
+The second case is where {\tt dup} is establishing a connection for {\bf writing}
+to the process started by {\tt dupd}.  In this case, {\tt dup} sends:
+
+\begin{enumerate}
+ \item{32-bit ``magic'' number (0xEFFF8600)}
+ \item{32-bit version number (0 for now)}
+ \item{No 64-bit session number ({\bf removed in 2.0)}}
+ \item{32-bit number of the remote process (as read from
+       {\tt dup}; must not be zero)}
+ \item{32-bit number corresponding to the desired file
+       descriptor of the remote process}
+ \item{64-bit stream identification number from {\tt dup} ({\bf new in 2.0})}
+\end{enumerate}
+
+For this case, {\tt dup} will perform a shutdown on the socket for reading
+and {\tt dupd} will perform a shutdown on the socket for writing.
+
+
+Note that in both cases, no response is transmitted.  If the receiving
+{\tt dupd} is unaware of the specified session, it should queue
+the request for 240s in anticipation of receiving session information
+before eventually timing out.
+
+\end{document} 
+

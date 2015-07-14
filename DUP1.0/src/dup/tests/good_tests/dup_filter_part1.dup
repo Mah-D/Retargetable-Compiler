@@ -1,0 +1,4 @@
+DUP@127.0.0.1:55555[0|nodeGREP:0, 4|nodeSED:0]$ none;
+nodeGREP@127.0.0.1:55555[1|nodeMERGE:0]$ grep -E 'ra';
+nodeSED@127.0.0.1:55555[1|nodeMERGE:3]$ sed 'y/aeiou/12345/g';
+nodeMERGE@127.0.0.1:55555[1|DUP:1]$ fanin;

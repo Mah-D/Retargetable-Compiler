@@ -1,0 +1,21 @@
+.TH DELAY "1" "Nov 20 2008" "delay"
+
+.SH "NAME"
+delay \- copy one input stream to one output stream after waiting some time
+
+.SH "SYNOPSIS"
+.B delay
+\fIDELAYTIME\fR
+
+.SH "DESCRIPTION"
+.PP
+delay reads from stdin and writes the input to stdout after waiting DELAYTIME milliseconds.
+
+.SH "SEE ALSO"
+\fBcat\fP(1), \fBdup\fP(1), \fBdupd\fP(1)
+
+.SH "LEGAL NOTICE"
+delay is released under the GPL.
+
+.SH "REPORTING BUGS"
+Please send electronic mail to <dup@cs.du.edu>

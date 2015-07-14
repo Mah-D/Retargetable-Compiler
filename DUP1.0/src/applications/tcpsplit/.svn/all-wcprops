@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/faculty/!svn/ver/8843/dup/src/applications/tcpsplit
+END
+ipa_db.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/faculty/!svn/ver/8719/dup/src/applications/tcpsplit/ipa_db.c
+END
+tcpsplit_fds.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/faculty/!svn/ver/8843/dup/src/applications/tcpsplit/tcpsplit_fds.c
+END
+balancer.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/faculty/!svn/ver/8719/dup/src/applications/tcpsplit/balancer.c
+END
+tcpsplit.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/faculty/!svn/ver/8843/dup/src/applications/tcpsplit/tcpsplit.h
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/faculty/!svn/ver/8843/dup/src/applications/tcpsplit/Makefile.am
+END

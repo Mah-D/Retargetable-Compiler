@@ -1,0 +1,36 @@
+.TH EAT "1" "Feb 10 2009" "eat"
+
+.SH "NAME"
+eat \- eats lines or records from the start of stdin (or files)
+
+.SH "SYNOPSIS"
+.B eat N [\fIFILE\fR]*
+
+.SH "DESCRIPTION"
+.PP
+When started with only one argument, eat reads lines from file 
+descriptor 0 (stdin), throws away the first N lines and copies
+the others to file descriptor 1 (stdout).
+.PP
+When started with two or more arguments, eat will treat all
+arguments after the first as filenames and throw away the first
+N lines of the concatenation of the files and copy the 
+remaining lines to file descriptor 1 (stdout).
+.TP
+N
+indicates how many lines to eat from the beginning
+of the data stream.  This argument is required.
+.PP
+If no argument is given, eat will print a brief usage description.
+.PP
+Eat is actually a shell script and requires the sed filter to
+be installed.
+
+.SH "SEE ALSO"
+\fBdrop\fP(1), \fBsed\fP(1)
+
+.SH "LEGAL NOTICE"
+eat is in the public domain.
+
+.SH "REPORTING BUGS"
+Please send electronic mail to <dup@cs.du.edu>

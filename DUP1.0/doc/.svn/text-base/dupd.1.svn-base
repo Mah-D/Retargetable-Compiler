@@ -1,0 +1,40 @@
+.TH DUPD "1" "Jan 22 2009" "dupd"
+
+.SH "NAME"
+dupd \- the dupd daemon
+
+.SH "SYNOPSIS"
+.B dupd [\fIOPTIONS\fR]
+
+.SH "DESCRIPTION"
+.PP
+dupd is the background process that must run on all systems participating in the execution of a dup application.
+.PP
+dupd is currently not secure.  Running dupd will allow anyone who is able to connect to the dupd port to execute arbitrary code on the local system with the permissions of the user running dupd.  
+.TP
+\-\-daemonize
+Start dupd as a background process.  This will cause dupd to detach from the terminal and run in the background as a separate session.  Error messages will not be logged to stderr and without the logfile option all dupd output will simply be discarded.
+.TP
+\-\-help
+This option will print a short helptext describing the options supported by dupd.
+.TP
+\-\-logfile=FILENAME
+When deamonized, this option can be used to have dupd log error messages to the given file instead of throwing them away.  Note that the option has no effect if not used in conjunction with the deamonize option: without daemonization, all messages will always be logged to stderr.
+.TP
+\-\-port=PORT
+This option can be used to set the port on which dupd will listen for incoming requests.
+.TP
+\-\-pidfile=FILENAME
+Create a file FILENAME and write the process ID of dupd to that file.  Particularly useful in combination with \-\-daemonize for killing dupd later.
+.TP
+\-\-version
+Display the version number.
+
+.SH "SEE ALSO"
+\fBdup\fP(1)
+
+.SH "LEGAL NOTICE"
+dupd is released under the GPL.
+
+.SH "REPORTING BUGS"
+Please send electronic mail to <dup@cs.du.edu>

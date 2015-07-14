@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/faculty/!svn/ver/8713/dup/src/applications/video
+END
+curesize.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/faculty/!svn/ver/8713/dup/src/applications/video/curesize.h
+END
+siva.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/faculty/!svn/ver/8713/dup/src/applications/video/siva.c
+END
+play.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/faculty/!svn/ver/8713/dup/src/applications/video/play.c
+END
+resize.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/faculty/!svn/ver/8713/dup/src/applications/video/resize.h
+END
+siva.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/faculty/!svn/ver/8713/dup/src/applications/video/siva.h
+END
+dupcam.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/faculty/!svn/ver/8713/dup/src/applications/video/dupcam.c
+END
+mresize.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/faculty/!svn/ver/8713/dup/src/applications/video/mresize.c
+END
+dupvids.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/faculty/!svn/ver/8713/dup/src/applications/video/dupvids.c
+END
+dupcam.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/faculty/!svn/ver/8713/dup/src/applications/video/dupcam.h
+END
+camdelay.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/faculty/!svn/ver/8713/dup/src/applications/video/camdelay.c
+END
+jpg.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/faculty/!svn/ver/8713/dup/src/applications/video/jpg.c
+END
+dupio.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/faculty/!svn/ver/8713/dup/src/applications/video/dupio.c
+END
+dupvids.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/faculty/!svn/ver/8713/dup/src/applications/video/dupvids.h
+END
+jpg.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/faculty/!svn/ver/8713/dup/src/applications/video/jpg.h
+END
+dupio.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/faculty/!svn/ver/8713/dup/src/applications/video/dupio.h
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/faculty/!svn/ver/8713/dup/src/applications/video/Makefile.am
+END

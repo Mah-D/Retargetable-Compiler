@@ -1,0 +1,2 @@
+badnode@localhost:9999[identifier|/some/file]$ command ;
+goodNode@localhost:8889[1|bad node:0]$ command ;

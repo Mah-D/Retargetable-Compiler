@@ -1,0 +1,7 @@
+#!/bin/sh
+mkdir m4 &> /dev/null
+libtoolize --force
+aclocal
+automake
+autoreconf -i
+automake --add-missing

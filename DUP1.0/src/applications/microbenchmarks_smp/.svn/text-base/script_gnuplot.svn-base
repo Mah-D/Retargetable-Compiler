@@ -1,0 +1,14 @@
+#set terminal postscript eps enhanced color
+#set terminal gif
+#set output "IPC.gif"
+set title "IPC Performance Comparison"
+set xlabel "size-bytes"
+set ylabel "microseconds-per-byte"
+set logscale x
+
+plot "pixel_unidirection_multicore.dat" index 0 using 2:3 with linespoints tit 'pipe', \
+"pixel_unidirection_multicore.dat" index 1 using 2:3 with linespoints tit 'message queue', \
+"pixel_unidirection_multicore.dat" index 2 using 2:3 with linespoints tit 'tcp loop back', \
+"pixel_unidirection_multicore.dat" index 3 using 2:3 with linespoints tit 'unix domain socket - stream', \
+"pixel_unidirection_multicore.dat" index 4 using 2:3 with linespoints tit 'unix domain socket - datagram'
+pause -1 "Hit any key to continue"

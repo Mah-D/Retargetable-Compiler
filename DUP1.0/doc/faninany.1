@@ -1,0 +1,28 @@
+.TH FANINANY "1" "Jul 17 2010" "faninany"
+
+.SH "NAME"
+faninany \- copy one input stream to many output streams
+
+.SH "SYNOPSIS"
+.B faninany
+[\fIRECORDSIZE\fR]
+
+.SH "DESCRIPTION"
+.PP
+faninany reads from all open file descriptors including stdin but excluding stdout and stderr and writes to stdout.  stderr is used to report unexpected errors.  By default, faninany operates in newline-mode in which records are delimited by the newline character, if the RECORDSIZE argument is provided, faninany operates on fixed-width records of the specified size.  faninany uses select to read from the input file descriptors, whenever a full record is read (determined based on its operating mode), the entire record is written to stdout.
+.TP
+If stdout causes a write error due to the receiving end closing the stream, faninany will also terminate.  If an input file descriptor closes, faninany will continue reading from all available input descriptors and will terminate when there is no longer any data to read.
+.TP
+When in newline-mode, the last record read from one of the input file descriptors will be written to stdout even if it is not terminated by a newline.  In record mode, only complete records are written; if the last record from an input descriptor is incomplete, it will not be written to stdout.
+.TP
+As a special argument, the character "S" can be given for the blocksize.  In this case, the data streams are expected to consist of variable-size message blocks where the size of each block is given as a 16-bit big-endian number at the beginning of each block (the size includes this two-byte header).  When running in "S" mode, faninany will interpret the 2-byte prefixes of the data streams as the blocksize.
+.TP
+
+.SH "SEE ALSO"
+\fBfanout\fP(1), \fBgather\fP(1), \fBdup\fP(1), \fBdupd\fP(1)
+
+.SH "LEGAL NOTICE"
+fanout is released under the GPL.
+
+.SH "REPORTING BUGS"
+Please send electronic mail to <dup@cs.du.edu>

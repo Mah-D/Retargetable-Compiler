@@ -1,0 +1,12 @@
+#!/bin/bash
+set -eu
+PROG="$(basename -- "${0}")"
+if [ "${#}" -lt 1 ] || ! [[ ${1} =~ [0-9]+ ]]; then
+  echo "Usage: ${PROG} N [FILE]*
+  Remove the first N lines of the concatenation of FILEs, or stdout."
+  exit 1
+fi
+N="${1}"
+shift
+set +u
+exec sed -e "1,${N}d" "${@}"

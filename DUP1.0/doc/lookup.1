@@ -1,0 +1,29 @@
+.TH LOOKUP "1" "Nov 20 2008" "lookup"
+
+.SH "NAME"
+lookup \- find lines matching keys in an input stream
+
+.SH "SYNOPSIS"
+.B lookup
+
+.SH "DESCRIPTION"
+.PP
+lookup first reads a set of keys from FD 3 (it is an error if FD 3 is not open initially) until FD 3 gives EOF.  lookup then reads data from stdin (it is again an error if stdin is not open initially).  Each line from stdin that exactly matches a line previously read from FD 3 is written to stdout.  Each line that does not match any of the keys is written to FD 4.  Once stdin gives EOF, all keys that were never matched against any line from stdin are output to FD 5.
+
+.PP
+stdout, FD 4 and FD 5 may all be closed or fail to write during execution (SIGPIPE).  In those cases, lookup will simply continue to process and write data to the remaining open file descriptors.  Once stdout, FD 4 and FD 5 have closed, lookup will terminate even if more input is available from stdin.
+
+.PP
+stdin must end with a newline, otherwise the line lacking the newline is discarded and an error code is returned (however, all of the lines up to that point are processed; no data will be written to FD 5 in this case).
+
+.PP
+Currently, lookup is always line\-based and takes no arguments.
+
+.SH "SEE ALSO"
+\fBmgrep\fP(1), \fBcat\fP(1), \fBdup\fP(1), \fBdupd\fP(1)
+
+.SH "LEGAL NOTICE"
+lookup is released under the GPL.
+
+.SH "REPORTING BUGS"
+Please send electronic mail to <dup@cs.du.edu>

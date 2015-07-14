@@ -1,0 +1,54 @@
+/home/dupper/duprun/lib/async.c: In function ‘_thread_gethere’:
+/home/dupper/duprun/lib/async.c:335: warning: cast from pointer to integer of different size
+/home/dupper/duprun/lib/async.c: In function ‘_thread_sethere’:
+/home/dupper/duprun/lib/async.c:343: warning: cast to pointer from integer of different size
+/home/dupper/duprun/lib/errormsg.c: In function ‘writeDebugMsg’:
+/home/dupper/duprun/lib/errormsg.c:46: warning: cast from pointer to integer of different size
+/home/dupper/duprun/lib/errormsg.c:47: warning: format ‘%s’ expects type ‘char *’, but argument 5 has type ‘int’
+/home/dupper/duprun/lib/RunMain.c: In function ‘Data1_fill’:
+/home/dupper/duprun/lib/RunMain.c:163: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c:313: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c:613: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c:913: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c: In function ‘ToInitAllTasks_toString’:
+/home/dupper/duprun/lib/RunMain.c:9208: warning: return discards qualifiers from pointer target type
+/home/dupper/duprun/lib/RunMain.c: In function ‘Data6_fill’:
+/home/dupper/duprun/lib/RunMain.c:9500: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c:9650: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c:9950: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c:10250: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c: In function ‘Data3_fill’:
+/home/dupper/duprun/lib/RunMain.c:18904: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c:19054: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c:19354: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c:19654: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c: In function ‘Data4_fill’:
+/home/dupper/duprun/lib/RunMain.c:28544: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c:28694: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c:28994: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c:29294: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c: In function ‘Data8_fill’:
+/home/dupper/duprun/lib/RunMain.c:37548: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c:37698: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c: In function ‘Data0_fill’:
+/home/dupper/duprun/lib/RunMain.c:43462: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c:43612: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c:43912: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c:44212: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c: In function ‘Data7_fill’:
+/home/dupper/duprun/lib/RunMain.c:52921: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c:53071: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c:53371: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c:53671: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c: In function ‘Data2_fill’:
+/home/dupper/duprun/lib/RunMain.c:61931: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c:62081: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c:62381: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c:62681: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c: In function ‘Data5_fill’:
+/home/dupper/duprun/lib/RunMain.c:70935: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c:71085: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c:71385: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/RunMain.c:71685: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘char *’
+/home/dupper/duprun/lib/tpl.c: In function ‘tpl_mmap_output_file’:
+/home/dupper/duprun/lib/tpl.c:1746: warning: implicit declaration of function ‘ftruncate’

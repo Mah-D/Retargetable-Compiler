@@ -1,0 +1,191 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/faculty/!svn/ver/8840/dup/src/dupd
+END
+session_stream.cc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/faculty/!svn/ver/8744/dup/src/dupd/session_stream.cc
+END
+read_dup_stream.cc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/faculty/!svn/ver/8725/dup/src/dupd/read_dup_stream.cc
+END
+read_dupd_stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/faculty/!svn/ver/2516/dup/src/dupd/read_dupd_stream.h
+END
+unknown_stream.cc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/faculty/!svn/ver/8723/dup/src/dupd/unknown_stream.cc
+END
+file_descriptor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/faculty/!svn/ver/8723/dup/src/dupd/file_descriptor.cc
+END
+file_descriptor.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/faculty/!svn/ver/5198/dup/src/dupd/file_descriptor.h
+END
+process.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/faculty/!svn/ver/8723/dup/src/dupd/process.h
+END
+write_pipe_stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/faculty/!svn/ver/8723/dup/src/dupd/write_pipe_stream.h
+END
+base_stream.cc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/faculty/!svn/ver/5287/dup/src/dupd/base_stream.cc
+END
+base_stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/faculty/!svn/ver/2911/dup/src/dupd/base_stream.h
+END
+dupd.cc
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/faculty/!svn/ver/8840/dup/src/dupd/dupd.cc
+END
+session_stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/faculty/!svn/ver/8723/dup/src/dupd/session_stream.h
+END
+read_dup_stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/faculty/!svn/ver/2214/dup/src/dupd/read_dup_stream.h
+END
+read_dupd_stream.cc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/faculty/!svn/ver/8743/dup/src/dupd/read_dupd_stream.cc
+END
+read_pipe_stream.cc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/faculty/!svn/ver/8723/dup/src/dupd/read_pipe_stream.cc
+END
+read_pipe_stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/faculty/!svn/ver/8723/dup/src/dupd/read_pipe_stream.h
+END
+io_descriptor.cc
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/faculty/!svn/ver/8765/dup/src/dupd/io_descriptor.cc
+END
+io_descriptor.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/faculty/!svn/ver/8723/dup/src/dupd/io_descriptor.h
+END
+listen_stream.cc
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/faculty/!svn/ver/5032/dup/src/dupd/listen_stream.cc
+END
+listen_stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/faculty/!svn/ver/2214/dup/src/dupd/listen_stream.h
+END
+unknown_stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/faculty/!svn/ver/2214/dup/src/dupd/unknown_stream.h
+END
+write_dup_stream.cc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/faculty/!svn/ver/8725/dup/src/dupd/write_dup_stream.cc
+END
+process.cc
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/faculty/!svn/ver/8746/dup/src/dupd/process.cc
+END
+write_dup_stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/faculty/!svn/ver/2214/dup/src/dupd/write_dup_stream.h
+END
+write_dupd_stream.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/faculty/!svn/ver/8764/dup/src/dupd/write_dupd_stream.cc
+END
+write_pipe_stream.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/faculty/!svn/ver/8723/dup/src/dupd/write_pipe_stream.cc
+END
+write_dupd_stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/faculty/!svn/ver/8723/dup/src/dupd/write_dupd_stream.h
+END
+session.cc
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/faculty/!svn/ver/8723/dup/src/dupd/session.cc
+END
+session.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/faculty/!svn/ver/8723/dup/src/dupd/session.h
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/faculty/!svn/ver/2039/dup/src/dupd/Makefile.am
+END
+globals.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/faculty/!svn/ver/8723/dup/src/dupd/globals.h
+END

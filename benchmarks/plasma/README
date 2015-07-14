@@ -1,0 +1,9 @@
+
+cp /project/jkenl/plasma-current/source/*.x10 .
+cp /project/jkenl/version18/out.txt .
+
+// old: cp /project/jkenl/version18/*.x10 .
+
+setenv JAVA_HOME /usr/java/jdk1.6.0_04
+/project/jkenl/x10/x10.common/bin/x10c LinearESOpenPIC2DMain.x10
+/project/jkenl/x10/x10.common/bin/x10 LinearESOpenPIC2DMain < out.txt

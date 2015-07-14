@@ -1,0 +1,29 @@
+.TH DEAL "1" "Dec 1 2008" "deal"
+
+.SH "NAME"
+deal \- copy data from one input stream round\-robin to many output streams
+
+.SH "SYNOPSIS"
+.B deal
+[\fIRECORDSIZE\fR]
+
+.SH "DESCRIPTION"
+.PP
+If FD 3 is closed, deal reads from stdin and splits the data round\-robin to all open output file descriptors including stdout but excluding stderr.  stderr is used to report unexpected errors.  If an output file descriptor causes a write error due to the receiving end closing the stream, deal will continue to write round\-robin to the remaining output file descriptors.  If all output file descriptors (other than stderr) are closed, then deal will terminate.  If the input file descriptor signals the end of the stream, deal will also terminate.
+.PP
+If FD 3 is open, deal will expect to read file descriptor numbers (one per line) from FD 3 and will write the next line from stdin to the file descriptor read from FD 3.  deal will expect to read exactly one line from FD 3 per line processed from stdin.  If the file descriptor number returned from FD 3 is not open or no longer open, deal will skip the corresponding input line.  If FD 3 was initially open, deal will exit once either stdin or FD 3 signals the end of the input.
+.TP
+Note that due to buffering by the operating system, records will likely be lost if any output file descriptor signals SIGPIPE (stops to read data).  deal will continue to distribute to the other descriptors in this case.
+.TP
+When called without arguments, deal will operate in line\-based mode.  In this mode, deal will buffer an entire line of input before writing output to the respective output file descriptor.  If the last line read from the input is not terminated with a newline, deal will still flush the last line before terminating.
+.TP
+When called with a number as the argument, deal will operate in record\-based mode.  In this mode, deal will read the specified number of bytes from input before writing the record to the outputs.  If the last line read from the input is incomplete (does not have the full record size), deal will discard it.
+
+.SH "SEE ALSO"
+\fBfanout\fP(1), \fBgather\fP(1), \fBdup\fP(1), \fBdupd\fP(1)
+
+.SH "LEGAL NOTICE"
+deal is released under the GPL.
+
+.SH "REPORTING BUGS"
+Please send electronic mail to <dup@cs.du.edu>

@@ -1,0 +1,17 @@
+K 10
+svn:ignore
+V 131
+stamp-h1
+libtool
+DUP_config.h.in
+DUP_config.h
+configure
+config.status
+config.log
+aclocal.m4
+m4
+autom4te.cache
+Makefile.in
+Makefile
+
+END

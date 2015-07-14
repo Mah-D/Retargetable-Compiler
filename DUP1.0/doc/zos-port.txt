@@ -1,0 +1,61 @@
+DONE:
+export _CXX_CXXSUFFIX=cc to solve the *.cc file extension error
+htons problem
+      make sure that dup_network.h is included first in each file
+      where it is included
+      -add #include <arpa.h> to dup_network.h
+      -#include <dup_network.h> in dup_string.h
+      -add #define OS360 1
+      #define _OPEN_THREADS 3
+      -copied z/OS specific includes from libmicrohttpd's platform.h
+      into dup_network.h
+      #include <stdio.h>
+      #include <unistd.h>
+      #include <sys/resource.h>
+      #include <string.h> in strn_functs
+      ensure there are no C++ comments incode from C code
+in control connection.h change static const to define 
+
+TODO-Jeff:
+gnu-getopt should be made available.  Include the source files
+in the distribution as they do not exist on z/OS.
+
+getopt for dupd
+
+figure out why we have macro yywrap in dup_lex.c that takes one argument
+but also a funtion yywrap that takes zero arguments
+
+dup_process::start
+	-start needs to return a return value
+
+dupd
+write_dup_stream::run
+	-needs a return value even after an abort
+
+take out W and WError from the build system.
+
+check filters for c++ comments 
+
+
+TODO-Christian:
+io_descriptor.o
+	vsnprintf not found
+
+
+HELP-IBM:!
+/usr/include/cstdio 
+	-text unsigned is unexpected error
+	-make connection.o
+dup_string.h
+	-first operand to new operator must be size_t
+dup_lex 
+	-duplicate type sepcifier int and unsigned in sys/types.h
+operator new problem for 
+	 -dupd/file_descriptor.h
+
+
+????:
+process.o has lots of template errors.
+
+
+

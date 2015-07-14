@@ -1,0 +1,7 @@
+dispatcher0@Caspian:5000[5|fanin0:5, 6|fanin1:5, 7|fanin2:5,2|Terminator:7,1|Terminator:10]$/Users/dupper/Desktop/dupTestCode/a.out;
+dispatcher1@Juhu:5001[5|fanin0:6,    6|fanin1:6, 7|fanin2:6,2|Terminator:8,1|Terminator:11]$/Users/dupper/Desktop/dupTestCode/a.out;
+dispatcher2@Hama:5002[5|fanin0:7,    6|fanin1:7, 7|fanin2:7,2|Terminator:9,1|Terminator:12]$/Users/dupper/Desktop/dupTestCode/a.out;
+fanin0@Caspian:5003[1|dispatcher0:4]$faninany;
+fanin1@Juhu:5004[1|dispatcher1:4]$faninany;
+fanin2@Hama:5005[1|dispatcher2:4]$faninany;
+Terminator@Caspian:5006[1>/Users/dupper/Desktop/dupTestCode/out.txt]$faninany;

@@ -1,0 +1,7 @@
+#uni-directional version
+#description	 block-size	 bytes-per-second	 tuned-iteration-num	 mean	 standard-deviation
+unix_domain_socket_datagram: 8	0.005353	655	978825	71409.959328
+unix_domain_socket_datagram: 16	0.010485	719	1097193	82813.335082
+unix_domain_socket_datagram: 1048576	nan	0	0	0.000000
+
+

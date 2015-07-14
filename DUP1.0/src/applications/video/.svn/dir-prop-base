@@ -1,0 +1,11 @@
+K 10
+svn:ignore
+V 51
+Makefile.in
+Makefile
+dupvids
+dupcam
+camdelay
+.deps
+
+END

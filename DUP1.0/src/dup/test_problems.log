@@ -1,0 +1,87 @@
+1.  starting another dup from within a dup configuration doesn't work as I expected 
+	(unless I'm just not seeing the logic error).
+
+The following worked within the test suite:
+
+
+echo "s@localhost[DUP:3|0, 1>dup.out]$ sed 'y/eo/EO/';" > dupB.in
+
+echo "echo@localhost[1|nodeDup:3]$ echo hello world;" > dup.in
+echo "nodeDup@localhost[0<dupB.in]$ dup;" >> dup.in
+
+
+But what I was trying to do was something like this (which did not work):
+
+
+echo "s@localhost[DUP:3|0, 1|DUP:5]$ sed 'y/eo/EO/';" > dupB.in
+
+echo "echo@localhost[1|nodeDup:3]$ echo hello world;" > dup.in
+echo "nodeDup@localhost[0<dupB.in, 5|DUP:6]$ dup;" >> dup.in
+
+the command to run would look like:
+
+dup < dup.in 6> dup.out
+
+So the first dup (dupA) launches echo and another dup dupB.  Echo feeds its output to 
+dupB's istream 3 and launches a sed process which reads from dupB's istream 3
+and writes to dupB's ostream 5.  dupB's ostream 5 is connected to dupA's ostream 6
+which writes to wherever (in this case a file).  This should work logically right?
+Neither dup nor dupd throws an error, it just hangs (eventually you get a select error
+within one of the dup programs.)
+
+After that didn't seem to work I tried this:
+
+echo "s@localhost[DUP:3|0, 1|DUP:5]$ sed 'y/eo/EO/';" > dupB.in
+
+echo "echo@localhost[1|nodeDup:3]$ echo hello world;" > dup.in
+echo "nodeDup@localhost[0<dupB.in, 5>dup.out]$ dup;" >> dup.in
+
+The only difference being that I removed the connection between the two dups.  
+This doesn't seem to work either.  Again no error is thrown, but dup.out is 
+empty and the diff test fails.  
+
+Let me know if I did something silly syntacticly or logically.  
+
+-Jeff
+
+
+2.	After the problems described above I tried the following much simpler test case
+
+
+# ----------------------------------------------------------------------------------
+# Test dup read from file and dup write to file
+# ----------------------------------------------------------------------------------
+
+echo -n "TEST: read from dup, write to dup..."
+
+echo "a@localhost[DUP:3|0, 1|DUP:4]$ sed 'y/aeiou/AEIOU/';" > dup.in
+
+cat dup.in | sed 'y/aeiou/AEIOU/' > dup.want
+
+if ! $DUP < dup.in 3< dup.in 4> dup.out
+then
+    echo "FAIL: error running $exe"
+    exit 1
+fi
+
+sleep 1
+if ! diff dup.out dup.want
+then
+	echo "FAIL:unexpected output"
+	exit 1
+fi 
+echo "PASS"
+
+
+It too hangs and then eventually gives a select error.  Looks like dup can 
+set connect its own input streams with other processes' input stream
+or connect other processes output streams to its own output streams, but
+not both at the same time (based on the successful test cases for either 
+of those two scenarios).
+
+-jeff
+
+3.
+In the multi_stream tests, forking doesn't seem to work.  Neither does merging.
+
+-jeff

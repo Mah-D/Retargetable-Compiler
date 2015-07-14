@@ -1,0 +1,9 @@
+/home/dupper/duprun/lib/async.c: In function ‘_thread_gethere’:
+/home/dupper/duprun/lib/async.c:335: warning: cast from pointer to integer of different size
+/home/dupper/duprun/lib/async.c: In function ‘_thread_sethere’:
+/home/dupper/duprun/lib/async.c:343: warning: cast to pointer from integer of different size
+/home/dupper/duprun/lib/errormsg.c: In function ‘writeDebugMsg’:
+/home/dupper/duprun/lib/errormsg.c:46: warning: cast from pointer to integer of different size
+/home/dupper/duprun/lib/errormsg.c:47: warning: format ‘%s’ expects type ‘char *’, but argument 5 has type ‘int’
+/home/dupper/duprun/lib/tpl.c: In function ‘tpl_mmap_output_file’:
+/home/dupper/duprun/lib/tpl.c:1743: warning: implicit declaration of function ‘ftruncate’

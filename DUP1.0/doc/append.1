@@ -1,0 +1,47 @@
+.TH APPEND "1" "Jan 20 2009" "append"
+
+.SH "NAME"
+append \- appends the output of a filter to the stream of data being
+sent from stdin to stdout. 
+
+.SH "SYNOPSIS"
+.B append [\fIFILTER\fR | [\fIARG1...\fR | [\fI...ARGN\fR]]]
+
+.SH "DESCRIPTION"
+.PP
+append reads the stream from file descriptor 0 (stdin) and writes 
+the data read to file descriptor 1 (stdout). Once this has completed,
+it executes FILTER with additional arguments for append (ARG1...ARGN) 
+passed as arguments to
+FILTER. Assuming FILTER sends its output to file descriptor 1
+(stdout), the output would be 'appended' to the initial stream from
+stdin. While there is no requirement that the running filter send its
+output to stdout, append is somewhat meaningless otherwise since the
+data from the filter will not appear after the initial stream.
+.PP
+.TP
+FILTER 
+The filter to execute after forwarding the data from stdin to stdout.
+.TP
+ARG1...ARGN
+The argument list for FILTER. 
+.PP
+Executed without arguments, append's behaviour is identical to 'cat
+-', though \fBcat\fR most likely performs better. 
+
+.SH EXAMPLE
+.TP
+append cat t2 < t1
+First, t1 is read and sent to stdout, then 'cat t2' is executed,
+appending t2 to the end of t1. This is equivalent to 'cat t1 t2'.
+While the example is trivial, \fBcat\fR could be replaced with any 
+filter.
+
+.SH "SEE ALSO"
+\fBdup\fP(1), \fBdupd\fP(1), \fBcat\fP(1)
+
+.SH "LEGAL NOTICE"
+append is released under the GPL.
+
+.SH "REPORTING BUGS"
+Please send electronic mail to <dup@cs.du.edu>

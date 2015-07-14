@@ -1,0 +1,92 @@
+N.B.: This is slightly buggy (only the lex parts) given that I debugged the
+code after I wrote this.
+
+This is basically the grammar bison uses plus a slightly altered version of the 
+lexer's generated terminals (for readability and expressiveness). The grammar
+
+listed is highly dependent on bison's parsing algorithm. 
+
+Caveat lector: there are a few things we do with flex (escapes and some things 
+with quotes, for example) which are done using start conditions and states to
+avoid ambiguous rules and other problems.  These things are often either 
+underspecified or completely unspecified here, and if some of the terminal rules
+here seem ambiguous, it's because the lexer is in a particular state when it 
+sees the pattern and knows what it's looking at. 
+
+*********** 
+Note that lists are left-recursive for bison's benefit, not the reader's, 
+so the rules for process_list, edge_list and argument_list could be 
+rewritten as follows:
+
+process_list:  (process)*
+edge_list: edge ("," edge)*
+argument_list: (argument)*
+***********
+
+
+session: process_list
+
+process_list:	/* empty */
+		| process
+		| process_list process
+	       	
+process:	process_id "@" host_info "[" edge_list "]" "$" command argument_list ";\n"
+
+process_id:	IDENTIFIER
+
+host_info:	address ":" port
+		| address
+
+port:		INTEGER
+
+address:	IPV6_ID 
+		| DOT_ID
+
+edge_list:	edge
+		| edge_list "," edge
+
+edge:		edgenode OPERATOR edgenode
+
+edgenode:	desc_number
+		| remote_proc_info 
+		| filepath 
+
+desc_number:	INTEGER
+
+remote_proc_info:	process_id : desc_number
+
+filepath:	PATH
+							       
+command:	COMMAND_TOK 
+
+argument_list:	/* empty */
+		| argument
+		| argument_list argument
+
+argument:       COMMAND_TOK 
+
+IDENTIFIER: 	[a-ZA-Z][a-zA-Z0-9_]*
+
+INTEGER:	[0-9]+
+
+IPV6_ID:	"[" (":" | [0-9a-fA-F])+ "]" /* Note: actual parser strips "[" "]" */
+
+DOT_ID:		[.a-zA-Z0-9]+
+
+OPERATOR:	"|" | "<" | ">>"
+
+PATH:		(. - ("," | "]"))+  /* any character but , or ]  - this is for the lexer's benefit (state termination) and nothing else - we may choose to allow escaping these things later */ 
+
+COMMAND_TOK:	(. - ["' \t]) | ["] (. - ["])+ ["] | ['] (. - ['])+ [']
+	        /* what this says is that we allow for command/argument tokens
+	           separated by whitespace which don't contain quotes (actually,
+		   we allow these to be escaped in the lexer, but I'm not
+		   sure how to express that atm - I did it in the lexer with
+		   start conditions, but I doubt it's all that important
+		   except that we should document it here) OR
+		   we allow a command token to be a double-quoted or
+	 	   single-quoted expression (again, escape behavior isn't
+	 	   documented here). What this doesn't really say is that
+		   technically, you could put a set of quotes that were
+		   empty (no whitespace in between) and the lexer would
+		   just ignore them, but that's a technical detail IMHO */ 

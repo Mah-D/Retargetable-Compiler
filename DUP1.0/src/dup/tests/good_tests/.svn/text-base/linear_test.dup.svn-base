@@ -1,0 +1,2 @@
+nodeCAT@localhost:55555[0 </usr/share/dict/words, 1 | nodeGREP:0]$ cat -;
+nodeGREP@localhost:55555[1 > somefile]$ grep -E "[qQ][^uU]";

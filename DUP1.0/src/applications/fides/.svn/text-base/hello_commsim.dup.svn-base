@@ -1,0 +1,7 @@
+errorLog@localhost:55555[1>commsim.err]$faninany;
+fanin@localhost:55555[1|fanout:0,2|errorLog:5]$faninany;
+fanout@localhost:55555[1|timekeeper:0, 2|errorLog:6, 4|m0:0, 5|r0:0, 6|c0:0]$fanout;
+timekeeper@localhost:55555[1|fanin:7,2|errorLog:7]$vtimekeeper 3;
+m0@localhost:55555[1|fanin:11,2|errorLog:11]$manufacturer m1|item1:9 ;
+r0@localhost:55555[1|fanin:12,2|errorLog:12]$retailer r1|item1:m1:16 ;
+c0@localhost:55555[1|fanin:13,2|errorLog:13]$consumer c1|r1:item1:6:343,r1:item1:14:134,r1:item1:35:281,r1:item1:12:246,r1:item1:19:339,r1:item1:41:194,r1:item1:35:90,r1:item1:44:365,r1:item1:9:124,r1:item1:13:250,r1:item1:4:293,r1:item1:1:12,r1:item1:30:65,r1:item1:33:354,r1:item1:50:225,r1:item1:24:53,r1:item1:43:42,r1:item1:49:180,r1:item1:45:225,r1:item1:32:344,r1:item1:15:54,r1:item1:43:266,r1:item1:34:164,r1:item1:26:290,r1:item1:25:239,r1:item1:39:33,r1:item1:39:276,r1:item1:14:9,r1:item1:15:360,r1:item1:12:29,r1:item1:10:80,r1:item1:6:309,r1:item1:48:116,r1:item1:36:119 ;

@@ -1,0 +1,173 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/faculty/!svn/ver/6987/dup/src/applications/microbenchmarks_smp
+END
+smp_AF_UNIX_DGRAM_perf.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/faculty/!svn/ver/6788/dup/src/applications/microbenchmarks_smp/smp_AF_UNIX_DGRAM_perf.c
+END
+smp_tcp_socket_perf.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/faculty/!svn/ver/6710/dup/src/applications/microbenchmarks_smp/smp_tcp_socket_perf.h
+END
+smp_AF_UNIX_STREAM_perf.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/faculty/!svn/ver/6788/dup/src/applications/microbenchmarks_smp/smp_AF_UNIX_STREAM_perf.c
+END
+smp_msq_perf.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/faculty/!svn/ver/6710/dup/src/applications/microbenchmarks_smp/smp_msq_perf.h
+END
+default_output.txt
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/faculty/!svn/ver/6710/dup/src/applications/microbenchmarks_smp/default_output.txt
+END
+calibrate_driver.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/faculty/!svn/ver/6987/dup/src/applications/microbenchmarks_smp/calibrate_driver.c
+END
+smp_AF_UNIX_DGRAM_perf.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/faculty/!svn/ver/6710/dup/src/applications/microbenchmarks_smp/smp_AF_UNIX_DGRAM_perf.h
+END
+smp_AF_UNIX_STREAM_perf.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/faculty/!svn/ver/6710/dup/src/applications/microbenchmarks_smp/smp_AF_UNIX_STREAM_perf.h
+END
+helper_lib.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/faculty/!svn/ver/6710/dup/src/applications/microbenchmarks_smp/helper_lib.c
+END
+memcpy_perf.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/faculty/!svn/ver/6710/dup/src/applications/microbenchmarks_smp/memcpy_perf.c
+END
+calibrate_driver.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/faculty/!svn/ver/6710/dup/src/applications/microbenchmarks_smp/calibrate_driver.h
+END
+helper_lib.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/faculty/!svn/ver/6710/dup/src/applications/microbenchmarks_smp/helper_lib.h
+END
+memcpy_perf.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/faculty/!svn/ver/6710/dup/src/applications/microbenchmarks_smp/memcpy_perf.h
+END
+readme
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/faculty/!svn/ver/6710/dup/src/applications/microbenchmarks_smp/readme
+END
+client_server_common.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/faculty/!svn/ver/6710/dup/src/applications/microbenchmarks_smp/client_server_common.c
+END
+AF_UNIX_DGRAM_common.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/faculty/!svn/ver/6788/dup/src/applications/microbenchmarks_smp/AF_UNIX_DGRAM_common.h
+END
+client_server_common.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/faculty/!svn/ver/6788/dup/src/applications/microbenchmarks_smp/client_server_common.h
+END
+tcp_simple_server.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/faculty/!svn/ver/6710/dup/src/applications/microbenchmarks_smp/tcp_simple_server.c
+END
+smp_pipe_perf.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/faculty/!svn/ver/6987/dup/src/applications/microbenchmarks_smp/smp_pipe_perf.c
+END
+AF_UNIX_DGRAM_server.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/faculty/!svn/ver/6710/dup/src/applications/microbenchmarks_smp/AF_UNIX_DGRAM_server.c
+END
+smp_tcp_socket_perf.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/faculty/!svn/ver/6788/dup/src/applications/microbenchmarks_smp/smp_tcp_socket_perf.c
+END
+AF_UNIX_STREAM_server.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/faculty/!svn/ver/6710/dup/src/applications/microbenchmarks_smp/AF_UNIX_STREAM_server.c
+END
+script_gnuplot
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/faculty/!svn/ver/6788/dup/src/applications/microbenchmarks_smp/script_gnuplot
+END
+smp_msq_perf.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/faculty/!svn/ver/6987/dup/src/applications/microbenchmarks_smp/smp_msq_perf.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/faculty/!svn/ver/6710/dup/src/applications/microbenchmarks_smp/Makefile
+END
+common.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/faculty/!svn/ver/6788/dup/src/applications/microbenchmarks_smp/common.h
+END
+smp_pipe_perf.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/faculty/!svn/ver/6710/dup/src/applications/microbenchmarks_smp/smp_pipe_perf.h
+END
+thread_core_mapping.conf
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/faculty/!svn/ver/6987/dup/src/applications/microbenchmarks_smp/thread_core_mapping.conf
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/faculty/!svn/ver/5015/dup/src/dup/tests/good_tests
+END
+split-merge.dup
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/faculty/!svn/ver/5015/dup/src/dup/tests/good_tests/split-merge.dup
+END
+linear_test.dup
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/faculty/!svn/ver/2129/dup/src/dup/tests/good_tests/linear_test.dup
+END
+cycle.dup
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/faculty/!svn/ver/2129/dup/src/dup/tests/good_tests/cycle.dup
+END
+dup_filter_part1.dup
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/faculty/!svn/ver/2129/dup/src/dup/tests/good_tests/dup_filter_part1.dup
+END
+dup_filter_part2.dup
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/faculty/!svn/ver/2129/dup/src/dup/tests/good_tests/dup_filter_part2.dup
+END

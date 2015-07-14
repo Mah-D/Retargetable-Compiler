@@ -1,0 +1,5 @@
+dispatcher0@tuvalu:5000[     5|fanin0:10, 2|Terminator:26, 1|Result1:30 ]$gdb /home/dupper/duprun/dispatcher -x "/home/dupper/duprun/debug.txt";
+fanin0@tuvalu:5006[          99|dispatcher0:4, 2|Terminator:40, 1|Result1:44]$gdb /home/dupper/duprun/relayer -x "/home/dupper/duprun/debug.txt";
+Terminator@tuvalu:5010[1>/home/dupper/duprun/out.txt]$faninany;
+Result1@tuvalu:5011[1>/home/dupper/duprun/result.txt]$faninany;
+

@@ -1,0 +1,44 @@
+<commsim>
+<manufacturer name='m1'>
+<item name='item1' delay='9'/>
+</manufacturer>
+<retailer name='r1'>
+<item name='item1' manufacturer='m1' unitSize='16'/>
+</retailer>
+<consumer name='c1'>
+<order item='item1' retailer='r1' quantity='6' delay='343'/>
+<order item='item1' retailer='r1' quantity='14' delay='134'/>
+<order item='item1' retailer='r1' quantity='35' delay='281'/>
+<order item='item1' retailer='r1' quantity='12' delay='246'/>
+<order item='item1' retailer='r1' quantity='19' delay='339'/>
+<order item='item1' retailer='r1' quantity='41' delay='194'/>
+<order item='item1' retailer='r1' quantity='35' delay='90'/>
+<order item='item1' retailer='r1' quantity='44' delay='365'/>
+<order item='item1' retailer='r1' quantity='9' delay='124'/>
+<order item='item1' retailer='r1' quantity='13' delay='250'/>
+<order item='item1' retailer='r1' quantity='4' delay='293'/>
+<order item='item1' retailer='r1' quantity='1' delay='12'/>
+<order item='item1' retailer='r1' quantity='30' delay='65'/>
+<order item='item1' retailer='r1' quantity='33' delay='354'/>
+<order item='item1' retailer='r1' quantity='50' delay='225'/>
+<order item='item1' retailer='r1' quantity='24' delay='53'/>
+<order item='item1' retailer='r1' quantity='43' delay='42'/>
+<order item='item1' retailer='r1' quantity='49' delay='180'/>
+<order item='item1' retailer='r1' quantity='45' delay='225'/>
+<order item='item1' retailer='r1' quantity='32' delay='344'/>
+<order item='item1' retailer='r1' quantity='15' delay='54'/>
+<order item='item1' retailer='r1' quantity='43' delay='266'/>
+<order item='item1' retailer='r1' quantity='34' delay='164'/>
+<order item='item1' retailer='r1' quantity='26' delay='290'/>
+<order item='item1' retailer='r1' quantity='25' delay='239'/>
+<order item='item1' retailer='r1' quantity='39' delay='33'/>
+<order item='item1' retailer='r1' quantity='39' delay='276'/>
+<order item='item1' retailer='r1' quantity='14' delay='9'/>
+<order item='item1' retailer='r1' quantity='15' delay='360'/>
+<order item='item1' retailer='r1' quantity='12' delay='29'/>
+<order item='item1' retailer='r1' quantity='10' delay='80'/>
+<order item='item1' retailer='r1' quantity='6' delay='309'/>
+<order item='item1' retailer='r1' quantity='48' delay='116'/>
+<order item='item1' retailer='r1' quantity='36' delay='119'/>
+</consumer>
+</commsim>

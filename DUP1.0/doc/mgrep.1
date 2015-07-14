@@ -1,0 +1,21 @@
+.TH MGREP "1" "Nov 20 2008" "mgrep"
+
+.SH "NAME"
+mgrep \- multi\-stream grep
+
+.SH "SYNOPSIS"
+.B mgrep
+\fIREGEX\fR
+
+.SH "DESCRIPTION"
+.PP
+mgrep reads from stdin and writes lines matching the given regular expression to stdout.  Lines that do not match the regular expression are written to file descriptor 3.
+
+.SH "SEE ALSO"
+\fBgrep\fP(1), \fBegrep\fP(1), \fBdup\fP(1), \fBdupd\fP(1)
+
+.SH "LEGAL NOTICE"
+mgrep is released under the GPL.
+
+.SH "REPORTING BUGS"
+Please send electronic mail to <dup@cs.du.edu>

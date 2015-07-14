@@ -1,0 +1,22 @@
+.TH ROUTER "1" "Jul 16 2010" "router"
+
+.SH "NAME"
+router \- copy data from one input stream to output streams based on routing information in the input data
+
+.SH "SYNOPSIS"
+.B router
+[\fIOFFSET\fR]
+
+.SH "DESCRIPTION"
+.PP
+Router reads messages consisting of a 16-bit big-endian length prefix followed by a 16-bit big-endian target identifier from stdin (FD 0).  The length prefix must be at least 4 (since it includes the header).  The message is then copied to the file descriptor described by the target identifier.  However, instead of just using the 16-bit number directly, OFFSET (the first argument) is added to the target identifier first.  If no OFFSET argument is given, an offset of 3 is used.
+.PP
+
+.SH "SEE ALSO"
+\fBdeal\fP(1), \fBfaninany\fP(1), \fBdup\fP(1)
+
+.SH "LEGAL NOTICE"
+router is released under the GPL.
+
+.SH "REPORTING BUGS"
+Please send electronic mail to <dup@cs.du.edu>

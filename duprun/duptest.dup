@@ -1,0 +1,3 @@
+dispatcher0@tuvalu:5000[     5|dispatcher0:4, 2|Terminator:26, 1|Result:30 ]$/home/dupper/duprun/dispatcher  "/home/dupper/duprun/in.txt";
+Terminator@tuvalu:5010[1>/home/dupper/duprun/out.txt]$faninany;
+Result@tuvalu:5011[1>/home/dupper/duprun/result.txt]$faninany;

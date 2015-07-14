@@ -1,0 +1,160 @@
+Sun Oct 10 11:17:25 CEST 2010
+	Fixed segv in dup due to "concurrent modification"
+	of iterated vector in the presence of a self-loop.
+	Thanks to Riyaz for reporting! -CG
+
+Sat Jul 17 21:44:49 CEST 2010
+	Extended faninany with "S" mode for processing of
+	blocks of embedded size. -CG
+
+Fri Jul 16 16:58:21 CEST 2010
+	Adding router filter. -CG
+
+Tue Jun  8 22:43:47 CEST 2010
+	DUP testcases pass again.  Error reporting is still
+	not nice, but SSH authentication should now work.
+	Relleasing DUP 0.1.0. -CG
+
+Mon Jun  7 12:19:48 CEST 2010
+	Moved applications out of main build (new configure.ac
+	is now in src/applications/).  Started work on
+	implementing DUP Protocol v2. -CG
+
+Fri Jan  8 18:49:07 CET 2010
+	Improving IPv6 support for some systems. -CG
+	Adding nodelay filter. -CG
+
+Fri Nov 27 12:20:50 CET 2009
+	Releasing DUP 0.0.1. -CG
+
+Fri Nov 20 13:07:21 CET 2009
+	Changed filters (fanout, faninany, deal, holmerge)
+	to tolerate open file descriptors of the wrong type
+	(i.e., write-only file descriptors, other than stdout/stderr
+	for faninany).  Code now checks if the file-descriptor
+	supports the respective operation and ignores it if not. -CG
+
+Fri Nov 20 12:13:21 CET 2009
+	Added buffer-dup filter, a faster replacement for
+	the traditional 'buffer' command and (on some systems)
+	slow versions of 'cat'.  Unlike traditional 'buffer',
+	buffer-dup also supports "unbounded" (growing)
+	buffers, only limited by the size of available
+	virtual memory. -CG
+
+Wed Nov 18 18:26:21 CET 2009
+	Eliminated a memmove from the filter code to
+	improve performance. -CG
+
+Mon Oct 12 15:17:57 CEST 2009
+	Added support for writing a PID file to dupd.
+	Fixed problems with logging to file, daemonization
+	and relative paths. -CG
+
+Mon Oct 12 14:24:20 CEST 2009
+	Making sure timeouts correspond to specification
+	(Mantis #8). -CG
+
+Mon Oct 12 14:03:18 CEST 2009
+	Fixing Mantis #11 (dupd shoud check for
+	control-connection being closed while
+	waiting for data connections in order to
+	shutdown session as soon as possible
+	on error). -CG
+
+Fri Oct  9 10:28:26 CEST 2009
+	Fixed missing check for duplicate labedls
+	(Mantis #28). -CG
+
+Wed Oct  7 10:18:52 CEST 2009
+	Fixed bug in process-readiness check (used
+	wrong, uninitialized variable). -CG
+
+Tue Oct  6 16:34:14 CEST 2009
+	Increased the number of file descriptors to
+	65536 on GNU/Linux (overriding FD_SETSIZE).
+	Reduced buffer size in dupd for non-control
+	connections (to avoid wasting memory). -CG
+
+Tue Oct  6 14:26:11 CEST 2009
+	Added check to make sure that we don't use
+	sockets larger than FD_SETSIZE (which would
+	cause memory corruption in conjunction with
+	our select calls). -CG
+
+Tue Oct  6 12:27:53 CEST 2009
+	Fixed various performance issues in dup to dupd
+	communication.  Eliminated call to fcntl for each
+	socket in the select set (expensive check for
+	debugging only).  Fixed reporting of errors from
+	dupd to dup (messages now printed).  Added
+	caching of DNS lookups to dupd. -CG
+
+Tue Feb 10 12:36:45 MST 2009
+	Added filter "eat". -CG
+
+Sun Jan 25 12:40:44 MST 2009
+	Adding daemonization for dupd and various
+	other command-line options for dup and dupd. -CG
+
+Sat Jan 24 00:45:11 MST 2009
+	Basic DUP functionality working (control
+	stream, data streams between dup and dupd
+	and data streams between dupds as well as
+	loopback). -CG
+
+Thu Jan  8 02:17:10 MST 2009
+	Finished first draft of the dup code (at this
+	point entirely untested, need dupd first). -CG
+
+Tue Jan  6 20:38:11 MST 2009
+	Fixed various memory leaks, uninitialized
+	variables and some style issues. -CG
+
+Wed Dec 10 23:38:43 MST 2008
+	Renamed fanin to gather (which is the more
+	appropriate CMS name for what we are doing).
+	Eliminate most memmove calls for processing
+	of lines. -CG
+	Added DUP parser based on Flex and Bison. -KG
+
+Wed Dec  3 23:36:11 MST 2008
+	Added FD 3 processing functionality to deal. -CG
+
+Mon Dec  1 23:31:57 MST 2008
+	Renamed cp to cmd and rrout to deal. -CG
+
+Mon Dec  1 23:18:37 MST 2008
+	Added duplicate. -CG
+
+Mon Dec  1 20:18:55 MST 2008
+	Renamed rrmerge to fanin. -CG
+
+Mon Dec  1 19:56:04 MST 2008
+	Added cp. -CG
+
+Mon Dec  1 15:10:58 MST 2008
+	Added gate. -CG
+
+Fri Nov 21 13:29:15 MST 2008
+	Added holmerge and rrout. -CG
+
+Fri Nov 21 01:36:24 MST 2008
+	Added rrmerge (previously known as merge). -CG
+
+Fri Nov 21 00:33:43 MST 2008
+	Added lookup. -CG
+
+Thu Nov 20 21:02:53 MST 2008
+	Added mgrep (previously known as CMS LOCATE, but the
+	locate name would conflict with a well-known UNIX
+	tool). -CG
+
+Thu Nov 20 17:54:03 MST 2008
+	Added delay. -CG
+
+Thu Nov 20 00:05:09 MST 2008
+	Added fanout with testcases. -CG
+
+Tue Nov 18 22:58:51 MST 2008
+	Project started (build system added). -CG

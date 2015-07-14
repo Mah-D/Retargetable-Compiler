@@ -1,0 +1,3 @@
+nodeCAT@127.0.0.1:55555[0 < /usr/share/dict/words, 1 | nodeSPLIT:0]$ cat;
+nodeSPLIT@127.0.0.1:55555[1|nodeDUP:0, 3|nodeDUP:4]$ fanout;
+nodeDUP@127.0.0.1:55555[1>/dev/tty]$ dup --config=dup_filter_part2.dup;

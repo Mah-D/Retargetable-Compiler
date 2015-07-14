@@ -1,0 +1,25 @@
+K 10
+svn:ignore
+V 560
+unidirectional.txt
+spec_unix_domain_socket_stream_unidirection.dat
+spec_unix_domain_socket_stream_bidirection.dat
+spec_unix_domain_socket_datagram_unidirection.dat
+spec_unix_domain_socket_datagram_bidirection.dat
+spec_tcp_loopback_unidirection.dat
+spec_tcp_loopback_bidirection.dat
+spec_pipe_unidirection.dat
+spec_pipe_bidirection.dat
+spec_message_queue_unidirection.dat
+spec_message_queue_bidirection.dat
+spec_memcpy_unidirection.dat
+spec_memcpy_bidirection.dat
+profile
+Makefile.in
+Makefile
+default_output.txt
+AF_UNIX_STREAM_server
+AF_UNIX_DGRAM_server
+.deps
+
+END

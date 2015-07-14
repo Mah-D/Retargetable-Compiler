@@ -1,0 +1,2 @@
+egrep "point " *.x10 | egrep -v finish | egrep -v for | egrep -v "\/\/"
+

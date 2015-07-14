@@ -1,0 +1,108 @@
+Init: Green's function
+Init: Shape factor
+Init: X Electric field
+Init: Y Electric field
+Poisson Solver initialized
+Init: particle position
+Init: particle velocity
+Init: correcting drift
+Init: updating with drift
+Init: particles
+Init: initial field distribution
+Init: initial partical distribution
+Init: background charge
+T = 0
+q Distribution: Distribution_c.Arbitrary<
+[[0,0], place(id=0)],
+[[0,1], place(id=0)],
+[[0,2], place(id=0)],
+[[0,3], place(id=0)],
+[[0,4], place(id=0)],
+[[5,0], place(id=1)],
+[[13,0], place(id=3)],
+[[13,2], place(id=3)],
+[[5,4], place(id=1)],
+[[13,1], place(id=3)],
+[[5,3], place(id=1)],
+[[13,4], place(id=3)],
+[[5,2], place(id=1)],
+[[13,3], place(id=3)],
+[[5,1], place(id=1)],
+[[10,1], place(id=2)],
+[[9,1], place(id=2)],
+[[10,0], place(id=2)],
+[[9,2], place(id=2)],
+[[9,3], place(id=2)],
+[[9,4], place(id=2)],
+[[11,0], place(id=2)],
+[[11,1], place(id=2)],
+[[11,2], place(id=2)],
+[[11,3], place(id=2)],
+[[11,4], place(id=2)],
+[[10,4], place(id=2)],
+[[10,3], place(id=2)],
+[[10,2], place(id=2)],
+[[9,0], place(id=2)],
+[[1,2], place(id=0)],
+[[1,1], place(id=0)],
+[[1,4], place(id=0)],
+[[1,3], place(id=0)],
+[[14,0], place(id=3)],
+[[14,1], place(id=3)],
+[[14,4], place(id=3)],
+[[4,1], place(id=1)],
+[[4,0], place(id=1)],
+[[14,2], place(id=3)],
+[[4,3], place(id=1)],
+[[14,3], place(id=3)],
+[[4,2], place(id=1)],
+[[1,0], place(id=0)],
+[[15,2], place(id=3)],
+[[15,1], place(id=3)],
+[[15,0], place(id=3)],
+[[15,4], place(id=3)],
+[[4,4], place(id=1)],
+[[15,3], place(id=3)],
+[[7,4], place(id=1)],
+[[7,3], place(id=1)],
+[[7,0], place(id=1)],
+[[2,0], place(id=0)],
+[[7,2], place(id=1)],
+[[2,1], place(id=0)],
+[[7,1], place(id=1)],
+[[12,1], place(id=3)],
+[[3,0], place(id=0)],
+[[6,0], place(id=1)],
+[[12,0], place(id=3)],
+[[2,4], place(id=0)],
+[[6,1], place(id=1)],
+[[12,3], place(id=3)],
+[[3,2], place(id=0)],
+[[2,3], place(id=0)],
+[[12,2], place(id=3)],
+[[3,1], place(id=0)],
+[[2,2], place(id=0)],
+[[6,4], place(id=1)],
+[[6,2], place(id=1)],
+[[6,3], place(id=1)],
+[[12,4], place(id=3)],
+[[8,3], place(id=2)],
+[[8,2], place(id=2)],
+[[8,1], place(id=2)],
+[[8,0], place(id=2)],
+[[3,3], place(id=0)],
+[[3,4], place(id=0)],
+[[8,4], place(id=2)]>
+q Region: {[0,0],[0,1],[0,2],[0,3],[0,4],[1,0],[1,1],[1,2],[1,3],[1,4],[2,0],[2,1],[2,2],[2,3],[2,4],[3,0],[3,1],[3,2],[3,3],[3,4],[4,0],[4,1],[4,2],[4,3],[4,4],[5,0],[5,1],[5,2],[5,3],[5,4],[6,0],[6,1],[6,2],[6,3],[6,4],[7,0],[7,1],[7,2],[7,3],[7,4],[8,0],[8,1],[8,2],[8,3],[8,4],[9,0],[9,1],[9,2],[9,3],[9,4],[10,0],[10,1],[10,2],[10,3],[10,4],[11,0],[11,1],[11,2],[11,3],[11,4],[12,0],[12,1],[12,2],[12,3],[12,4],[13,0],[13,1],[13,2],[13,3],[13,4],[14,0],[14,1],[14,2],[14,3],[14,4],[15,0],[15,1],[15,2],[15,3],[15,4]}
+field, kinetic, total energies = 0.0,35.74523949386594,35.74523949386594
+final field energy diff = 0.009936711552799253
+final kinetic energy diff = 0.04525649103576512
+final final energy diff = 0.055193202588561974
+Total time (ms): 481
+Initialization time (ms): 61 12.681912681912682
+Particle Deposit time (ms): 8 1.6632016632016633
+Field Redistribution time (ms): 119 24.74012474012474
+Solver time (ms): 199 41.37214137214137
+Particle Push time (ms): 4 0.8316008316008316
+Particle move time (ms): 90 18.71101871101871
+Wall-clock time for plasma: 1.163 secs
